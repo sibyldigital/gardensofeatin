@@ -1,0 +1,112 @@
+/* Gardens of Eatin' — Design tokens
+   Imported from the Gardens of Eatin' Design System project (claude.ai/design).
+   Warm editorial minimalism: cream ground, deep/mid forest greens, harvest gold
+   accent, maroon reserved for calls-to-action. */
+
+:root {
+  /* Base palette (from brand guide) */
+  --color-cream:          #F7F3ED;
+  --color-forest-deep:    #1A3D2B;
+  --color-forest-mid:     #2D5A3D;
+  --color-gold:           #8B6914;
+  --color-maroon:         #5C1A1A;
+
+  /* Derived neutrals — tinted off the cream/forest, never pure gray */
+  --color-cream-dim:      #EFE8DC;
+  --color-cream-line:     #DCD2C0;
+  --color-forest-deep-90: #24473380;
+  --color-ink:            #1E2420;
+  --color-ink-soft:       #4A5049;
+
+  /* On-dark text (for hero overlays / deep-forest surfaces) */
+  --color-cream-100:      #FFFFFF;
+  --color-on-forest:      #F7F3ED;
+  --color-on-forest-soft: #C9D3C9;
+
+  /* Interactive state layers */
+  --color-maroon-hover:   #711F1F;
+  --color-maroon-press:   #4A1515;
+  --color-forest-hover:   #234D34;
+  --color-gold-hover:     #9C7619;
+
+  /* Semantic aliases — use these in components/UI, not the raw hues above */
+  --surface-page:         var(--color-cream);
+  --surface-card:         var(--color-cream);
+  --surface-sunken:       var(--color-cream-dim);
+  --surface-deep:         var(--color-forest-deep);
+  --surface-mid:          var(--color-forest-mid);
+
+  --text-heading:         var(--color-forest-deep);
+  --text-body:            var(--color-ink);
+  --text-muted:           var(--color-ink-soft);
+  --text-on-deep:         var(--color-on-forest);
+  --text-on-deep-muted:   var(--color-on-forest-soft);
+
+  --border-hairline:      var(--color-cream-line);
+  --border-on-deep:       #3E6350;
+
+  --accent-gold:          var(--color-gold);
+  --accent-cta:           var(--color-maroon);
+  --accent-cta-hover:     var(--color-maroon-hover);
+  --accent-cta-press:     var(--color-maroon-press);
+
+  /* Photo overlay scrim for hero sections (dark forest → transparent) */
+  --overlay-hero: linear-gradient(180deg, rgba(26,61,43,0.15) 0%, rgba(20,32,25,0.62) 100%);
+  --overlay-card: linear-gradient(0deg, rgba(20,32,25,0.55) 0%, rgba(20,32,25,0) 55%);
+
+  /* Type */
+  --font-display: "Baskervville", "Times New Roman", serif;
+  --font-body:    "Work Sans", -apple-system, "Helvetica Neue", sans-serif;
+
+  --size-display-xl: clamp(2.75rem, 2.1rem + 2.6vw, 5rem);
+  --size-display-lg: clamp(2.25rem, 1.85rem + 1.8vw, 3.75rem);
+  --size-display-md: clamp(1.75rem, 1.5rem + 1.1vw, 2.5rem);
+
+  --text-display-xl: 400 var(--size-display-xl)/1.05 var(--font-display);
+  --text-display-lg: 400 var(--size-display-lg)/1.08 var(--font-display);
+  --text-display-md: 400 var(--size-display-md)/1.12 var(--font-display);
+  --text-display-sm: 400 1.5rem/1.2 var(--font-display);
+  --text-display-italic-lg: italic 400 var(--size-display-md)/1.2 var(--font-display);
+
+  --text-eyebrow:  600 0.8125rem/1 var(--font-body);
+  --text-body-lg:  400 1.1875rem/1.6 var(--font-body);
+  --text-body-md:  400 1.0625rem/1.65 var(--font-body);
+  --text-body-sm:  400 0.9375rem/1.55 var(--font-body);
+  --text-nav:      500 0.9375rem/1 var(--font-body);
+  --text-button:   600 0.9375rem/1 var(--font-body);
+  --text-caption:  400 0.8125rem/1.4 var(--font-body);
+
+  --tracking-eyebrow: 0.16em;
+  --tracking-nav: 0.02em;
+  --tracking-display: -0.01em;
+
+  /* Spacing / radius / shadow / motion */
+  --space-3xs: 4px;
+  --space-2xs: 8px;
+  --space-xs:  12px;
+  --space-sm:  16px;
+  --space-md:  24px;
+  --space-lg:  40px;
+  --space-xl:  64px;
+  --space-2xl: 96px;
+  --space-3xl: 140px;
+
+  --content-max: 1180px;
+  --content-pad: clamp(20px, 4vw, 64px);
+
+  --radius-none: 0px;
+  --radius-sm: 2px;
+  --radius-md: 4px;
+  --radius-pill: 999px;
+
+  --shadow-none: none;
+  --shadow-soft: 0 1px 2px rgba(20,32,25,0.06);
+  --shadow-callout: 0 12px 28px rgba(20,32,25,0.14);
+
+  --border-width-hairline: 1px;
+
+  --ease-standard: cubic-bezier(0.4, 0, 0.2, 1);
+  --duration-fast: 150ms;
+  --duration-standard: 300ms;
+  --duration-slow: 500ms;
+}
