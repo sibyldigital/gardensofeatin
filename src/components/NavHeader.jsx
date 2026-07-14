@@ -1,5 +1,6 @@
 import React from "react";
 import { Link, NavLink } from "react-router-dom";
+import { asset } from "../lib/asset.js";
 
 /**
  * NavHeader — transparent-over-hero header with wordmark, primary nav,
@@ -20,7 +21,7 @@ export function NavHeader({ onDark = false, phone = "(828) 555-0134" }) {
   return (
     <header className={onDark ? "nav nav--on-dark" : "nav"}>
       <Link to="/" className="nav__wordmark">
-        <img className="nav__mark" src="/assets/logo/apple-tree-mark.png" alt="" />
+        <img className="nav__mark" src={asset("assets/logo/apple-tree-mark.png")} alt="" />
         Gardens of Eatin'
       </Link>
       <nav className="nav__links" aria-label="Primary">

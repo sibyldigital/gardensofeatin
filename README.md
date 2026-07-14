@@ -20,7 +20,23 @@ to the spec of the project sitemap CSV.
 npm install
 npm run dev      # local dev server
 npm run build    # production build to dist/
+npm run preview  # serve the built dist/ locally
 ```
+
+## Deployment (GitHub Pages)
+
+The site deploys to <https://sibyldigital.github.io/gardensofeatin/>.
+
+- `vite.config.js` sets `base: '/gardensofeatin/'` so every built asset URL
+  (JS, CSS, fonts, images) resolves under the repo subpath. Fonts live in
+  `src/assets/` and photos/logo in `public/assets/`; JS references public
+  assets through `src/lib/asset.js`, which prefixes `import.meta.env.BASE_URL`.
+  The router uses the same base via `basename={import.meta.env.BASE_URL}`.
+- `.github/workflows/deploy.yml` builds and publishes `dist/` to GitHub Pages
+  on every push to `main` (and on manual dispatch). It also copies
+  `index.html` to `404.html` so client-side deep links resolve on Pages.
+- One-time repo setting: **Settings → Pages → Build and deployment → Source:
+  GitHub Actions.**
 
 ## Pages (per sitemap CSV)
 
@@ -32,6 +48,7 @@ npm run build    # production build to dist/
 | `/packages`           | Service Packages       |
 | `/process`            | Process                |
 | `/portfolio`          | Portfolio (filterable) |
+| `/portfolio/:slug`    | Project case study     |
 | `/blog`               | Blog (search + filter) |
 | `/blog/:slug`         | Blog Post              |
 | `/contact`            | Contact + service map  |
@@ -39,12 +56,21 @@ npm run build    # production build to dist/
 
 ## Design system
 
-Tokens (colors, type, spacing, motion) and components (Button, Card,
-Callout, Input, NavHeader, Footer) are ported from the design system
-project, adapted from inline-style React to CSS classes and made
-router-aware. Brand rules honored throughout: maroon reserved for CTAs,
-open-edge cards (no borders/shadows/radius), cream + deep-forest as the
-only page backgrounds, no icons, Title Case headings, quiet motion.
+Tokens (colors, type, spacing, motion) and components are ported from the
+design system project, adapted from inline-style React to CSS classes and
+made router-aware. Brand rules honored throughout: maroon reserved for CTAs,
+open-edge cards (no borders/shadows/radius), cream + deep-forest as the only
+page backgrounds, no icons, Title Case headings, quiet motion.
+
+The updated design system added a library of homepage/section options, all
+implemented here as reusable components: `StatsBar`, `InformationSection`
+(gold-ruled fact callouts), `TestimonialSection` (typographic ★ ratings),
+`JournalSection`, `PricingSection` (Design/Installation/Maintenance tiers),
+`TeamSection` (forest/gold monogram tiles — no invented headshots),
+`ServiceRadius` (abstract concentric-ring service-area schematic),
+`ServiceDetailSection`, `CommercialPitchSection`, `FAQSection`,
+`BeforeAfterSection`, and `InstagramSection`, plus a `CaseStudy` project
+detail page and the editorial `BlogPost` article layout.
 
 ## ⚠️ Photography assets are placeholders
 

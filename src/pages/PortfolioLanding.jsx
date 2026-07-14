@@ -3,8 +3,11 @@ import { PageHero } from "../components/PageHero.jsx";
 import { SectionHeading } from "../components/SectionHeading.jsx";
 import { Card } from "../components/Card.jsx";
 import { Button } from "../components/Button.jsx";
+import { StatsBar } from "../components/StatsBar.jsx";
+import { TeamSection } from "../components/TeamSection.jsx";
+import { InstagramSection } from "../components/InstagramSection.jsx";
 import { Footer } from "../components/Footer.jsx";
-import { PHOTOS, PROJECTS, REVIEWS, TEAM } from "../data/content.js";
+import { PHOTOS, PROJECTS, REVIEWS } from "../data/content.js";
 
 /* Portfolio Landing Page — full-screen hero, short philosophy statement,
    featured gallery organized by scale, Google review pulls, brief team
@@ -14,15 +17,6 @@ const SCALE_ORDER = [
   { scale: "City Lots & Homesteads", categories: ["Residential"] },
   { scale: "Venues & Inns", categories: ["Venue"] },
   { scale: "Breweries & Commercial", categories: ["Brewery/Commercial"] },
-];
-
-const INSTAGRAM_GRID = [
-  PHOTOS.harvest,
-  PHOTOS.coneflowers,
-  PHOTOS.carrots,
-  PHOTOS.orchard,
-  PHOTOS.cabbage,
-  PHOTOS.coleus,
 ];
 
 export default function PortfolioLanding() {
@@ -117,54 +111,13 @@ export default function PortfolioLanding() {
         </div>
       </section>
 
-      <section className="section section--deep">
-        <div className="container">
-          <SectionHeading eyebrow="The Team" title="Who Does The Work" />
-          <div className="grid-3">
-            {TEAM.map((member) => (
-              <div key={member.name}>
-                <div
-                  style={{
-                    backgroundImage: `url(${member.image})`,
-                    backgroundSize: "cover",
-                    backgroundPosition: "center",
-                    aspectRatio: "1 / 1",
-                    marginBottom: "var(--space-sm)",
-                  }}
-                />
-                <h3 className="display-md" style={{ fontSize: "20px", color: "var(--color-on-forest)", marginBottom: "2px" }}>
-                  {member.name}
-                </h3>
-                <p className="eyebrow" style={{ margin: 0 }}>{member.title}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <StatsBar />
 
-      <section style={{ padding: 0 }}>
-        <div className="container" style={{ paddingTop: "var(--space-xl)", paddingBottom: "var(--space-md)" }}>
-          <SectionHeading eyebrow="@gardensofeatin" title="From The Feed" />
-        </div>
-        <div
-          style={{
-            display: "grid",
-            gridTemplateColumns: "repeat(auto-fit, minmax(180px, 1fr))",
-          }}
-        >
-          {INSTAGRAM_GRID.map((image, i) => (
-            <div
-              key={i}
-              style={{
-                backgroundImage: `url(${image})`,
-                backgroundSize: "cover",
-                backgroundPosition: "center",
-                aspectRatio: "1 / 1",
-              }}
-            />
-          ))}
-        </div>
-      </section>
+      <TeamSection eyebrow="The Team" title="Who Does The Work" />
+
+      <div className="section--sunken">
+        <InstagramSection />
+      </div>
 
       <section className="section" style={{ textAlign: "center" }}>
         <div className="container">

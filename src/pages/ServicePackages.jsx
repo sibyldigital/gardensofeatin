@@ -2,6 +2,9 @@ import React from "react";
 import { PageHero } from "../components/PageHero.jsx";
 import { SectionHeading } from "../components/SectionHeading.jsx";
 import { Button } from "../components/Button.jsx";
+import { PricingSection } from "../components/PricingSection.jsx";
+import { TestimonialSection } from "../components/TestimonialSection.jsx";
+import { FAQSection } from "../components/FAQSection.jsx";
 import { Footer } from "../components/Footer.jsx";
 import { PHOTOS, PACKAGES } from "../data/content.js";
 
@@ -78,6 +81,14 @@ export default function ServicePackages() {
           </div>
         </div>
       </section>
+
+      <div className="section--sunken">
+        <PricingSection />
+      </div>
+
+      <TestimonialSection />
+
+      <FAQSection />
 
       <section className="section section--sunken" style={{ textAlign: "center" }}>
         <div className="container" style={{ maxWidth: "720px" }}>

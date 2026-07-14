@@ -28,6 +28,8 @@ export default function Contact() {
     phone: "",
     projectType: "",
     location: "",
+    timeline: "",
+    budget: "",
     message: "",
   });
   const [sent, setSent] = useState(false);
@@ -70,7 +72,11 @@ export default function Contact() {
                   onChange={set("projectType")}
                   required
                 />
-                <Input label="Location" placeholder="Asheville, NC" value={form.location} onChange={set("location")} />
+                <Input label="Property Address" placeholder="Asheville, NC" value={form.location} onChange={set("location")} />
+                <div className="grid-2" style={{ gap: "var(--space-md)" }}>
+                  <Input label="Desired Timeline" placeholder="This fall" value={form.timeline} onChange={set("timeline")} />
+                  <Input label="Budget Range" placeholder="Optional" value={form.budget} onChange={set("budget")} />
+                </div>
                 <Input
                   label="Message"
                   textarea

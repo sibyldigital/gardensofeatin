@@ -6,6 +6,7 @@ import Services from "./pages/Services.jsx";
 import ServicePackages from "./pages/ServicePackages.jsx";
 import Process from "./pages/Process.jsx";
 import Portfolio from "./pages/Portfolio.jsx";
+import CaseStudy from "./pages/CaseStudy.jsx";
 import Blog from "./pages/Blog.jsx";
 import BlogPost from "./pages/BlogPost.jsx";
 import Contact from "./pages/Contact.jsx";
@@ -30,6 +31,7 @@ export default function App() {
         <Route path="/packages" element={<ServicePackages />} />
         <Route path="/process" element={<Process />} />
         <Route path="/portfolio" element={<Portfolio />} />
+        <Route path="/portfolio/:slug" element={<CaseStudy />} />
         <Route path="/blog" element={<Blog />} />
         <Route path="/blog/:slug" element={<BlogPost />} />
         <Route path="/contact" element={<Contact />} />

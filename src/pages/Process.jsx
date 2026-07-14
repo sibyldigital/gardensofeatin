@@ -2,6 +2,7 @@ import React from "react";
 import { PageHero } from "../components/PageHero.jsx";
 import { Button } from "../components/Button.jsx";
 import { CTABanner } from "../components/CTABanner.jsx";
+import { ServiceRadius } from "../components/ServiceRadius.jsx";
 import { Footer } from "../components/Footer.jsx";
 import { PHOTOS, STEPS } from "../data/content.js";
 
@@ -42,6 +43,8 @@ export default function Process() {
           </div>
         </section>
       ))}
+
+      <ServiceRadius />
 
       <CTABanner image={PHOTOS.hero}>
         <Button variant="primary" size="lg" to="/contact">

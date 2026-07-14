@@ -1,15 +1,16 @@
 import React from "react";
 import { useParams, Link } from "react-router-dom";
-import { PageHero } from "../components/PageHero.jsx";
+import { NavHeader } from "../components/NavHeader.jsx";
 import { Callout } from "../components/Callout.jsx";
 import { Button } from "../components/Button.jsx";
 import { CTABanner } from "../components/CTABanner.jsx";
 import { Footer } from "../components/Footer.jsx";
-import { POSTS, PHOTOS } from "../data/content.js";
+import { POSTS } from "../data/content.js";
 
-/* Blog Post — title/date/category/author over the featured image with dark
-   overlay, rich text body with an open-edge inline image and a single gold
-   callout, deep-forest CTA to start a project. */
+/* Blog Post — editorial single-article layout (design system's BlogPage):
+   forest nav bar, full-bleed featured image banner, then title and meta on
+   the cream ground below (no overlaid headline), justified body copy, a
+   single gold Callout aside, and a deep-forest CTA to start a project. */
 
 export default function BlogPost() {
   const { slug } = useParams();
@@ -18,11 +19,18 @@ export default function BlogPost() {
   if (!post) {
     return (
       <div>
-        <PageHero image={PHOTOS.hero} title="Post Not Found" lede="That journal entry has been composted." />
+        <div style={{ background: "var(--color-forest-deep)" }}>
+          <NavHeader onDark />
+        </div>
         <section className="section" style={{ textAlign: "center" }}>
-          <Button variant="secondary" to="/blog">
-            Back To The Journal
-          </Button>
+          <div className="container">
+            <h1 className="display-lg" style={{ marginBottom: "var(--space-md)" }}>
+              Post Not Found
+            </h1>
+            <Button variant="secondary" to="/blog">
+              Back To The Journal
+            </Button>
+          </div>
         </section>
         <Footer />
       </div>
@@ -32,53 +40,42 @@ export default function BlogPost() {
   const midpoint = Math.ceil(post.body.length / 2);
 
   return (
-    <div>
-      <PageHero
-        image={post.image}
-        eyebrow={`${post.category} — ${post.date}`}
-        title={post.title}
-        lede={`By ${post.author}`}
-      />
+    <div style={{ background: "var(--surface-page)" }}>
+      <div style={{ background: "var(--color-forest-deep)" }}>
+        <NavHeader onDark />
+      </div>
 
-      <article className="section">
-        <div className="container" style={{ maxWidth: "760px" }}>
-          {post.body.slice(0, midpoint).map((para, i) => (
-            <p key={i} className="body-justified" style={{ font: "var(--text-body-lg)", marginBottom: "var(--space-md)" }}>
-              {para}
-            </p>
-          ))}
+      <div className="article-banner" style={{ backgroundImage: `url(${post.image})` }} />
 
-          <div
-            style={{
-              backgroundImage: `url(${post.image})`,
-              backgroundSize: "cover",
-              backgroundPosition: "center",
-              aspectRatio: "16 / 9",
-              margin: "var(--space-lg) 0",
-            }}
-          />
+      <article className="article fade-in">
+        <p className="eyebrow">{`${post.category} — ${post.date}`}</p>
+        <h1 className="article__title">{post.title}</h1>
+        <p style={{ font: "var(--text-nav)", color: "var(--text-muted)", margin: "0 0 var(--space-lg)" }}>
+          By {post.author}
+        </p>
 
-          {post.callout && (
-            <div style={{ margin: "var(--space-lg) 0" }}>
-              <Callout label="Field Note">{post.callout}</Callout>
-            </div>
-          )}
+        {post.body.slice(0, midpoint).map((para, i) => (
+          <p key={i}>{para}</p>
+        ))}
 
-          {post.body.slice(midpoint).map((para, i) => (
-            <p key={i} className="body-justified" style={{ font: "var(--text-body-lg)", marginBottom: "var(--space-md)" }}>
-              {para}
-            </p>
-          ))}
+        {post.callout && (
+          <div style={{ margin: "var(--space-lg) 0" }}>
+            <Callout label="In The Field">{post.callout}</Callout>
+          </div>
+        )}
 
-          <p style={{ marginTop: "var(--space-lg)" }}>
-            <Link to="/blog" className="btn btn--sm btn--ghost">
-              ‹ Back To The Journal
-            </Link>
-          </p>
-        </div>
+        {post.body.slice(midpoint).map((para, i) => (
+          <p key={i}>{para}</p>
+        ))}
+
+        <p style={{ marginTop: "var(--space-md)" }}>
+          <Link to="/blog" className="btn btn--sm btn--ghost">
+            ‹ Back To The Journal
+          </Link>
+        </p>
       </article>
 
-      <CTABanner solid title="Ready To Start Your Own?">
+      <CTABanner solid eyebrow="Ready When You Are" title="Ready To Start Your Own?">
         <p className="lede" style={{ margin: "0 auto var(--space-lg)", color: "var(--color-on-forest-soft)" }}>
           Every garden in this journal began with a walk on the land. Yours can too.
         </p>

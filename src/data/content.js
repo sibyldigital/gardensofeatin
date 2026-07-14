@@ -2,15 +2,17 @@
    grounded. "We" speaks for the company, "you" is the reader. Headlines in
    Title Case, copy names actual plants and outcomes, no exclamation points. */
 
+import { asset } from "../lib/asset.js";
+
 export const PHOTOS = {
-  hero: "/assets/photography/landscape-hero-wide.png",
-  harvest: "/assets/photography/harvest-basket.png",
-  orchard: "/assets/photography/apple-tree-orchard.png",
-  coneflowers: "/assets/photography/coneflowers-butterfly.png",
-  cabbage: "/assets/photography/cabbage-beds.png",
-  carrots: "/assets/photography/carrots-kale.png",
-  coleus: "/assets/photography/coleus-planter.png",
-  aerial: "/assets/photography/garden-path-aerial.png",
+  hero: asset("assets/photography/landscape-hero-wide.png"),
+  harvest: asset("assets/photography/harvest-basket.png"),
+  orchard: asset("assets/photography/apple-tree-orchard.png"),
+  coneflowers: asset("assets/photography/coneflowers-butterfly.png"),
+  cabbage: asset("assets/photography/cabbage-beds.png"),
+  carrots: asset("assets/photography/carrots-kale.png"),
+  coleus: asset("assets/photography/coleus-planter.png"),
+  aerial: asset("assets/photography/garden-path-aerial.png"),
 };
 
 export const SERVICES = [
@@ -126,54 +128,136 @@ export const STEPS = [
 
 export const PROJECTS = [
   {
+    slug: "black-mountain-homestead",
     name: "Black Mountain Homestead",
     category: "Residential",
+    location: "Black Mountain, NC",
     image: PHOTOS.carrots,
     descriptor: "A quarter-acre kitchen garden and young orchard for a family of five.",
+    summary:
+      "A quarter-acre of lawn became a working kitchen garden and young orchard — raised beds by the back door, fruit trees on the slope, and a berry hedge closing the property line.",
+    bullets: [
+      "Twelve raised beds with drip irrigation",
+      "Eight fruit trees selected for the elevation",
+      "Perennial herb and pollinator borders",
+      "First-season planting and harvest plan",
+    ],
   },
   {
+    slug: "hominy-creek-food-forest",
     name: "Hominy Creek Food Forest",
     category: "Residential",
+    location: "Candler, NC",
     image: PHOTOS.orchard,
     descriptor: "Apples, chestnuts, and pawpaws layered over berries on a south-facing slope.",
+    summary:
+      "A south-facing slope planted as a true food forest: canopy apples and chestnuts over an understory of pawpaw and hazelnut, closed with currants, comfrey, and creeping thyme.",
+    bullets: [
+      "Earthworks to slow and soak winter rain",
+      "Canopy, understory, and ground-cover layers",
+      "Native and heirloom variety selection",
+      "Two seasons of establishment care",
+    ],
   },
   {
+    slug: "laurel-ridge-wedding-venue",
     name: "Laurel Ridge Wedding Venue",
     category: "Venue",
+    location: "Leicester, NC",
     image: PHOTOS.hero,
     descriptor: "Ceremony lawn framed by pollinator borders that bloom May through October.",
+    summary:
+      "A ceremony lawn framed by native pollinator borders sequenced to bloom across the entire wedding season, from golden alexanders in April to asters at first frost.",
+    bullets: [
+      "Season-long bloom sequencing",
+      "Photo-forward sight lines from the altar",
+      "Low-allergen, foot-traffic-tolerant plantings",
+      "Seasonal maintenance for peak-weekend color",
+    ],
   },
   {
+    slug: "riverbend-brewery-beer-garden",
     name: "Riverbend Brewery Beer Garden",
     category: "Brewery/Commercial",
+    location: "Asheville, NC",
     image: PHOTOS.cabbage,
     descriptor: "Hops, herbs, and shade trees turning a gravel lot into a destination.",
+    summary:
+      "A gravel lot became the busiest patio in town — hops climbing the fence line, culinary herbs at arm's reach of the kitchen, and fast-growing shade for summer crowds.",
+    bullets: [
+      "Hops and brewing herbs the kitchen can use",
+      "Shade trees sited for afternoon sun",
+      "Durable paths and gathering spaces",
+      "Container plantings for quick impact",
+    ],
   },
   {
+    slug: "sandy-mush-estate",
     name: "Sandy Mush Estate",
     category: "Residential",
+    location: "Sandy Mush, NC",
     image: PHOTOS.aerial,
     descriptor: "A phased permaculture master plan across eleven acres of pasture and woodland.",
+    summary:
+      "A phased permaculture master plan across eleven acres — kitchen gardens near the house, a food forest on the mid-slope, and pollinator meadows restoring the old pasture.",
+    bullets: [
+      "Whole-property water and zone mapping",
+      "Phased installation over three seasons",
+      "Edible, ornamental, and restoration zones",
+      "Year-round ecological maintenance",
+    ],
   },
   {
+    slug: "craggy-view-inn",
     name: "Craggy View Inn",
     category: "Venue",
+    location: "Weaverville, NC",
     image: PHOTOS.coleus,
     descriptor: "Entry plantings and container gardens that feed the inn's kitchen.",
+    summary:
+      "Entry plantings and container gardens that greet guests and feed the inn's kitchen — herbs, edible flowers, and cutting greens within steps of the back door.",
+    bullets: [
+      "Signature entry and courtyard plantings",
+      "Kitchen herb and cutting-green containers",
+      "Edible flowers for the plate and the table",
+      "Low-maintenance seasonal rotation",
+    ],
   },
   {
+    slug: "west-asheville-pocket-orchard",
     name: "West Asheville Pocket Orchard",
     category: "Residential",
+    location: "Asheville, NC",
     image: PHOTOS.harvest,
     descriptor: "Six fruit trees and a berry hedge on a city lot, pruned for the picking.",
+    summary:
+      "Six fruit trees and a berry hedge fit onto a city lot — trained and pruned so the whole harvest stays within reach, no ladder required.",
+    bullets: [
+      "Compact, trained fruit-tree forms",
+      "Berry hedge along the property line",
+      "Espalier and open-center pruning",
+      "Small-space soil and mulch system",
+    ],
   },
   {
+    slug: "pisgah-taproom-terrace",
     name: "Pisgah Taproom Terrace",
     category: "Brewery/Commercial",
+    location: "Brevard, NC",
     image: PHOTOS.coneflowers,
     descriptor: "Native perennial beds that draw butterflies to the afternoon crowd.",
+    summary:
+      "Native perennial beds wrapping a taproom terrace, alive with butterflies through the afternoon rush — coneflower, bee balm, and mountain mint doing the work.",
+    bullets: [
+      "Native perennial pollinator beds",
+      "Butterfly and bee habitat structure",
+      "Durable edging for high foot traffic",
+      "Winter-standing stems for next-year habitat",
+    ],
   },
 ];
+
+export const PROJECT_BY_SLUG = Object.fromEntries(PROJECTS.map((p) => [p.slug, p]));
 
 export const PROJECT_CATEGORIES = ["All", "Residential", "Venue", "Brewery/Commercial"];
 

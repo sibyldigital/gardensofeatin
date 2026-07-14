@@ -3,6 +3,10 @@ import { PageHero } from "../components/PageHero.jsx";
 import { SectionHeading } from "../components/SectionHeading.jsx";
 import { Card } from "../components/Card.jsx";
 import { Button } from "../components/Button.jsx";
+import { ServiceDetailSection } from "../components/ServiceDetailSection.jsx";
+import { PricingSection } from "../components/PricingSection.jsx";
+import { CommercialPitchSection } from "../components/CommercialPitchSection.jsx";
+import { FAQSection } from "../components/FAQSection.jsx";
 import { Footer } from "../components/Footer.jsx";
 import { PHOTOS, SERVICES } from "../data/content.js";
 
@@ -39,6 +43,20 @@ export default function Services() {
           </div>
         </div>
       </section>
+
+      <div className="section--sunken">
+        <ServiceDetailSection
+          eyebrow="Signature Service"
+          title="Food Forest Design"
+          image={PHOTOS.orchard}
+        />
+      </div>
+
+      <PricingSection />
+
+      <CommercialPitchSection />
+
+      <FAQSection />
 
       <section className="section section--sunken" style={{ textAlign: "center" }}>
         <div className="container" style={{ maxWidth: "720px" }}>

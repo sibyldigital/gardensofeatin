@@ -4,6 +4,10 @@ import { SectionHeading } from "../components/SectionHeading.jsx";
 import { Card } from "../components/Card.jsx";
 import { Button } from "../components/Button.jsx";
 import { CTABanner } from "../components/CTABanner.jsx";
+import { StatsBar } from "../components/StatsBar.jsx";
+import { InformationSection } from "../components/InformationSection.jsx";
+import { TestimonialSection } from "../components/TestimonialSection.jsx";
+import { JournalSection } from "../components/JournalSection.jsx";
 import { Footer } from "../components/Footer.jsx";
 import { PHOTOS } from "../data/content.js";
 
@@ -77,6 +81,8 @@ export default function Home() {
         }
       />
 
+      <StatsBar />
+
       <section className="section">
         <div className="container">
           <SectionHeading
@@ -132,6 +138,12 @@ export default function Home() {
           </div>
         ))}
       </section>
+
+      <InformationSection />
+
+      <TestimonialSection />
+
+      <JournalSection />
 
       <CTABanner image={PHOTOS.aerial}>
         <Button variant="primary" size="lg" to="/contact">

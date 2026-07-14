@@ -3,26 +3,29 @@
    Both are commercial faces substituted with the nearest free equivalents (see design
    system readme): Baskervville and Work Sans, self-hosted below. */
 
+/* Relative url() paths so Vite fingerprints these files and rewrites them
+   with the configured base (/gardensofeatin/) for GitHub Pages. */
+
 @font-face {
   font-family: "Baskervville";
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  src: url("/assets/fonts/baskervville-400.woff2") format("woff2");
+  src: url("../assets/fonts/baskervville-400.woff2") format("woff2");
 }
 @font-face {
   font-family: "Baskervville";
   font-style: italic;
   font-weight: 400;
   font-display: swap;
-  src: url("/assets/fonts/baskervville-400i.woff2") format("woff2");
+  src: url("../assets/fonts/baskervville-400i.woff2") format("woff2");
 }
 @font-face {
   font-family: "Baskervville";
   font-style: normal;
   font-weight: 700;
   font-display: swap;
-  src: url("/assets/fonts/baskervville-700.woff2") format("woff2");
+  src: url("../assets/fonts/baskervville-700.woff2") format("woff2");
 }
 
 @font-face {
@@ -30,33 +33,33 @@
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  src: url("/assets/fonts/work-sans-400.woff2") format("woff2");
+  src: url("../assets/fonts/work-sans-400.woff2") format("woff2");
 }
 @font-face {
   font-family: "Work Sans";
   font-style: italic;
   font-weight: 400;
   font-display: swap;
-  src: url("/assets/fonts/work-sans-400i.woff2") format("woff2");
+  src: url("../assets/fonts/work-sans-400i.woff2") format("woff2");
 }
 @font-face {
   font-family: "Work Sans";
   font-style: normal;
   font-weight: 500;
   font-display: swap;
-  src: url("/assets/fonts/work-sans-500.woff2") format("woff2");
+  src: url("../assets/fonts/work-sans-500.woff2") format("woff2");
 }
 @font-face {
   font-family: "Work Sans";
   font-style: normal;
   font-weight: 600;
   font-display: swap;
-  src: url("/assets/fonts/work-sans-600.woff2") format("woff2");
+  src: url("../assets/fonts/work-sans-600.woff2") format("woff2");
 }
 @font-face {
   font-family: "Work Sans";
   font-style: normal;
   font-weight: 700;
   font-display: swap;
-  src: url("/assets/fonts/work-sans-700.woff2") format("woff2");
+  src: url("../assets/fonts/work-sans-700.woff2") format("woff2");
 }

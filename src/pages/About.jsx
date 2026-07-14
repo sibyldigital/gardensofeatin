@@ -1,12 +1,23 @@
 import React from "react";
 import { PageHero } from "../components/PageHero.jsx";
 import { SectionHeading } from "../components/SectionHeading.jsx";
-import { Card } from "../components/Card.jsx";
+import { StatsBar } from "../components/StatsBar.jsx";
 import { Footer } from "../components/Footer.jsx";
 import { PHOTOS, TEAM, VALUES } from "../data/content.js";
 
 /* About — warm editorial hero, two-column philosophy statement (text left,
-   portrait right), three-member team section, values list. */
+   portrait right), team section (monogram tiles per the updated design —
+   no invented headshots), values list. */
+
+const initials = (name) =>
+  name
+    .split(" ")
+    .map((w) => w[0])
+    .join("")
+    .slice(0, 2)
+    .toUpperCase();
+
+const TILE_BG = ["var(--color-forest-mid)", "var(--color-gold)", "var(--color-forest-mid)"];
 
 export default function About() {
   return (
@@ -52,19 +63,39 @@ export default function About() {
         </div>
       </section>
 
+      <StatsBar />
+
       <section className="section section--deep">
         <div className="container">
           <SectionHeading eyebrow="The People" title="A Small Crew With Deep Roots" />
           <div className="grid-3">
-            {TEAM.map((member) => (
-              <Card
-                key={member.name}
-                image={member.image}
-                eyebrow={member.title}
-                title={member.name}
-                description={member.bio}
-              />
-            ))}
+            {TEAM.map((member, i) => {
+              const bg = TILE_BG[i % TILE_BG.length];
+              const onGold = bg === "var(--color-gold)";
+              return (
+                <div key={member.name}>
+                  <div
+                    className="monogram"
+                    style={{
+                      aspectRatio: "4 / 3",
+                      background: bg,
+                      color: onGold ? "var(--color-forest-deep)" : "var(--color-on-forest)",
+                    }}
+                  >
+                    {initials(member.name)}
+                  </div>
+                  <div style={{ paddingTop: "var(--space-sm)" }}>
+                    <p className="eyebrow" style={{ marginBottom: "6px" }}>{member.title}</p>
+                    <h3 className="display-md" style={{ fontSize: "20px", color: "var(--color-on-forest)", marginBottom: "var(--space-2xs)" }}>
+                      {member.name}
+                    </h3>
+                    <p style={{ font: "var(--text-body-sm)", color: "var(--color-on-forest-soft)" }}>
+                      {member.bio}
+                    </p>
+                  </div>
+                </div>
+              );
+            })}
           </div>
         </div>
       </section>
