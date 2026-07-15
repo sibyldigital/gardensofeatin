@@ -24,7 +24,14 @@ export default function ServicePackages() {
       <section className="section">
         <div className="container">
           <SectionHeading eyebrow="The Tiers" title="Pick The Scale, We Bring The System" />
-          <div className="grid-3" style={{ alignItems: "start" }}>
+          <div
+            style={{
+              display: "grid",
+              gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))",
+              gap: "var(--space-lg)",
+              alignItems: "start",
+            }}
+          >
             {PACKAGES.map((pkg, i) => (
               <div
                 key={pkg.name}
@@ -99,7 +106,7 @@ export default function ServicePackages() {
             The packages are starting points. Tell us about your land and we
             will shape a custom quote around it.
           </p>
-          <Button variant="primary" size="lg" to="/contact">
+          <Button variant="primary" size="lg" to="/contact-us">
             Get A Quote
           </Button>
         </div>

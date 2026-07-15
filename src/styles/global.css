@@ -330,6 +330,64 @@ select.input__field { appearance: none; }
   text-decoration-color: var(--accent-gold);
 }
 
+/* Services dropdown */
+.nav__item--dropdown {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+}
+.nav__caret {
+  font-size: 0.85em;
+  margin-left: 5px;
+  transform: rotate(90deg);
+  display: inline-block;
+}
+.nav__dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  margin-top: 10px;
+  min-width: 220px;
+  background: var(--color-cream);
+  border-top: 3px solid var(--accent-gold);
+  box-shadow: var(--shadow-callout);
+  padding: var(--space-2xs) 0;
+  display: none;
+  z-index: 20;
+}
+.nav__item--dropdown:hover .nav__dropdown,
+.nav__item--dropdown:focus-within .nav__dropdown {
+  display: block;
+}
+.nav__dropdown-link {
+  display: block;
+  padding: 10px var(--space-md);
+  font: var(--text-nav);
+  color: var(--text-heading);
+  white-space: nowrap;
+}
+.nav__dropdown-link:hover,
+.nav__dropdown-link[aria-current="page"] {
+  background: var(--color-cream-dim);
+  color: var(--accent-cta);
+}
+
+@media (max-width: 900px) {
+  /* On wrapped mobile nav, reveal the sub-links inline under Services */
+  .nav__item--dropdown { display: block; width: 100%; }
+  .nav__dropdown {
+    position: static;
+    display: block;
+    box-shadow: none;
+    margin-top: var(--space-2xs);
+    background: transparent;
+    border-top: none;
+    padding: 0 0 0 var(--space-md);
+  }
+  .nav--on-dark .nav__dropdown-link { color: var(--color-on-forest); }
+  .nav__caret { display: none; }
+}
+
 .nav__right {
   display: flex;
   align-items: center;
@@ -887,6 +945,91 @@ select.input__field { appearance: none; }
   background-position: center;
   aspect-ratio: 16 / 9;
   margin: var(--space-lg) 0;
+}
+
+/* ---------- Process framework (questionnaire intro) ---------- */
+
+.framework-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: var(--space-lg);
+}
+.framework__label {
+  font: var(--text-eyebrow);
+  letter-spacing: var(--tracking-eyebrow);
+  text-transform: uppercase;
+  color: var(--accent-gold);
+  margin-bottom: 8px;
+}
+.framework__copy {
+  font: var(--text-body-sm);
+  color: var(--text-muted);
+  margin: 0;
+}
+
+/* ---------- Questionnaire form ---------- */
+
+.qform {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xl);
+}
+.qform__group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+.qform__legend {
+  font: var(--text-display-md);
+  font-size: 20px;
+  color: var(--text-heading);
+  margin-bottom: var(--space-2xs);
+}
+.qform__question {
+  font: var(--text-body-lg);
+  color: var(--text-heading);
+  margin-bottom: var(--space-xs);
+}
+.qform__hint {
+  font: var(--text-body-sm);
+  color: var(--text-muted);
+}
+.field-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-md);
+}
+@media (max-width: 640px) {
+  .field-2 { grid-template-columns: 1fr; }
+}
+
+.check-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-xs) var(--space-lg);
+}
+@media (max-width: 640px) {
+  .check-grid { grid-template-columns: 1fr; }
+}
+.check,
+.radio {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font: var(--text-body-md);
+  color: var(--text-body);
+  cursor: pointer;
+}
+.check input,
+.radio input {
+  margin-top: 5px;
+  accent-color: var(--color-forest-mid);
+  flex: none;
+}
+.radio-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
 }
 
 /* ---------- Page motion — quiet fades only ---------- */

@@ -70,7 +70,7 @@ export default function Home() {
         lede="Gardening and edible landscape design packages for homeowners, estates, and venues across Western North Carolina."
         actions={
           <>
-            <Button variant="primary" size="lg" to="/contact">
+            <Button variant="primary" size="lg" to="/contact-us">
               Get A Quote
             </Button>
             <Button variant="secondary-on-dark" size="lg" to="/portfolio">
@@ -145,7 +145,7 @@ export default function Home() {
       <JournalSection />
 
       <CTABanner image={PHOTOS.aerial}>
-        <Button variant="primary" size="lg" to="/contact">
+        <Button variant="primary" size="lg" to="/contact-us">
           Get A Quote
         </Button>
       </CTABanner>

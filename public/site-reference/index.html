@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="noindex" />
+  <title>Site Structure & Reference — Gardens of Eatin'</title>
+  <style>
+    :root {
+      --cream: #F7F3ED;
+      --deep-green: #1A3D2B;
+      --forest: #2D5A3D;
+      --gold: #8B6914;
+      --maroon: #5C1A1A;
+      --sage: #E8F0EB;
+      --pale-gold: #F5EDD6;
+      --gray: #555555;
+      --light-gray: #888888;
+      --divider: #C8D8CC;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background: var(--cream);
+      color: var(--gray);
+      font-family: 'Arial', sans-serif;
+      font-size: 16px;
+      line-height: 1.6;
+      padding: 0 0 80px;
+    }
+
+    header {
+      background: var(--deep-green);
+      padding: 40px 60px;
+      border-bottom: 4px solid var(--gold);
+    }
+
+    header h1 {
+      font-family: Georgia, serif;
+      font-size: 32px;
+      color: #fff;
+      letter-spacing: 0.04em;
+      margin-bottom: 6px;
+    }
+
+    header p {
+      color: var(--gold);
+      font-style: italic;
+      font-size: 16px;
+    }
+
+    .notice {
+      background: var(--pale-gold);
+      border-top: 5px solid var(--gold);
+      padding: 20px 60px;
+      font-size: 14px;
+      color: var(--gray);
+    }
+
+    .notice strong { color: var(--deep-green); }
+
+    main {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 60px 40px;
+    }
+
+    section { margin-bottom: 60px; }
+
+    .section-label {
+      font-size: 11px;
+      font-weight: bold;
+      letter-spacing: 0.12em;
+      color: var(--gold);
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+
+    h2 {
+      font-family: Georgia, serif;
+      font-size: 26px;
+      color: var(--deep-green);
+      margin-bottom: 6px;
+      padding-bottom: 10px;
+      border-bottom: 2px solid var(--divider);
+    }
+
+    .section-desc {
+      font-size: 14px;
+      color: var(--light-gray);
+      margin: 12px 0 24px;
+      font-style: italic;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 14px;
+      margin-bottom: 8px;
+    }
+
+    thead tr {
+      background: var(--deep-green);
+      color: #fff;
+    }
+
+    thead th {
+      padding: 10px 14px;
+      text-align: left;
+      font-weight: bold;
+      font-size: 13px;
+      letter-spacing: 0.04em;
+    }
+
+    tbody tr:nth-child(even) { background: var(--sage); }
+    tbody tr:nth-child(odd) { background: #fff; }
+
+    tbody td {
+      padding: 10px 14px;
+      vertical-align: top;
+      border-bottom: 1px solid var(--divider);
+    }
+
+    code {
+      font-family: 'Courier New', monospace;
+      font-size: 13px;
+      background: rgba(26,61,43,0.07);
+      padding: 2px 6px;
+      border-radius: 3px;
+      color: var(--deep-green);
+    }
+
+    .badge {
+      display: inline-block;
+      font-size: 11px;
+      font-weight: bold;
+      padding: 2px 8px;
+      border-radius: 3px;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+
+    .badge-new { background: var(--sage); color: var(--forest); }
+    .badge-keep { background: #e8f0ff; color: #2a4a8a; }
+    .badge-redirect { background: var(--pale-gold); color: var(--gold); }
+    .badge-shadow { background: #f0e8f0; color: #6a2a6a; }
+    .badge-nav { background: var(--deep-green); color: #fff; }
+
+    .arrow {
+      color: var(--gold);
+      font-weight: bold;
+      padding: 0 6px;
+    }
+
+    .nav-tree {
+      background: #fff;
+      border: 1px solid var(--divider);
+      border-radius: 4px;
+      padding: 24px 32px;
+      font-family: 'Courier New', monospace;
+      font-size: 14px;
+      line-height: 2;
+      color: var(--gray);
+    }
+
+    .nav-tree .top { color: var(--deep-green); font-weight: bold; }
+    .nav-tree .sub { color: var(--forest); padding-left: 28px; }
+    .nav-tree .slug { color: var(--light-gray); font-size: 12px; }
+
+    .callout {
+      background: var(--sage);
+      border-left: 4px solid var(--forest);
+      padding: 16px 20px;
+      margin: 20px 0;
+      font-size: 14px;
+      border-radius: 0 4px 4px 0;
+    }
+
+    .callout strong { color: var(--deep-green); }
+
+    footer {
+      background: var(--deep-green);
+      color: var(--divider);
+      text-align: center;
+      padding: 24px;
+      font-size: 13px;
+      margin-top: 80px;
+    }
+
+    footer a { color: var(--gold); text-decoration: none; }
+
+    @media (max-width: 700px) {
+      header, .notice { padding: 24px 20px; }
+      main { padding: 40px 16px; }
+      table { font-size: 12px; }
+      thead th, tbody td { padding: 8px 10px; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Gardens of Eatin' — Site Structure & Developer Reference</h1>
+  <p>Internal reference document. Not indexed. Linked in footer for developer access.</p>
+</header>
+
+<div class="notice">
+  <strong>For developers and SEO partners:</strong> This page documents the full URL structure, navigation hierarchy, page purposes, and required 301 redirects for gardensofeatin.net. All changes to URL structure, redirects, or page routing should be confirmed against this document before implementation.
+</div>
+
+<main>
+
+  <!-- NAV STRUCTURE -->
+  <section>
+    <div class="section-label">Navigation</div>
+    <h2>Navigation Structure</h2>
+    <p class="section-desc">Display labels and their corresponding routes. Note: display labels and slugs differ in some cases intentionally.</p>
+
+    <div class="nav-tree">
+      <div><span class="top">Home</span> <span class="slug">→ /</span></div>
+      <div><span class="top">About</span> <span class="slug">→ /about-us/</span></div>
+      <div><span class="top">How It Works</span> <span class="slug">→ /process/  <em>(display label only, slug stays /process/)</em></span></div>
+      <div><span class="top">Services</span> <span class="slug">→ /ecological-landscaping-services/</span></div>
+      <div class="sub">Design &amp; Consultation <span class="slug">→ /services/design/</span></div>
+      <div class="sub">Installation <span class="slug">→ /services/installation/</span></div>
+      <div class="sub">Maintenance <span class="slug">→ /services/maintenance/</span></div>
+      <div class="sub">Commercial <span class="slug">→ /services/commercial/</span></div>
+      <div><span class="top">Packages</span> <span class="slug">→ /design-packages/</span></div>
+      <div><span class="top">Portfolio</span> <span class="slug">→ /portfolio/</span></div>
+      <div><span class="top">Blog</span> <span class="slug">→ /blog/</span></div>
+      <div><span class="top">Contact</span> <span class="slug">→ /contact-us/</span></div>
+    </div>
+
+    <div class="callout">
+      <strong>Questionnaire</strong> at <code>/questionnaire/</code> is not a top-level nav item. It is linked from the Design &amp; Consultation service page CTA and from the Process page at the consultation phase step.
+    </div>
+  </section>
+
+  <!-- FULL PAGE INVENTORY -->
+  <section>
+    <div class="section-label">Page Inventory</div>
+    <h2>Full URL Inventory</h2>
+    <p class="section-desc">All pages, their status, purpose, and whether they appear in navigation.</p>
+
+    <table>
+      <thead>
+        <tr>
+          <th>URL Slug</th>
+          <th>Status</th>
+          <th>In Nav</th>
+          <th>Purpose</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><code>/</code></td>
+          <td><span class="badge badge-keep">Keep</span></td>
+          <td>Home</td>
+          <td>Homepage. Primary brand entry point and conversion hub.</td>
+        </tr>
+        <tr>
+          <td><code>/about-us/</code></td>
+          <td><span class="badge badge-keep">Keep</span></td>
+          <td>About</td>
+          <td>Team bios, mission, philosophy. Canonical About page. 2021 slug — high SEO equity. Do not rename.</td>
+        </tr>
+        <tr>
+          <td><code>/ecological-landscaping-services/</code></td>
+          <td><span class="badge badge-keep">Keep — Canonical</span></td>
+          <td>Services</td>
+          <td>Services hub page. Educational overview of GOE disciplines. Links to sub-pages. Old Wix slug with indexed equity — promoted to canonical services URL.</td>
+        </tr>
+        <tr>
+          <td><code>/services/design/</code></td>
+          <td><span class="badge badge-new">New</span></td>
+          <td>Services dropdown</td>
+          <td>Design &amp; Consultation discipline page. Includes Downing project design stages. Links to questionnaire and packages.</td>
+        </tr>
+        <tr>
+          <td><code>/services/installation/</code></td>
+          <td><span class="badge badge-new">New</span></td>
+          <td>Services dropdown</td>
+          <td>Installation discipline page. Lists all installation service types. Links to portfolio and packages.</td>
+        </tr>
+        <tr>
+          <td><code>/services/maintenance/</code></td>
+          <td><span class="badge badge-new">New</span></td>
+          <td>Services dropdown</td>
+          <td>Maintenance discipline page. Ongoing care, mulching, seasonal services. Links to portfolio and packages.</td>
+        </tr>
+        <tr>
+          <td><code>/services/commercial/</code></td>
+          <td><span class="badge badge-new">New</span></td>
+          <td>Services dropdown</td>
+          <td>Commercial installations page. Venues, breweries, estates. Uses commercial messaging pillars. Links to portfolio and packages.</td>
+        </tr>
+        <tr>
+          <td><code>/design-packages/</code></td>
+          <td><span class="badge badge-keep">Keep</span></td>
+          <td>Packages</td>
+          <td>Conversion page. Four package tiers: Kitchen Garden, Food Forest, Estate Plan, Commercial Custom. Primary Get A Quote destination.</td>
+        </tr>
+        <tr>
+          <td><code>/consultation/</code></td>
+          <td><span class="badge badge-keep">Keep</span></td>
+          <td>No</td>
+          <td>Design and consultation service detail. Contains Downing design photos and three-stage design process. Content duplicated to /services/design/ — keep both live, do not redirect.</td>
+        </tr>
+        <tr>
+          <td><code>/permaculture-consultation/</code></td>
+          <td><span class="badge badge-shadow">Shadow Page</span></td>
+          <td>No</td>
+          <td>SEO landing page targeting permaculture consultation keywords. Not in nav. Do not redirect or modify. Managed separately by SEO partner. Funnels to /consultation/ or /contact-us/.</td>
+        </tr>
+        <tr>
+          <td><code>/process/</code></td>
+          <td><span class="badge badge-keep">Keep</span></td>
+          <td>How It Works</td>
+          <td>Client journey narrative. Four phases: Consult, Design, Install, Maintain. Links to /services/design/ at consultation step and to /questionnaire/.</td>
+        </tr>
+        <tr>
+          <td><code>/portfolio/</code></td>
+          <td><span class="badge badge-keep">Keep</span></td>
+          <td>Portfolio</td>
+          <td>Project gallery. Filterable by category: Residential, Venue/Commercial, Design Plans.</td>
+        </tr>
+        <tr>
+          <td><code>/questionnaire/</code></td>
+          <td><span class="badge badge-new">New</span></td>
+          <td>No — linked from /services/design/ and /process/</td>
+          <td>Full intake form. COMMUNICATE through HARVEST framework intro. 11 questions. Submits to gardensofeatin@gmail.com.</td>
+        </tr>
+        <tr>
+          <td><code>/blog/</code></td>
+          <td><span class="badge badge-keep">Keep</span></td>
+          <td>Blog</td>
+          <td>Blog archive. Search, category filter, breadcrumbs on individual posts. Blog content from previous Wix site to be uploaded and migrated.</td>
+        </tr>
+        <tr>
+          <td><code>/contact-us/</code></td>
+          <td><span class="badge badge-keep">Keep</span></td>
+          <td>Contact</td>
+          <td>Contact page with intake form fields: name, email, phone, project type, location, message.</td>
+        </tr>
+        <tr>
+          <td><code>/gallery/</code></td>
+          <td><span class="badge badge-keep">Keep</span></td>
+          <td>No — folded into Portfolio</td>
+          <td>Existing gallery page. Keep live. Consider 301 to /portfolio/ once portfolio page is fully built out.</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- REDIRECT TABLE -->
+  <section>
+    <div class="section-label">Redirects</div>
+    <h2>Required 301 Redirects</h2>
+    <p class="section-desc">All redirects should be implemented as server-level 301 permanent redirects. Do not use JavaScript redirects. Confirm each redirect is live before any URL is decommissioned.</p>
+
+    <div class="callout">
+      <strong>Priority:</strong> The redirects from old Wix slugs to current WordPress URLs should be treated as urgent. These URLs are indexed in Google and may be generating organic traffic that is currently going to 404 pages.
+    </div>
+
+    <table>
+      <thead>
+        <tr>
+          <th>From (Old / Redirect Source)</th>
+          <th>To (Destination)</th>
+          <th>Type</th>
+          <th>Notes</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><code>/garden-services-asheville-nc</code></td>
+          <td><code>/ecological-landscaping-services/</code> <span class="arrow">→</span></td>
+          <td><span class="badge badge-redirect">301</span></td>
+          <td>Old Wix services slug. Redirect to canonical services URL to consolidate authority.</td>
+        </tr>
+        <tr>
+          <td><code>/services/</code></td>
+          <td><code>/ecological-landscaping-services/</code> <span class="arrow">→</span></td>
+          <td><span class="badge badge-redirect">301</span></td>
+          <td>Current WordPress services slug. Redirect to canonical. All internal links should be updated to point directly to /ecological-landscaping-services/ to avoid redirect chains.</td>
+        </tr>
+        <tr>
+          <td><code>/permiculture-design-process</code></td>
+          <td><code>/process/</code> <span class="arrow">→</span></td>
+          <td><span class="badge badge-redirect">301</span></td>
+          <td>Old Wix process slug, note misspelling of permaculture. Redirect to current process page.</td>
+        </tr>
+        <tr>
+          <td><code>/ecological-landscaping-services</code></td>
+          <td><code>/ecological-landscaping-services/</code> <span class="arrow">→</span></td>
+          <td><span class="badge badge-redirect">301</span></td>
+          <td>Trailing slash consistency. Ensure non-trailing-slash version redirects to trailing slash version.</td>
+        </tr>
+        <tr>
+          <td><code>/blog-1</code></td>
+          <td><code>/blog/</code> <span class="arrow">→</span></td>
+          <td><span class="badge badge-redirect">301</span></td>
+          <td>Old Wix blog slug. Redirect to current blog.</td>
+        </tr>
+        <tr>
+          <td><code>/testimonials</code></td>
+          <td><code>/about-us/</code> <span class="arrow">→</span></td>
+          <td><span class="badge badge-redirect">301</span></td>
+          <td>Old Wix testimonials page. Redirect to About page where testimonials now live.</td>
+        </tr>
+        <tr>
+          <td><code>/booking</code></td>
+          <td><code>/contact-us/</code> <span class="arrow">→</span></td>
+          <td><span class="badge badge-redirect">301</span></td>
+          <td>Old Wix booking page. Redirect to Contact page.</td>
+        </tr>
+        <tr>
+          <td><code>/about</code></td>
+          <td><code>/about-us/</code> <span class="arrow">→</span></td>
+          <td><span class="badge badge-redirect">301</span></td>
+          <td>Alternate About slug. Redirect to canonical /about-us/ to consolidate 2021 equity.</td>
+        </tr>
+        <tr>
+          <td><code>/design-packages</code></td>
+          <td><code>/design-packages/</code> <span class="arrow">→</span></td>
+          <td><span class="badge badge-redirect">301</span></td>
+          <td>Trailing slash consistency only. Slug stays as-is, just ensure non-slash version redirects.</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="callout" style="margin-top: 24px;">
+      <strong>Do not redirect:</strong> <code>/permaculture-consultation/</code> — This page is actively managed as a keyword landing page. Leave it live and untouched. It is not in the nav and does not conflict with any other page.
+    </div>
+  </section>
+
+  <!-- PAGE TAXONOMY -->
+  <section>
+    <div class="section-label">Taxonomy</div>
+    <h2>Content Taxonomy: Process vs Services vs Packages</h2>
+    <p class="section-desc">These three concepts are distinct and should never be conflated in navigation labels, page headings, or copy.</p>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Concept</th>
+          <th>What It Is</th>
+          <th>Lives At</th>
+          <th>Items</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Process</strong></td>
+          <td>The client journey. Sequential phases every engagement goes through. Not a product. Not purchasable. How it works.</td>
+          <td><code>/process/</code></td>
+          <td>Consult → Design → Install → Maintain</td>
+        </tr>
+        <tr>
+          <td><strong>Services</strong></td>
+          <td>The disciplines GOE practices and the a la carte offerings available to existing clients. Educational and capability-focused. What GOE knows how to do.</td>
+          <td><code>/ecological-landscaping-services/</code> and sub-pages</td>
+          <td>Design &amp; Consultation, Installation, Maintenance, Commercial. Plus a la carte: mulching, hardscaping, seasonal care, gardening services.</td>
+        </tr>
+        <tr>
+          <td><strong>Packages</strong></td>
+          <td>The scope tiers. How much land, how deep, how comprehensive. These have defined deliverables and price ranges. The conversion-focused offering. What you buy.</td>
+          <td><code>/design-packages/</code></td>
+          <td>The Kitchen Garden, The Food Forest, The Estate Plan, The Commercial Build</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- CONTENT NOTES -->
+  <section>
+    <div class="section-label">Content Notes</div>
+    <h2>Developer &amp; SEO Partner Notes</h2>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Item</th>
+          <th>Note</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Existing copy</td>
+          <td>All copy throughout the current site is approved and final. Do not rewrite, replace, or remove existing text on any page. Only add new content where specified.</td>
+        </tr>
+        <tr>
+          <td>Blog migration</td>
+          <td>Blog content from the previous Wix site has not been transferred. A full archive export with all post content, metadata, categories, and tags will be provided for import. All existing post URLs must be preserved on import. Blog template must match the new design system.</td>
+        </tr>
+        <tr>
+          <td>Logo files</td>
+          <td>Logo images currently loading from staging server at annac194.sg-host.com. These must be re-uploaded to the live WordPress media library and all references updated to point to gardensofeatin.net. Both versions needed: dark (new-logo-b.png) and light (logo-light.png) in SVG or high-res PNG.</td>
+        </tr>
+        <tr>
+          <td>Team social links</td>
+          <td>Current team member social links point to QodeInteractive (theme placeholder). These must be updated to actual profile URLs or removed entirely before launch.</td>
+        </tr>
+        <tr>
+          <td>Site title metadata</td>
+          <td>WordPress site title currently reads "My WordPress" in metadata. Must be updated to "Gardens of Eatin'" before launch. This affects all page title tags.</td>
+        </tr>
+        <tr>
+          <td>Contact email</td>
+          <td>Current contact email is gardensofeatin@gmail.com. All form submissions should route here. A branded domain email is recommended long-term but not required for launch.</td>
+        </tr>
+        <tr>
+          <td>Photography</td>
+          <td>Current site images are a mix of phone photos and placeholder assets. Professional photography is being shot separately and will be provided for swap-in before launch. Build all image sections with clear swap-friendly structure.</td>
+        </tr>
+        <tr>
+          <td>Internal links pointing to staging</td>
+          <td>Several internal links and image paths currently route to annac194.sg-host.com. All must be updated to gardensofeatin.net before launch.</td>
+        </tr>
+        <tr>
+          <td>SEO plugin</td>
+          <td>Confirm which SEO plugin is active (Yoast or RankMath) and ensure all new pages have meta titles and descriptions entered before launch. Do not install a second SEO plugin alongside an existing one.</td>
+        </tr>
+        <tr>
+          <td>Questionnaire form</td>
+          <td>Form at /questionnaire/ must submit all fields to gardensofeatin@gmail.com with a clear subject line identifying it as a design questionnaire submission. Include a confirmation message on the page after submission.</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+</main>
+
+<footer>
+  <p>Gardens of Eatin' Internal Reference &nbsp;|&nbsp; gardensofeatin.net &nbsp;|&nbsp; Last updated July 2026 &nbsp;|&nbsp; <a href="/gardensofeatin/">Return to site</a></p>
+</footer>
+
+</body>
+</html>

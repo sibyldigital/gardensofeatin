@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { PageHero } from "../components/PageHero.jsx";
 import { Button } from "../components/Button.jsx";
 import { CTABanner } from "../components/CTABanner.jsx";
@@ -30,6 +31,13 @@ export default function Process() {
                 {step.name}
               </h2>
               <p className="lede">{step.description}</p>
+              {i === 0 && (
+                <p style={{ marginTop: "var(--space-md)" }}>
+                  <Link to="/questionnaire" className="link-underline">
+                    Fill out our design questionnaire before your consultation ›
+                  </Link>
+                </p>
+              )}
             </div>
             <div
               style={{
@@ -47,7 +55,7 @@ export default function Process() {
       <ServiceRadius />
 
       <CTABanner image={PHOTOS.hero}>
-        <Button variant="primary" size="lg" to="/contact">
+        <Button variant="primary" size="lg" to="/contact-us">
           Start Your Design Consultation
         </Button>
       </CTABanner>

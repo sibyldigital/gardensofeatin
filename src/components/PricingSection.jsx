@@ -63,7 +63,7 @@ export function PricingSection() {
                 ))}
               </ul>
               <div className="tier__cta">
-                <Button variant={t.featured ? "secondary-on-dark" : "secondary"} to="/contact">
+                <Button variant={t.featured ? "secondary-on-dark" : "secondary"} to="/contact-us">
                   Custom Quote
                 </Button>
               </div>

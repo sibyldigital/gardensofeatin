@@ -1,27 +1,30 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { asset } from "../lib/asset.js";
 
 /**
  * Footer — deep-forest footer with wordmark, link columns, and legal line.
  * Matches the brand guide's footer: Homepage/About/Process/Portfolio/
- * Services/Packages plus Disclaimer/Privacy Policy/Contact Us and phone.
+ * Services/Packages plus Privacy Policy/Contact Us and phone, with a subtle
+ * Questionnaire link and a Developer Reference link to the internal
+ * site-structure page.
  */
 export function Footer({ phone = "(828) 555-0134" }) {
   const cols = [
     [
       { label: "Homepage", to: "/" },
-      { label: "About", to: "/about" },
-      { label: "Process", to: "/process" },
+      { label: "About", to: "/about-us" },
+      { label: "How It Works", to: "/process" },
     ],
     [
       { label: "Portfolio", to: "/portfolio" },
-      { label: "Services", to: "/services" },
-      { label: "Packages", to: "/packages" },
+      { label: "Services", to: "/ecological-landscaping-services" },
+      { label: "Packages", to: "/design-packages" },
     ],
     [
       { label: "Blog", to: "/blog" },
-      { label: "Privacy Policy", to: "/" },
-      { label: "Contact Us", to: "/contact" },
+      { label: "Questionnaire", to: "/questionnaire" },
+      { label: "Contact Us", to: "/contact-us" },
     ],
   ];
   return (
@@ -43,7 +46,12 @@ export function Footer({ phone = "(828) 555-0134" }) {
       </div>
       <div className="footer__bottom">
         <span>{phone}</span>
-        <span>© {new Date().getFullYear()} Gardens of Eatin'</span>
+        <span style={{ display: "flex", gap: "var(--space-md)", alignItems: "center" }}>
+          <a className="footer__link" href={asset("site-reference/")}>
+            Developer Reference
+          </a>
+          <span>© {new Date().getFullYear()} Gardens of Eatin'</span>
+        </span>
       </div>
     </footer>
   );

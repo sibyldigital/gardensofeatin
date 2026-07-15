@@ -79,7 +79,7 @@ export default function BlogPost() {
         <p className="lede" style={{ margin: "0 auto var(--space-lg)", color: "var(--color-on-forest-soft)" }}>
           Every garden in this journal began with a walk on the land. Yours can too.
         </p>
-        <Button variant="primary" size="lg" to="/contact">
+        <Button variant="primary" size="lg" to="/contact-us">
           Get A Quote
         </Button>
       </CTABanner>

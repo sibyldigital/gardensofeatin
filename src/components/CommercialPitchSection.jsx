@@ -21,7 +21,7 @@ export function CommercialPitchSection() {
           for photography, foot traffic, and harvest, all at once.
         </p>
         <div>
-          <Button variant="secondary-on-dark" size="lg" to="/contact">
+          <Button variant="secondary-on-dark" size="lg" to="/contact-us">
             Talk To Us
           </Button>
         </div>

@@ -85,7 +85,7 @@ export default function CaseStudy() {
         eyebrow="Ready When You Are"
         title="Let's Design Your Land's Next Chapter"
       >
-        <Button variant="primary" size="lg" to="/contact">
+        <Button variant="primary" size="lg" to="/contact-us">
           Get A Quote
         </Button>
       </CTABanner>

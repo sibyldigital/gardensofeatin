@@ -120,7 +120,7 @@ export default function PortfolioLanding() {
 
       <section className="section" style={{ textAlign: "center" }}>
         <div className="container">
-          <Button variant="primary" size="lg" to="/contact">
+          <Button variant="primary" size="lg" to="/contact-us">
             Start A Conversation
           </Button>
         </div>
