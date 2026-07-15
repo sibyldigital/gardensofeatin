@@ -11,6 +11,10 @@
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 html,
 body {
   margin: 0;
@@ -681,6 +685,76 @@ select.input__field { appearance: none; }
   .statsbar__grid { grid-template-columns: 1fr 1fr; gap: var(--space-md); }
   .statsbar__item, .statsbar__item[data-first] { border-left: none; }
 }
+
+/* ---------- Timeline (numbered process strip) ---------- */
+
+.timeline {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-lg);
+}
+/* Continuous hairline sitting under the number row (desktop only). */
+.timeline::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 40px;
+  height: 1px;
+  background: var(--border-hairline);
+}
+.timeline__step {
+  position: relative;
+  padding-top: 60px;
+  display: flex;
+  flex-direction: column;
+  color: inherit;
+}
+.timeline__num {
+  position: absolute;
+  top: 0;
+  left: 0;
+  font: var(--text-display-sm);
+  color: var(--accent-gold);
+}
+.timeline__name {
+  font: var(--text-display-md);
+  font-size: 20px;
+  color: var(--text-heading);
+  margin-bottom: 8px;
+}
+.timeline__copy {
+  font: var(--text-body-sm);
+  color: var(--text-muted);
+}
+.timeline__step--link { cursor: pointer; }
+.timeline__step--link:hover .timeline__name {
+  color: var(--accent-cta);
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+/* On the deep-forest ground, recolor the timeline text. */
+.section--deep .timeline__name { color: var(--color-on-forest); }
+.section--deep .timeline__copy { color: var(--color-on-forest-soft); }
+.section--deep .timeline::before { background: var(--border-on-deep); }
+
+@media (max-width: 800px) {
+  .timeline { grid-template-columns: 1fr 1fr; }
+  .timeline::before { display: none; }
+  .timeline__step {
+    padding-top: var(--space-md);
+    border-top: 1px solid var(--border-hairline);
+  }
+  .section--deep .timeline__step { border-top-color: var(--border-on-deep); }
+  .timeline__num { position: static; margin-bottom: var(--space-2xs); }
+}
+@media (max-width: 480px) {
+  .timeline { grid-template-columns: 1fr; }
+}
+
+/* Anchor targets on the Process step sections get breathing room. */
+.step-anchor { scroll-margin-top: var(--space-lg); }
 
 /* ---------- Testimonials ---------- */
 

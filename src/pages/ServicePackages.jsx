@@ -1,13 +1,12 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import { PageHero } from "../components/PageHero.jsx";
 import { SectionHeading } from "../components/SectionHeading.jsx";
 import { Button } from "../components/Button.jsx";
-import { PricingSection } from "../components/PricingSection.jsx";
+import { Timeline } from "../components/Timeline.jsx";
 import { TestimonialSection } from "../components/TestimonialSection.jsx";
 import { FAQSection } from "../components/FAQSection.jsx";
 import { Footer } from "../components/Footer.jsx";
-import { PHOTOS, PACKAGES } from "../data/content.js";
+import { PHOTOS, PACKAGES, STEPS } from "../data/content.js";
 
 /* Service Packages — hero introducing the tiers, three package columns with
    detailed inclusion lists, custom-quote CTA. */
@@ -24,7 +23,7 @@ export default function ServicePackages() {
 
       <section className="section">
         <div className="container">
-          <SectionHeading eyebrow="The Tiers" title="Pick The Scale, We Bring The System" />
+          <SectionHeading eyebrow="Packages" title="Pick The Scale, We Bring The System" />
           <div
             style={{
               display: "grid",
@@ -83,32 +82,30 @@ export default function ServicePackages() {
                   {pkg.includes.map((item) => (
                     <li key={item}>— {item}</li>
                   ))}
-                  {pkg.extraBullets &&
-                    pkg.extraBullets.map((b) => (
-                      <li key={b.text}>
-                        —{" "}
-                        <Link
-                          to={b.to}
-                          style={{
-                            color: i === 1 ? "var(--color-gold-bright)" : "var(--accent-cta)",
-                            textDecoration: "underline",
-                            textUnderlineOffset: "3px",
-                          }}
-                        >
-                          {b.text}
-                        </Link>
-                      </li>
-                    ))}
                 </ul>
+                {pkg.ctaButton && (
+                  <div style={{ marginTop: "var(--space-md)" }}>
+                    <Button
+                      variant={i === 1 ? "secondary-on-dark" : "secondary"}
+                      size="sm"
+                      to={pkg.ctaButton.to}
+                    >
+                      {pkg.ctaButton.label}
+                    </Button>
+                  </div>
+                )}
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      <div className="section--sunken">
-        <PricingSection />
-      </div>
+      <Timeline
+        sunken
+        eyebrow="Process"
+        title="How We Grow With You"
+        steps={STEPS.map((s) => ({ number: s.number, name: s.name, description: s.short }))}
+      />
 
       <TestimonialSection />
 

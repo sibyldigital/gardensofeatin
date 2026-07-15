@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { PageHero } from "../components/PageHero.jsx";
 import { Button } from "../components/Button.jsx";
+import { Timeline } from "../components/Timeline.jsx";
 import { CTABanner } from "../components/CTABanner.jsx";
 import { ServiceRadius } from "../components/ServiceRadius.jsx";
 import { Footer } from "../components/Footer.jsx";
@@ -22,8 +23,23 @@ export default function Process() {
         lede="Four steps carry every project — a consultation on your land, a custom design, a careful installation, and the ecological care that keeps it producing."
       />
 
+      <Timeline
+        eyebrow="The Journey"
+        title="Four Steps, Start To Harvest"
+        steps={STEPS.map((s) => ({
+          number: s.number,
+          name: s.name,
+          description: s.short,
+          href: `#step-${s.number}`,
+        }))}
+      />
+
       {STEPS.map((step, i) => (
-        <section key={step.name} className={i % 2 === 1 ? "section section--sunken" : "section"}>
+        <section
+          key={step.name}
+          id={`step-${step.number}`}
+          className={`step-anchor ${i % 2 === 1 ? "section section--sunken" : "section"}`}
+        >
           <div className="container grid-2" style={{ alignItems: "center" }}>
             <div style={{ order: i % 2 === 1 ? 2 : 1 }}>
               <p className="eyebrow">{`Step ${step.number}`}</p>
@@ -54,7 +70,18 @@ export default function Process() {
 
       <ServiceRadius />
 
-      <CTABanner image={PHOTOS.hero}>
+      <CTABanner
+        image={PHOTOS.hero}
+        eyebrow="Ready When You Are"
+        title="Let's Begin With A Walk On Your Land"
+      >
+        <p
+          className="lede"
+          style={{ margin: "0 auto var(--space-lg)", color: "var(--color-on-forest-soft)" }}
+        >
+          Every project starts on site — listening to your goals and reading the water, sun, and
+          soil. Tell us about your land and we'll take the first step together.
+        </p>
         <Button variant="primary" size="lg" to="/contact-us">
           Start Your Design Consultation
         </Button>

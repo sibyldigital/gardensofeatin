@@ -130,10 +130,8 @@ export const PACKAGES = [
       "Phased installation over one to three years",
       "Year-round ecological maintenance and harvest management",
     ],
-    // Rendered as a linked bullet beneath the standard includes.
-    extraBullets: [
-      { text: "Commercial and venue installations available", to: "/services/commercial" },
-    ],
+    // Rendered as a button beneath the includes list.
+    ctaButton: { label: "Commercial Installations", to: "/services/commercial" },
   },
 ];
 
@@ -184,24 +182,28 @@ export const STEPS = [
   {
     number: "01",
     name: "Consultation",
+    short: "We walk the property and talk through how you use it, season to season.",
     description:
       "We walk your property with you — noting sun, slope, water, and soil — and listen to how you want to live on the land. The visit ends with clear goals and an honest read of what your site can do.",
   },
   {
     number: "02",
     name: "Design",
+    short: "A full planting and hardscape plan, layered for bloom and harvest year-round.",
     description:
       "We draw a custom permaculture master plan: plant palettes matched to Western North Carolina, material selections for paths and terraces, and a phasing plan that fits your budget.",
   },
   {
     number: "03",
     name: "Installation",
+    short: "Our crew builds beds, plants, and irrigates — typically over 1–3 weeks.",
     description:
       "Our crew builds the plan — earthworks and hardscapes first, then soil, irrigation, and planting. You watch the drawing become a landscape over weeks, not years.",
   },
   {
     number: "04",
     name: "Maintenance",
+    short: "Seasonal visits keep the system thriving as it matures over years.",
     description:
       "Ecological care keeps the system productive: seasonal pruning, soil building, and a harvest management plan so the abundance actually reaches your kitchen.",
   },

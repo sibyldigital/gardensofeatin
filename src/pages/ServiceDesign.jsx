@@ -62,6 +62,26 @@ export default function ServiceDesign() {
       ]}
       included={INCLUDED}
       includedTitle="What's Included"
+      stats={[
+        { value: "4", label: "Design Phases" },
+        { value: "1:1", label: "Collaborative Process" },
+        { value: "Custom", label: "Plant Palette" },
+        { value: "WNC", label: "Site-Matched Design" },
+      ]}
+      highlights={[
+        {
+          label: "Full-Service Or DIY",
+          text: "Take the finished plan to our install crew, or use it to build the gardens yourself — the design works either way.",
+        },
+        {
+          label: "Site-Led Palette",
+          text: "Every plant is chosen for your soil, slope, sun, and microclimate — never a generic list dropped onto the page.",
+        },
+        {
+          label: "Phased To Your Budget",
+          text: "Designs are drawn to install all at once or in seasonal phases, so the plan fits the pace you want to move at.",
+        },
+      ]}
       portfolioCategories={["Residential"]}
       portfolioTitle="Residential Design Work"
       questionnaireCallout

@@ -26,6 +26,26 @@ export default function ServiceInstallation() {
         "Our crew members are not just laborers. They are passionate about growth, beauty, and sustainability, and they bring that love to your projects, a difference you can taste.",
       ]}
       included={INCLUDED}
+      stats={[
+        { value: "2,000+", label: "Trees Planted" },
+        { value: "1–3 wk", label: "Typical Install" },
+        { value: "100%", label: "Local Materials" },
+        { value: "WNC", label: "Crews On The Ground" },
+      ]}
+      highlights={[
+        {
+          label: "Locally Sourced",
+          text: "Stone, soil, mulch, and plants sourced from within Western North Carolina wherever possible.",
+        },
+        {
+          label: "Earthworks First",
+          text: "We shape water and grade before planting, so the landscape holds moisture and drains where it should from day one.",
+        },
+        {
+          label: "Built To Last",
+          text: "Hardscapes and plantings are installed to mature and thrive for decades, not just to look good on install day.",
+        },
+      ]}
       portfolioCategories={["Residential", "Venue"]}
       portfolioTitle="Installation Work"
     />

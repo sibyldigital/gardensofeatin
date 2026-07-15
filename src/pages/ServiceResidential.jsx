@@ -26,6 +26,26 @@ export default function ServiceResidential() {
         "Every residential project starts by reading your land and listening to how you want to live on it, then layering in the plants, paths, and systems that let the whole property feed your family and the ecosystem at once.",
       ]}
       included={INCLUDED}
+      stats={[
+        { value: "50+", label: "Homes & Estates" },
+        { value: "6+", label: "Years In Business" },
+        { value: "100%", label: "Ecological" },
+        { value: "WNC", label: "Service Area" },
+      ]}
+      highlights={[
+        {
+          label: "Edible Or Ornamental",
+          text: "Dial the balance between kitchen-garden productivity and pure ornamental beauty — most homes land somewhere in between.",
+        },
+        {
+          label: "Whole-Yard Or Corner",
+          text: "Start with a single bed by the back door or master-plan the entire property; the system scales to your appetite.",
+        },
+        {
+          label: "Low-Maintenance By Design",
+          text: "Layered plantings and deep mulch mean your landscape asks for less water and weeding than a conventional lawn.",
+        },
+      ]}
       portfolioCategories={["Residential"]}
       portfolioTitle="Residential Work"
     />

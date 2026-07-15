@@ -1,8 +1,9 @@
 import React from "react";
+import { StatsBand } from "./StatsBand.jsx";
 
 /**
- * StatsBar — horizontal credibility band on the deep-forest ground. Plain
- * numerals in gold, no icon tiles (brand guide: "no icons or distractions").
+ * StatsBar — company-wide credibility band (years, installs, licensing,
+ * service area). Thin wrapper over StatsBand with the default GOE numbers.
  */
 const STATS = [
   { value: "6+", label: "Years In Business" },
@@ -12,16 +13,5 @@ const STATS = [
 ];
 
 export function StatsBar() {
-  return (
-    <section className="statsbar">
-      <div className="container statsbar__grid">
-        {STATS.map((s, i) => (
-          <div key={s.label} className="statsbar__item" data-first={i === 0 || undefined}>
-            <div className="statsbar__value">{s.value}</div>
-            <div className="statsbar__label">{s.label}</div>
-          </div>
-        ))}
-      </div>
-    </section>
-  );
+  return <StatsBand stats={STATS} />;
 }

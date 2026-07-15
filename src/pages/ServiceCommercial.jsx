@@ -38,6 +38,26 @@ export default function ServiceCommercial() {
       subhead="A backdrop that never stops growing."
       intro="Gardens of Eatin' designs and installs ecological landscapes for venues, breweries, restaurants, and commercial properties across Western North Carolina. A professionally designed edible or native garden is not just landscaping. It is a backdrop, a story, and a feature that shows up in every vendor photo, every guest experience, and every season. Rooted in beauty. Built for business."
       included={INCLUDED}
+      stats={[
+        { value: "WNC", label: "Venues & Breweries" },
+        { value: "Every Season", label: "Photo-Ready" },
+        { value: "Multi-Zone", label: "Master Plans" },
+        { value: "Ongoing", label: "Partnership" },
+      ]}
+      highlights={[
+        {
+          label: "Photography-Ready",
+          text: "Designed so every ceremony, every pour, and every vendor photo has a living backdrop that deepens each year.",
+        },
+        {
+          label: "Brand-Aligned Planting",
+          text: "Hop yards, edible herbs, and native pollinator beds that reinforce the local, handcrafted identity your guests expect.",
+        },
+        {
+          label: "Co-Marketing",
+          text: "Showcase installations can be featured in our portfolio and cross-promoted — your grounds working as marketing.",
+        },
+      ]}
       portfolioCategories={["Venue", "Brewery/Commercial"]}
       portfolioTitle="Commercial & Venue Work"
     >

@@ -3,6 +3,8 @@ import { Link } from "react-router-dom";
 import { PageHero } from "./PageHero.jsx";
 import { SectionHeading } from "./SectionHeading.jsx";
 import { Card } from "./Card.jsx";
+import { Callout } from "./Callout.jsx";
+import { StatsBand } from "./StatsBand.jsx";
 import { Button } from "./Button.jsx";
 import { Footer } from "./Footer.jsx";
 import { PROJECTS } from "../data/content.js";
@@ -25,12 +27,19 @@ export function ServiceSubLayout({
   portfolioCategories = [],
   portfolioTitle = "Related Work",
   questionnaireCallout = false,
+  stats,
+  highlights,
+  highlightsEyebrow = "The Details",
+  highlightsTitle = "Choices & Options",
 }) {
   const projects = PROJECTS.filter((p) => portfolioCategories.includes(p.category)).slice(0, 3);
 
   return (
     <div>
       <PageHero image={heroImage} eyebrow={eyebrow} title={title} lede={subhead} />
+
+      {/* Page-specific stats band */}
+      {stats && stats.length > 0 && <StatsBand stats={stats} />}
 
       {/* Intro */}
       <section className="section">
@@ -68,6 +77,22 @@ export function ServiceSubLayout({
                 </li>
               ))}
             </ul>
+          </div>
+        </section>
+      )}
+
+      {/* Highlights — specific choices / options for this discipline */}
+      {highlights && highlights.length > 0 && (
+        <section className="section">
+          <div className="container">
+            <SectionHeading eyebrow={highlightsEyebrow} title={highlightsTitle} />
+            <div className={highlights.length >= 3 ? "grid-3" : "grid-2"}>
+              {highlights.map((h) => (
+                <Callout key={h.label} label={h.label}>
+                  {h.text}
+                </Callout>
+              ))}
+            </div>
           </div>
         </section>
       )}
