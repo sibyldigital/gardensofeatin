@@ -39,10 +39,7 @@ export default function CaseStudy() {
 
   return (
     <div>
-      <div
-        className="hero"
-        style={{ backgroundImage: `url(${project.image})`, minHeight: "560px" }}
-      >
+      <div className="hero" style={{ backgroundImage: `url(${project.image})` }}>
         <NavHeader onDark />
         <div
           className="fade-in"

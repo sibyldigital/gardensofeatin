@@ -27,7 +27,6 @@ export default function PortfolioLanding() {
         eyebrow="Gardens of Eatin' — Asheville, NC"
         title="Landscapes That Earn Their Keep"
         lede="Edible gardens, food forests, and full permaculture properties across Western North Carolina."
-        minHeight="100vh"
       />
 
       <section className="section">

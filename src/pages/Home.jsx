@@ -68,7 +68,6 @@ export default function Home() {
         eyebrow="Permaculture & Landscape Design in Asheville, NC"
         title="Beauty You Can Eat"
         lede="Gardening and edible landscape design packages for homeowners, estates, and venues across Western North Carolina."
-        minHeight="620px"
         actions={
           <>
             <Button variant="primary" size="lg" to="/contact">
