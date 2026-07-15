@@ -97,6 +97,62 @@ export const PACKAGES = [
       "Year-round ecological maintenance and harvest management",
     ],
   },
+  {
+    name: "The Commercial Build",
+    description:
+      "A bespoke ecological installation for venues, breweries, and commercial properties.",
+    includes: [
+      "Site assessment and commercial property analysis",
+      "Custom design for outdoor spaces, beer gardens, ceremony grounds, or event backdrops",
+      "Native pollinator plantings, edible installations, or food forest edge",
+      "Hardscapes, paths, and gathering spaces integrated with existing architecture",
+      "Photography-ready seasonal design that deepens in beauty every year",
+      "Ongoing maintenance partnership available",
+    ],
+  },
+];
+
+/* Service disciplines — the four sub-pages surfaced as cards on the Services
+   hub and in the nav dropdown. */
+export const DISCIPLINES = [
+  {
+    name: "Design & Consultation",
+    to: "/services/design",
+    image: PHOTOS.aerial,
+    description:
+      "Where every garden begins — on-site consultation, full site analysis, and a permaculture design developed with you from rough draft to installation-ready plan.",
+  },
+  {
+    name: "Installation",
+    to: "/services/installation",
+    image: PHOTOS.carrots,
+    description:
+      "Our dedicated crew brings the design to life with expert craftsmanship, locally sourced materials, and plantings built to thrive long-term.",
+  },
+  {
+    name: "Maintenance",
+    to: "/services/maintenance",
+    image: PHOTOS.harvest,
+    description:
+      "Custom seasonal maintenance plans that keep your landscape in optimal health and keep your investment producing, season after season.",
+  },
+  {
+    name: "Commercial",
+    to: "/services/commercial",
+    image: PHOTOS.cabbage,
+    description:
+      "Ecological landscapes for venues, breweries, restaurants, and estates — a backdrop that shows up in every vendor photo and deepens in beauty every year.",
+  },
+];
+
+/* A la carte and ongoing services — individual offerings available to existing
+   clients or clients with a specific need outside a full package. */
+export const ALACARTE = [
+  "Mulching",
+  "Seasonal care",
+  "Hardscaping",
+  "Gardening services",
+  "Ongoing maintenance plans",
 ];
 
 export const STEPS = [
