@@ -7,7 +7,7 @@ import { SectionHeading } from "./SectionHeading.jsx";
  * a name and a short description. When a step has an `href`, the whole step
  * becomes an anchor link (used on the Process page to jump to each section).
  */
-export function Timeline({ eyebrow, title, steps, sunken = false }) {
+export function Timeline({ eyebrow, title, steps, sunken = false, action }) {
   return (
     <section className={sunken ? "section section--sunken" : "section"}>
       <div className="container">
@@ -32,6 +32,7 @@ export function Timeline({ eyebrow, title, steps, sunken = false }) {
             );
           })}
         </div>
+        {action && <div style={{ marginTop: "var(--space-xl)" }}>{action}</div>}
       </div>
     </section>
   );

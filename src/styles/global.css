@@ -81,6 +81,15 @@ p {
   margin: 0 0 10px;
 }
 
+/* On dark overlays and deep-forest grounds, the eyebrow shifts to the
+   brighter gold so it holds contrast over photography and green. */
+.hero .eyebrow,
+.cta-banner .eyebrow,
+.section--deep .eyebrow,
+.split__panel .eyebrow {
+  color: var(--color-gold-bright);
+}
+
 .display-xl {
   font: var(--text-display-xl);
   letter-spacing: var(--tracking-display);
@@ -923,6 +932,24 @@ select.input__field { appearance: none; }
 }
 @media (max-width: 700px) {
   .beforeafter { grid-template-columns: 1fr; }
+}
+
+/* ---------- Picture grid (case study / landing gallery) ---------- */
+
+.picture-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-sm);
+}
+.picture-grid__cell {
+  background-size: cover;
+  background-position: center;
+}
+@media (max-width: 800px) {
+  .picture-grid { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 480px) {
+  .picture-grid { grid-template-columns: 1fr; }
 }
 
 /* ---------- Instagram grid ---------- */

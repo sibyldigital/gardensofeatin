@@ -105,6 +105,11 @@ export default function ServicePackages() {
         eyebrow="Process"
         title="How We Grow With You"
         steps={STEPS.map((s) => ({ number: s.number, name: s.name, description: s.short }))}
+        action={
+          <Button variant="secondary" to="/process">
+            Learn More About Our Process
+          </Button>
+        }
       />
 
       <TestimonialSection />

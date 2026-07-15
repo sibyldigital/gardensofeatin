@@ -3,10 +3,11 @@ import { ServiceSubLayout } from "../components/ServiceSubLayout.jsx";
 import { SectionHeading } from "../components/SectionHeading.jsx";
 import { PHOTOS } from "../data/content.js";
 
-/* Design & Consultation (/services/design). Intro uses the existing
-   consultation description; the four design phases and their Downing project
-   images follow. Image paths are swap-friendly placeholders standing in for
-   the Downing media-library assets named in the design brief. */
+/* Design (/services/design). The custom permaculture plan developed from the
+   consultation — split out from the former combined Design & Consultation
+   page. The four design phases use the existing Downing project images
+   (swap-friendly placeholders standing in for the named media-library
+   assets). */
 
 const DESIGN_STAGES = [
   {
@@ -40,9 +41,6 @@ const DESIGN_STAGES = [
 ];
 
 const INCLUDED = [
-  "On-site property consultation",
-  "Site analysis: soil, water, sun, microclimate",
-  "Collaborative design questionnaire",
   "Rough draft block design",
   "Refined design with pathways, hardscaping, and water retention",
   "Final planting plan with full plant palette",
@@ -54,12 +52,9 @@ export default function ServiceDesign() {
   return (
     <ServiceSubLayout
       heroImage={PHOTOS.aerial}
-      title="Design & Consultation"
-      subhead="Where every garden begins."
-      intro={[
-        "We walk your property with you — noting sun, slope, water, and soil — and listen to how you want to live on the land. The visit ends with clear goals and an honest read of what your site can do.",
-        "From that first consultation, your designer develops a custom permaculture plan through a series of drafts — orienting the big elements first, then layering in pathways, water, and plantings — until you have an installation-ready design matched to Western North Carolina.",
-      ]}
+      title="Design"
+      subhead="A custom plan, drawn to build."
+      intro="From that first consultation, your designer develops a custom permaculture plan through a series of drafts — orienting the big elements first, then layering in pathways, water, and plantings — until you have an installation-ready design matched to Western North Carolina."
       included={INCLUDED}
       includedTitle="What's Included"
       stats={[
@@ -84,7 +79,6 @@ export default function ServiceDesign() {
       ]}
       portfolioCategories={["Residential"]}
       portfolioTitle="Residential Design Work"
-      questionnaireCallout
     >
       {/* Four design phases */}
       <section className="section section--sunken">

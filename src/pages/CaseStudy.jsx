@@ -3,18 +3,32 @@ import { useParams, Link } from "react-router-dom";
 import { NavHeader } from "../components/NavHeader.jsx";
 import { ServiceDetailSection } from "../components/ServiceDetailSection.jsx";
 import { BeforeAfterSection } from "../components/BeforeAfterSection.jsx";
+import { PictureGrid } from "../components/PictureGrid.jsx";
 import { CTABanner } from "../components/CTABanner.jsx";
 import { Button } from "../components/Button.jsx";
 import { Footer } from "../components/Footer.jsx";
 import { PROJECT_BY_SLUG, PHOTOS } from "../data/content.js";
 
 /* CaseStudy — individual portfolio project page. Full-bleed project hero
-   (CaseStudyHero pattern), a photo + detail breakdown, a before/after
-   split, and a closing CTA. */
+   (CaseStudyHero pattern), a photo + detail breakdown, a picture-grid
+   gallery, a before/after split, and a closing CTA. */
 
 export default function CaseStudy() {
   const { slug } = useParams();
   const project = PROJECT_BY_SLUG[slug];
+
+  // Gallery leads with the project's cover image, filled out with source
+  // photography as swap-friendly placeholders until real project photos land.
+  const gallery = project
+    ? [
+        project.image,
+        PHOTOS.harvest,
+        PHOTOS.coneflowers,
+        PHOTOS.carrots,
+        PHOTOS.coleus,
+        PHOTOS.orchard,
+      ]
+    : [];
 
   if (!project) {
     return (
@@ -69,6 +83,8 @@ export default function CaseStudy() {
         description={project.summary}
         bullets={project.bullets}
       />
+
+      <PictureGrid sunken eyebrow="Project Gallery" title="From The Ground" images={gallery} />
 
       <BeforeAfterSection />
 

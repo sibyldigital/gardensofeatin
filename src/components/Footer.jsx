@@ -20,6 +20,7 @@ export function Footer({ phone = "(828) 555-0134" }) {
       { label: "Portfolio", to: "/portfolio" },
       { label: "Services", to: "/ecological-landscaping-services" },
       { label: "Packages", to: "/design-packages" },
+      { label: "Landing Page", to: "/landing" },
     ],
     [
       { label: "Blog", to: "/blog" },

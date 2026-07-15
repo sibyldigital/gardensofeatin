@@ -12,7 +12,8 @@ import { asset } from "../lib/asset.js";
  * "About" → /about-us, "Services" → /ecological-landscaping-services.
  */
 const SERVICE_CHILDREN = [
-  { label: "Design & Consultation", to: "/services/design" },
+  { label: "Consultation", to: "/services/consultation" },
+  { label: "Design", to: "/services/design" },
   { label: "Residential", to: "/services/residential" },
   { label: "Installation", to: "/services/installation" },
   { label: "Maintenance", to: "/services/maintenance" },

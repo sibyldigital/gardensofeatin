@@ -73,10 +73,10 @@ export const SERVICES = [
 export const WAYS_TO_WORK = [
   {
     name: "Consultation",
-    to: "/services/design",
+    to: "/services/consultation",
     image: PHOTOS.aerial,
     description:
-      "Where every garden begins — an on-site consultation and a permaculture design developed with you, from rough draft to installation-ready plan.",
+      "Where every garden begins — an on-site consultation, full site analysis, and clear goals before any design work starts.",
   },
   {
     name: "Residential",

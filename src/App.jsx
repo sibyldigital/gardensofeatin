@@ -3,6 +3,7 @@ import { Routes, Route, Navigate, useLocation } from "react-router-dom";
 import Home from "./pages/Home.jsx";
 import About from "./pages/About.jsx";
 import Services from "./pages/Services.jsx";
+import ServiceConsultation from "./pages/ServiceConsultation.jsx";
 import ServiceDesign from "./pages/ServiceDesign.jsx";
 import ServiceResidential from "./pages/ServiceResidential.jsx";
 import ServiceInstallation from "./pages/ServiceInstallation.jsx";
@@ -16,6 +17,7 @@ import Blog from "./pages/Blog.jsx";
 import BlogPost from "./pages/BlogPost.jsx";
 import Contact from "./pages/Contact.jsx";
 import Questionnaire from "./pages/Questionnaire.jsx";
+import Landing from "./pages/Landing.jsx";
 import PortfolioLanding from "./pages/PortfolioLanding.jsx";
 
 function ScrollToTop() {
@@ -43,6 +45,7 @@ export default function App() {
         {/* Services hub — canonical slug, redirect legacy /services */}
         <Route path="/ecological-landscaping-services" element={<Services />} />
         <Route path="/services" element={<Navigate to="/ecological-landscaping-services" replace />} />
+        <Route path="/services/consultation" element={<ServiceConsultation />} />
         <Route path="/services/design" element={<ServiceDesign />} />
         <Route path="/services/residential" element={<ServiceResidential />} />
         <Route path="/services/installation" element={<ServiceInstallation />} />
@@ -63,6 +66,7 @@ export default function App() {
         <Route path="/contact" element={<Navigate to="/contact-us" replace />} />
 
         <Route path="/questionnaire" element={<Questionnaire />} />
+        <Route path="/landing" element={<Landing />} />
         <Route path="/portfolio-landing" element={<PortfolioLanding />} />
       </Routes>
     </>
