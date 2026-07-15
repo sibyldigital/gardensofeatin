@@ -5,7 +5,7 @@ import { SectionHeading } from "../components/SectionHeading.jsx";
 import { Card } from "../components/Card.jsx";
 import { Button } from "../components/Button.jsx";
 import { Footer } from "../components/Footer.jsx";
-import { PHOTOS, SERVICES, DISCIPLINES, ALACARTE } from "../data/content.js";
+import { PHOTOS, SERVICES, WAYS_TO_WORK, ALACARTE } from "../data/content.js";
 
 /* Services hub (/ecological-landscaping-services) — educational overview of
    the disciplines GOE practices. Hero + philosophy intro + four discipline
@@ -43,11 +43,11 @@ export default function Services() {
       {/* Four discipline cards → sub-pages */}
       <section className="section section--sunken">
         <div className="container">
-          <SectionHeading eyebrow="Our Disciplines" title="Four Ways We Work With Your Land" />
-          <div className="grid-4">
-            {DISCIPLINES.map((d) => (
+          <SectionHeading eyebrow="Our Disciplines" title="Three Ways To Work With Us" />
+          <div className="grid-3">
+            {WAYS_TO_WORK.map((d) => (
               <Link key={d.name} to={d.to} style={{ display: "block" }}>
-                <Card image={d.image} eyebrow="Service" title={d.name} description={d.description} aspect="4 / 3" />
+                <Card image={d.image} eyebrow="Discipline" title={d.name} description={d.description} aspect="4 / 3" />
               </Link>
             ))}
           </div>
@@ -75,16 +75,24 @@ export default function Services() {
             title="From First Bed To Full Forest"
           />
           <div className="grid-3">
-            {SERVICES.map((s) => (
-              <Card
-                key={s.name}
-                image={s.image}
-                eyebrow="System"
-                title={s.name}
-                description={s.description}
-                aspect="4 / 3"
-              />
-            ))}
+            {SERVICES.map((s) => {
+              const card = (
+                <Card
+                  image={s.image}
+                  eyebrow="System"
+                  title={s.name}
+                  description={s.description}
+                  aspect="4 / 3"
+                />
+              );
+              return s.to ? (
+                <Link key={s.name} to={s.to} style={{ display: "block" }}>
+                  {card}
+                </Link>
+              ) : (
+                <React.Fragment key={s.name}>{card}</React.Fragment>
+              );
+            })}
           </div>
         </div>
       </section>

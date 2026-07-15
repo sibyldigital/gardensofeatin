@@ -9,6 +9,7 @@
   --color-forest-deep:    #1A3D2B;
   --color-forest-mid:     #2D5A3D;
   --color-gold:           #8B6914;
+  --color-gold-bright:    #C9A23F; /* lighter harvest gold — for high contrast on deep forest */
   --color-maroon:         #5C1A1A;
 
   /* Derived neutrals — tinted off the cream/forest, never pure gray */

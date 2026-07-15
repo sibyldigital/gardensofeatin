@@ -47,16 +47,50 @@ export const SERVICES = [
       "Stone paths, terraces, and gathering spaces built from local materials, set to serve the garden rather than dominate it.",
   },
   {
+    name: "Installation",
+    image: PHOTOS.carrots,
+    description:
+      "Expert build-out of gardens, food forests, hardscapes, and plantings — locally sourced materials, built to thrive long-term.",
+    to: "/services/installation",
+  },
+  {
     name: "Maintenance",
     image: PHOTOS.harvest,
     description:
       "Seasonal pruning, ecological care, and harvest management that keep an edible landscape productive for decades.",
+    to: "/services/maintenance",
   },
   {
     name: "Mulching",
     image: PHOTOS.coleus,
     description:
       "Deep, living mulch systems that build soil, hold moisture through summer, and quiet the weeds without chemicals.",
+  },
+];
+
+/* Ways to work with us — the three entry points surfaced on the Services hub
+   "Our Disciplines" section. */
+export const WAYS_TO_WORK = [
+  {
+    name: "Consultation",
+    to: "/services/design",
+    image: PHOTOS.aerial,
+    description:
+      "Where every garden begins — an on-site consultation and a permaculture design developed with you, from rough draft to installation-ready plan.",
+  },
+  {
+    name: "Residential",
+    to: "/services/residential",
+    image: PHOTOS.coleus,
+    description:
+      "Edible landscapes, food forests, and pollinator gardens designed and installed for homes and estates across Western North Carolina.",
+  },
+  {
+    name: "Commercial",
+    to: "/services/commercial",
+    image: PHOTOS.cabbage,
+    description:
+      "Ecological landscapes for venues, breweries, and restaurants — a living backdrop that deepens in beauty every year.",
   },
 ];
 
@@ -96,18 +130,9 @@ export const PACKAGES = [
       "Phased installation over one to three years",
       "Year-round ecological maintenance and harvest management",
     ],
-  },
-  {
-    name: "The Commercial Build",
-    description:
-      "A bespoke ecological installation for venues, breweries, and commercial properties.",
-    includes: [
-      "Site assessment and commercial property analysis",
-      "Custom design for outdoor spaces, beer gardens, ceremony grounds, or event backdrops",
-      "Native pollinator plantings, edible installations, or food forest edge",
-      "Hardscapes, paths, and gathering spaces integrated with existing architecture",
-      "Photography-ready seasonal design that deepens in beauty every year",
-      "Ongoing maintenance partnership available",
+    // Rendered as a linked bullet beneath the standard includes.
+    extraBullets: [
+      { text: "Commercial and venue installations available", to: "/services/commercial" },
     ],
   },
 ];

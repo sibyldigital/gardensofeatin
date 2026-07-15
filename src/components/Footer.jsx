@@ -14,7 +14,7 @@ export function Footer({ phone = "(828) 555-0134" }) {
     [
       { label: "Homepage", to: "/" },
       { label: "About", to: "/about-us" },
-      { label: "How It Works", to: "/process" },
+      { label: "Process", to: "/process" },
     ],
     [
       { label: "Portfolio", to: "/portfolio" },

@@ -336,6 +336,16 @@ select.input__field { appearance: none; }
   display: inline-flex;
   align-items: center;
 }
+/* Invisible bridge across the visual gap to the panel, so moving the cursor
+   from the link down into the dropdown never crosses an un-hovered gap. */
+.nav__item--dropdown::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  height: 16px;
+}
 .nav__caret {
   font-size: 0.85em;
   margin-left: 5px;
@@ -659,7 +669,8 @@ select.input__field { appearance: none; }
 .statsbar__value {
   font: var(--text-display-md);
   font-size: 30px;
-  color: var(--color-gold);
+  font-weight: 700;
+  color: var(--color-gold-bright);
   margin-bottom: 6px;
 }
 .statsbar__label {

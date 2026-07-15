@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { PageHero } from "../components/PageHero.jsx";
 import { SectionHeading } from "../components/SectionHeading.jsx";
 import { Button } from "../components/Button.jsx";
@@ -82,6 +83,22 @@ export default function ServicePackages() {
                   {pkg.includes.map((item) => (
                     <li key={item}>— {item}</li>
                   ))}
+                  {pkg.extraBullets &&
+                    pkg.extraBullets.map((b) => (
+                      <li key={b.text}>
+                        —{" "}
+                        <Link
+                          to={b.to}
+                          style={{
+                            color: i === 1 ? "var(--color-gold-bright)" : "var(--accent-cta)",
+                            textDecoration: "underline",
+                            textUnderlineOffset: "3px",
+                          }}
+                        >
+                          {b.text}
+                        </Link>
+                      </li>
+                    ))}
                 </ul>
               </div>
             ))}

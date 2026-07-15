@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { PageHero } from "../components/PageHero.jsx";
 import { SectionHeading } from "../components/SectionHeading.jsx";
 import { Card } from "../components/Card.jsx";
@@ -14,27 +15,30 @@ import { PHOTOS } from "../data/content.js";
 /* Home — hero with two CTAs, "Beauty You Can Eat" three-card feature,
    "Service Packages" alternating pillar blocks, photo CTA, footer. */
 
-const CORE_SERVICES = [
+const START_CARDS = [
   {
+    to: "/design-packages",
+    image: PHOTOS.carrots,
+    eyebrow: "What You Buy",
+    title: "Packages",
+    description:
+      "Tiered offerings for every scale of land — from a first kitchen garden to a full estate or commercial build.",
+  },
+  {
+    to: "/ecological-landscaping-services",
     image: PHOTOS.harvest,
-    eyebrow: "Core Service",
-    title: "Edible Gardens",
+    eyebrow: "What We Do",
+    title: "Services",
     description:
-      "Kitchen gardens planned around what your household actually eats — carrots, kale, tomatoes, and herbs within reach of the back door.",
+      "The disciplines we practice and the systems we build — design, installation, maintenance, and commercial work.",
   },
   {
-    image: PHOTOS.orchard,
-    eyebrow: "Core Service",
-    title: "Food Forests",
+    to: "/process",
+    image: PHOTOS.aerial,
+    eyebrow: "How It Works",
+    title: "Process",
     description:
-      "Fruit trees layered with edible nuts and berries into a multi-layered system that combines annual and perennial plants.",
-  },
-  {
-    image: PHOTOS.coneflowers,
-    eyebrow: "Core Service",
-    title: "Native Pollinator Gardens",
-    description:
-      "Layered native plantings that draw pollinators and beneficial insects into your landscape year-round.",
+      "How every engagement unfolds, from the first walk on your land to the first harvest.",
   },
 ];
 
@@ -87,11 +91,13 @@ export default function Home() {
           <SectionHeading
             eyebrow="An Ecological Company"
             title="Beauty You Can Eat"
-            lede="Three ways we turn ornamental ground into productive, living landscape."
+            lede="Get started with us."
           />
           <div className="grid-3">
-            {CORE_SERVICES.map((s) => (
-              <Card key={s.title} {...s} />
+            {START_CARDS.map((s) => (
+              <Link key={s.title} to={s.to} style={{ display: "block" }}>
+                <Card image={s.image} eyebrow={s.eyebrow} title={s.title} description={s.description} />
+              </Link>
             ))}
           </div>
         </div>

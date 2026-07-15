@@ -13,6 +13,7 @@ import { asset } from "../lib/asset.js";
  */
 const SERVICE_CHILDREN = [
   { label: "Design & Consultation", to: "/services/design" },
+  { label: "Residential", to: "/services/residential" },
   { label: "Installation", to: "/services/installation" },
   { label: "Maintenance", to: "/services/maintenance" },
   { label: "Commercial", to: "/services/commercial" },
@@ -21,7 +22,7 @@ const SERVICE_CHILDREN = [
 const NAV_ITEMS = [
   { label: "Home", to: "/" },
   { label: "About", to: "/about-us" },
-  { label: "How It Works", to: "/process" },
+  { label: "Process", to: "/process" },
   { label: "Services", to: "/ecological-landscaping-services", children: SERVICE_CHILDREN },
   { label: "Packages", to: "/design-packages" },
   { label: "Portfolio", to: "/portfolio" },
