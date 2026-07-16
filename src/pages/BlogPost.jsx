@@ -48,6 +48,11 @@ export default function BlogPost() {
       <div className="article-banner" style={{ backgroundImage: `url(${post.image})` }} />
 
       <article className="article fade-in">
+        <p style={{ margin: "0 0 var(--space-md)" }}>
+          <Link to="/blog" className="btn btn--sm btn--ghost">
+            ‹ Back To The Journal
+          </Link>
+        </p>
         <p className="eyebrow">{`${post.category} — ${post.date}`}</p>
         <h1 className="article__title">{post.title}</h1>
         <p style={{ font: "var(--text-nav)", color: "var(--text-muted)", margin: "0 0 var(--space-lg)" }}>
