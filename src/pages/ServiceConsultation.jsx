@@ -20,7 +20,15 @@ export default function ServiceConsultation() {
       heroImage={PHOTOS.harvest}
       title="Consultation"
       subhead="Where every garden begins."
+      introEyebrow="The Consultation"
+      introTitle="Start With A Walk On The Land"
       intro="We walk your property with you — noting sun, slope, water, and soil — and listen to how you want to live on the land. The visit ends with clear goals and an honest read of what your site can do."
+      textSection={{
+        eyebrow: "Why It Matters",
+        title: "The Site Tells Us What To Plant",
+        body:
+          "Most design mistakes are really listening mistakes — a plan drawn before anyone read the water, the wind, or the way the afternoon sun bakes one corner. The consultation is where we slow down and let the property speak first: where it drains, where it holds frost, what already grows well and what struggles. Everything we recommend afterward is built on what we learned standing on your ground, not on a template.",
+      }}
       included={INCLUDED}
       stats={[
         { value: "On-Site", label: "Consultations" },

@@ -36,7 +36,15 @@ export default function ServiceCommercial() {
       heroImage={PHOTOS.cabbage}
       title="Commercial Installations"
       subhead="A backdrop that never stops growing."
+      introEyebrow="For Your Business"
+      introTitle="Grounds That Earn Their Keep"
       intro="Gardens of Eatin' designs and installs ecological landscapes for venues, breweries, restaurants, and commercial properties across Western North Carolina. A professionally designed edible or native garden is not just landscaping. It is a backdrop, a story, and a feature that shows up in every vendor photo, every guest experience, and every season. Rooted in beauty. Built for business."
+      textSection={{
+        eyebrow: "The Return",
+        title: "A Backdrop That Markets Itself",
+        body:
+          "For a venue or a taproom, the grounds are marketing that works while you sleep. Every ceremony photo, every social post, every guest who lingers a little longer in a beautiful outdoor space is quiet advertising you didn't have to buy — and unlike a printed campaign, a living landscape only gets better-looking with age. We design with that return in mind, so the investment shows up in bookings and dwell time, not just curb appeal.",
+      }}
       included={INCLUDED}
       stats={[
         { value: "WNC", label: "Venues & Breweries" },

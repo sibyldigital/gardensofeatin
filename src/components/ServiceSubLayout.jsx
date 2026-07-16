@@ -21,6 +21,8 @@ export function ServiceSubLayout({
   title,
   subhead,
   intro,
+  introEyebrow,
+  introTitle,
   children,
   included,
   includedTitle = "What's Included",
@@ -31,6 +33,7 @@ export function ServiceSubLayout({
   highlights,
   highlightsEyebrow = "The Details",
   highlightsTitle = "Choices & Options",
+  textSection,
 }) {
   const projects = PROJECTS.filter((p) => portfolioCategories.includes(p.category)).slice(0, 3);
 
@@ -41,9 +44,10 @@ export function ServiceSubLayout({
       {/* Page-specific stats band */}
       {stats && stats.length > 0 && <StatsBand stats={stats} />}
 
-      {/* Intro */}
+      {/* Intro — optional subhead/head above the body copy */}
       <section className="section">
         <div className="container" style={{ maxWidth: "820px" }}>
+          {introTitle && <SectionHeading eyebrow={introEyebrow} title={introTitle} />}
           {Array.isArray(intro) ? (
             intro.map((para, i) => (
               <p
@@ -93,6 +97,26 @@ export function ServiceSubLayout({
                 </Callout>
               ))}
             </div>
+          </div>
+        </section>
+      )}
+
+      {/* Free-standing text-content section, between the approach and the portfolio */}
+      {textSection && (textSection.title || textSection.body) && (
+        <section className="section section--sunken">
+          <div className="container" style={{ maxWidth: "820px" }}>
+            {textSection.title && (
+              <SectionHeading eyebrow={textSection.eyebrow} title={textSection.title} />
+            )}
+            {(Array.isArray(textSection.body) ? textSection.body : [textSection.body]).map((para, i) => (
+              <p
+                key={i}
+                className="body-justified"
+                style={{ font: "var(--text-body-lg)", marginBottom: "var(--space-md)" }}
+              >
+                {para}
+              </p>
+            ))}
           </div>
         </section>
       )}

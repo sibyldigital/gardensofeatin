@@ -23,6 +23,14 @@ export default function ServicePermaculture() {
       eyebrow="Service"
       title="Permaculture Consultation"
       subhead="Design that works with your land, not against it."
+      introEyebrow="The Consultation"
+      introTitle="Reading The Whole System"
+      textSection={{
+        eyebrow: "The Long View",
+        title: "Design That Compounds",
+        body:
+          "A permaculture plan is judged less by how it looks on install day than by how it behaves in year five. We design so the system gets easier and more abundant over time — the soil deepening under mulch, the canopy closing to shade out weeds, the water sinking where the swales put it. What starts as a set of young plantings becomes a largely self-feeding landscape that asks for less each season while it gives back more.",
+      }}
       intro={[
         "Permaculture reads your property as a whole living system — the way water moves across it, where the sun falls, how the soil holds together, and what already wants to grow. Before we draw a single bed, we spend a session mapping those patterns so every later decision works with them.",
         "The consultation ends with a phased, whole-system direction: what to establish first, how to harvest and slow your water, and how a food forest or perennial planting can carry more of the load each season with fewer outside inputs.",

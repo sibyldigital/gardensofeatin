@@ -21,6 +21,14 @@ export default function ServiceInstallation() {
       heroImage={PHOTOS.carrots}
       title="Installation"
       subhead="Bringing the design to life."
+      introEyebrow="The Build"
+      introTitle="Craftsmanship In The Ground"
+      textSection={{
+        eyebrow: "Our Crew",
+        title: "People Who Grow What They Build",
+        body:
+          "An install is only as good as the hands that do it. Our crew members aren't day labor moving material from a truck — they're gardeners who understand why the swale sits where it does and why that tree wants that much room. That understanding shows up in the small decisions no plan can fully specify: how a bed is shaped, how a root ball is set, how the mulch is finished. It's the difference you taste a season later.",
+      }}
       intro={[
         "Our dedicated installation team brings permaculture designs to life with expert craftsmanship, locally sourced materials, and careful attention to detail. Every installation is built to thrive long-term.",
         "Our crew members are not just laborers. They are passionate about growth, beauty, and sustainability, and they bring that love to your projects, a difference you can taste.",

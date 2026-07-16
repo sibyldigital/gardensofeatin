@@ -54,7 +54,15 @@ export default function ServiceDesign() {
       heroImage={PHOTOS.aerial}
       title="Design"
       subhead="A custom plan, drawn to build."
+      introEyebrow="The Plan"
+      introTitle="From Consultation To Installable Drawing"
       intro="From that first consultation, your designer develops a custom permaculture plan through a series of drafts — orienting the big elements first, then layering in pathways, water, and plantings — until you have an installation-ready design matched to Western North Carolina."
+      textSection={{
+        eyebrow: "Yours To Keep",
+        title: "A Plan You Own",
+        body:
+          "The design is a document, and it belongs to you. You can hand it to our install crew, build it yourself over a few weekends, or phase it across seasons as budget allows — the drawings hold up either way. Every plant, path, and grade decision is recorded, so nothing lives only in one person's head and the vision stays intact no matter who does the digging.",
+      }}
       included={INCLUDED}
       includedTitle="What's Included"
       stats={[

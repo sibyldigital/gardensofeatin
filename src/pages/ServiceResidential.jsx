@@ -21,6 +21,14 @@ export default function ServiceResidential() {
       heroImage={PHOTOS.coleus}
       title="Residential"
       subhead="Edible landscapes for the way you live."
+      introEyebrow="For Your Home"
+      introTitle="Landscapes That Feed The House"
+      textSection={{
+        eyebrow: "How We Think",
+        title: "Beauty And Harvest, Together",
+        body:
+          "We don't treat 'productive' and 'beautiful' as a trade-off. A well-designed edible landscape reads, from the patio, as a garden — structured, layered, and in bloom — while quietly doing the work of an orchard, a berry patch, and a pollinator sanctuary. The goal is a yard you're proud to host in that also sends people home with something to eat.",
+      }}
       intro={[
         "For homeowners and estates across Western North Carolina, we design and install landscapes that are as beautiful as they are productive — edible gardens by the back door, food forests on the slope, and native pollinator borders that bloom from spring to frost.",
         "Every residential project starts by reading your land and listening to how you want to live on it, then layering in the plants, paths, and systems that let the whole property feed your family and the ecosystem at once.",
