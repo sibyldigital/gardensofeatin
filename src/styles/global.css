@@ -569,6 +569,31 @@ select.input__field { appearance: none; }
   .grid-2 { grid-template-columns: 1fr; }
 }
 
+/* Project meta strip — timeline / budget / location, hairline-topped
+   like the site's timeline rows but labelled rather than numbered. */
+.projmeta {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-lg);
+  border-top: var(--border-width-hairline) solid var(--border-hairline);
+  padding-top: var(--space-lg);
+}
+
+.projmeta__item {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2xs);
+}
+
+.projmeta__val {
+  font: var(--text-display-sm);
+  color: var(--text-heading);
+}
+
+@media (max-width: 700px) {
+  .projmeta { grid-template-columns: 1fr; gap: var(--space-md); }
+}
+
 .split {
   display: grid;
   grid-template-columns: 1fr 1fr;

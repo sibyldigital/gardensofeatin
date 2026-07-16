@@ -1,6 +1,8 @@
 import React from "react";
 import { useParams, Link } from "react-router-dom";
 import { NavHeader } from "../components/NavHeader.jsx";
+import { SectionHeading } from "../components/SectionHeading.jsx";
+import { Callout } from "../components/Callout.jsx";
 import { ServiceDetailSection } from "../components/ServiceDetailSection.jsx";
 import { BeforeAfterSection } from "../components/BeforeAfterSection.jsx";
 import { PictureGrid } from "../components/PictureGrid.jsx";
@@ -9,9 +11,11 @@ import { Button } from "../components/Button.jsx";
 import { Footer } from "../components/Footer.jsx";
 import { PROJECT_BY_SLUG, PHOTOS } from "../data/content.js";
 
-/* CaseStudy — individual portfolio project page. Full-bleed project hero
-   (CaseStudyHero pattern), a photo + detail breakdown, a picture-grid
-   gallery, a before/after split, and a closing CTA. */
+/* CaseStudy — individual portfolio project page. Full-bleed hero, a
+   timeline/budget/location meta strip, the detail breakdown, Standout
+   Features, design drawings, a picture-grid gallery, a before/after split,
+   project notes, and a closing CTA. The per-project content fields mirror
+   the WordPress ACF group described in the rebuild spec. */
 
 export default function CaseStudy() {
   const { slug } = useParams();
@@ -76,6 +80,25 @@ export default function CaseStudy() {
         </div>
       </div>
 
+      <section className="section section--sunken">
+        <div className="container">
+          <div className="projmeta">
+            <div className="projmeta__item">
+              <p className="eyebrow">Timeline</p>
+              <p className="projmeta__val">{project.timeline}</p>
+            </div>
+            <div className="projmeta__item">
+              <p className="eyebrow">Budget</p>
+              <p className="projmeta__val">{project.budget}</p>
+            </div>
+            <div className="projmeta__item">
+              <p className="eyebrow">Location</p>
+              <p className="projmeta__val">{project.location}</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <ServiceDetailSection
         eyebrow="What We Did"
         title="Inside The Project"
@@ -84,9 +107,52 @@ export default function CaseStudy() {
         bullets={project.bullets}
       />
 
+      {project.standoutFeatures?.length > 0 && (
+        <section className="section section--sunken">
+          <div className="container">
+            <SectionHeading eyebrow="The Details" title="Standout Features" />
+            <div className="grid grid-3">
+              {project.standoutFeatures.map((f) => (
+                <Callout key={f.head} label={f.head}>
+                  {f.body}
+                </Callout>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
+      <section className="section">
+        <div className="container">
+          <SectionHeading eyebrow="The Plan" title="Design Drawings" />
+          <div className="grid grid-2">
+            {[project.designDrawing1, project.designDrawing2].map((src, i) => (
+              <div
+                key={i}
+                style={{
+                  backgroundImage: `url(${src})`,
+                  backgroundSize: "cover",
+                  backgroundPosition: "center",
+                  aspectRatio: "4 / 3",
+                }}
+              />
+            ))}
+          </div>
+        </div>
+      </section>
+
       <PictureGrid sunken eyebrow="Project Gallery" title="From The Ground" images={gallery} />
 
-      <BeforeAfterSection />
+      <BeforeAfterSection before={project.before} after={project.after} />
+
+      <section className="section section--sunken">
+        <div className="container" style={{ maxWidth: "820px" }}>
+          <SectionHeading eyebrow="Field Notes" title="Notes" />
+          <p className="body-justified" style={{ font: "var(--text-body-lg)" }}>
+            {project.notes}
+          </p>
+        </div>
+      </section>
 
       <div style={{ padding: "0 var(--content-pad) var(--space-xl)" }}>
         <div className="container">

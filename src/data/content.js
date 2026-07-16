@@ -209,7 +209,7 @@ export const STEPS = [
   },
 ];
 
-export const PROJECTS = [
+const RAW_PROJECTS = [
   {
     slug: "black-mountain-homestead",
     name: "Black Mountain Homestead",
@@ -339,6 +339,136 @@ export const PROJECTS = [
     ],
   },
 ];
+
+/* Per-project detail fields — these map 1:1 to the Advanced Custom Fields
+   group on the WordPress "Project" post type (see the rebuild spec):
+   before/after images, two design-drawing images, a timeline/budget meta row
+   (location lives on the core record), free-text notes, and the three
+   "Standout Features" cards. Images are swap-friendly placeholders. */
+const PROJECT_DETAILS = {
+  "black-mountain-homestead": {
+    before: PHOTOS.aerial,
+    after: PHOTOS.carrots,
+    designDrawing1: PHOTOS.aerial,
+    designDrawing2: PHOTOS.cabbage,
+    timeline: "One season (spring install)",
+    budget: "$18k–$28k",
+    notes:
+      "The steep back slope had to be terraced before any beds could go in, so we phased the young orchard for the following fall.",
+    standoutFeatures: [
+      { head: "Terraced Kitchen Garden", body: "Twelve raised beds stepped into the slope, each within a hose-length of the back door." },
+      { head: "Young Orchard", body: "Eight fruit trees chosen for the elevation, underplanted with a pollinator strip." },
+      { head: "Berry Hedge", body: "A mixed currant and gooseberry hedge closing the property line and feeding the birds." },
+    ],
+  },
+  "hominy-creek-food-forest": {
+    before: PHOTOS.aerial,
+    after: PHOTOS.orchard,
+    designDrawing1: PHOTOS.aerial,
+    designDrawing2: PHOTOS.carrots,
+    timeline: "Two seasons",
+    budget: "$30k–$45k",
+    notes:
+      "Earthworks came first to slow the winter runoff; the canopy trees went in bare-root the following winter.",
+    standoutFeatures: [
+      { head: "Layered Canopy", body: "Apples and chestnuts over pawpaw and hazelnut, closed with currants and comfrey." },
+      { head: "Water Harvesting", body: "Swales cut on contour soak rain into the slope instead of letting it run off." },
+      { head: "Self-Feeding System", body: "Nitrogen-fixers and deep mulch keep the forest fed with almost no outside inputs." },
+    ],
+  },
+  "laurel-ridge-wedding-venue": {
+    before: PHOTOS.aerial,
+    after: PHOTOS.hero,
+    designDrawing1: PHOTOS.aerial,
+    designDrawing2: PHOTOS.coneflowers,
+    timeline: "One season, ahead of wedding season",
+    budget: "$40k–$60k",
+    notes:
+      "Installed and established over winter so the borders would be in full bloom for the first spring weddings.",
+    standoutFeatures: [
+      { head: "Season-Long Bloom", body: "Natives sequenced so something is always flowering from April through October." },
+      { head: "Photo Sight Lines", body: "Borders framed to the altar so every ceremony photo has a living backdrop." },
+      { head: "Low-Allergen Palette", body: "Foot-traffic-tolerant, low-allergen plantings chosen for guest comfort." },
+    ],
+  },
+  "riverbend-brewery-beer-garden": {
+    before: PHOTOS.aerial,
+    after: PHOTOS.cabbage,
+    designDrawing1: PHOTOS.aerial,
+    designDrawing2: PHOTOS.harvest,
+    timeline: "Six weeks",
+    budget: "$35k–$50k",
+    notes:
+      "Built around an operating taproom; the work was staged to keep the patio open every weekend.",
+    standoutFeatures: [
+      { head: "Brewer's Herbs", body: "Hops on the fence line and culinary herbs at arm's reach of the kitchen." },
+      { head: "Fast Shade", body: "Quick-growing shade trees sited for the afternoon crowd." },
+      { head: "Durable Hardscape", body: "Gathering spaces and paths built for high foot traffic and spilled pints." },
+    ],
+  },
+  "sandy-mush-estate": {
+    before: PHOTOS.cabbage,
+    after: PHOTOS.aerial,
+    designDrawing1: PHOTOS.aerial,
+    designDrawing2: PHOTOS.coleus,
+    timeline: "Three seasons (phased)",
+    budget: "$90k+",
+    notes:
+      "Eleven acres were master-planned up front, then installed in three phases as budget allowed.",
+    standoutFeatures: [
+      { head: "Whole-Property Plan", body: "Water and zone mapping across eleven acres before a single bed went in." },
+      { head: "Three Zones", body: "Kitchen gardens by the house, food forest mid-slope, pollinator meadow on the old pasture." },
+      { head: "Phased Build", body: "Installed over three seasons so the plan could flex with the budget." },
+    ],
+  },
+  "craggy-view-inn": {
+    before: PHOTOS.aerial,
+    after: PHOTOS.coleus,
+    designDrawing1: PHOTOS.aerial,
+    designDrawing2: PHOTOS.cabbage,
+    timeline: "One season",
+    budget: "$22k–$34k",
+    notes:
+      "A container-forward design so plantings could be refreshed seasonally without disrupting guests.",
+    standoutFeatures: [
+      { head: "Signature Entry", body: "Courtyard and entry plantings that set the tone the moment guests arrive." },
+      { head: "Kitchen Containers", body: "Herbs and cutting greens within steps of the inn's back door." },
+      { head: "Edible Flowers", body: "Blooms for the plate and the table, rotated through the season." },
+    ],
+  },
+  "west-asheville-pocket-orchard": {
+    before: PHOTOS.aerial,
+    after: PHOTOS.harvest,
+    designDrawing1: PHOTOS.aerial,
+    designDrawing2: PHOTOS.carrots,
+    timeline: "One season",
+    budget: "$12k–$18k",
+    notes:
+      "A tight city lot — every tree was trained to a compact form so the whole harvest stays within reach.",
+    standoutFeatures: [
+      { head: "Trained Fruit Trees", body: "Six trees in espalier and open-center forms sized for a small yard." },
+      { head: "Berry Hedge", body: "A productive hedge along the property line that doubles as a privacy screen." },
+      { head: "Small-Space Soil", body: "A deep-mulch, living-soil system that punches well above the lot's size." },
+    ],
+  },
+  "pisgah-taproom-terrace": {
+    before: PHOTOS.aerial,
+    after: PHOTOS.coneflowers,
+    designDrawing1: PHOTOS.aerial,
+    designDrawing2: PHOTOS.cabbage,
+    timeline: "Five weeks",
+    budget: "$28k–$42k",
+    notes:
+      "A pollinator-first design that keeps the terrace full of butterflies through the afternoon rush.",
+    standoutFeatures: [
+      { head: "Pollinator Beds", body: "Coneflower, bee balm, and mountain mint wrapping the terrace." },
+      { head: "Habitat Structure", body: "Winter-standing stems left for next year's bees and butterflies." },
+      { head: "Traffic-Ready Edging", body: "Durable edging that holds up to a full patio crowd." },
+    ],
+  },
+};
+
+export const PROJECTS = RAW_PROJECTS.map((p) => ({ ...PROJECT_DETAILS[p.slug], ...p }));
 
 export const PROJECT_BY_SLUG = Object.fromEntries(PROJECTS.map((p) => [p.slug, p]));
 

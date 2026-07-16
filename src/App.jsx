@@ -9,6 +9,7 @@ import ServiceResidential from "./pages/ServiceResidential.jsx";
 import ServiceInstallation from "./pages/ServiceInstallation.jsx";
 import ServiceMaintenance from "./pages/ServiceMaintenance.jsx";
 import ServiceCommercial from "./pages/ServiceCommercial.jsx";
+import ServicePermaculture from "./pages/ServicePermaculture.jsx";
 import ServicePackages from "./pages/ServicePackages.jsx";
 import Process from "./pages/Process.jsx";
 import Portfolio from "./pages/Portfolio.jsx";
@@ -51,6 +52,9 @@ export default function App() {
         <Route path="/services/installation" element={<ServiceInstallation />} />
         <Route path="/services/maintenance" element={<ServiceMaintenance />} />
         <Route path="/services/commercial" element={<ServiceCommercial />} />
+
+        {/* Permaculture Consultation — top-level legacy slug, kept as-is */}
+        <Route path="/permaculture-consultation" element={<ServicePermaculture />} />
 
         {/* Packages — canonical /design-packages, redirect legacy /packages */}
         <Route path="/design-packages" element={<ServicePackages />} />

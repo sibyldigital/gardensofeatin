@@ -13,6 +13,7 @@ import { asset } from "../lib/asset.js";
  */
 const SERVICE_CHILDREN = [
   { label: "Consultation", to: "/services/consultation" },
+  { label: "Permaculture Consultation", to: "/permaculture-consultation" },
   { label: "Design", to: "/services/design" },
   { label: "Residential", to: "/services/residential" },
   { label: "Installation", to: "/services/installation" },

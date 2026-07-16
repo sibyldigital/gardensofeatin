@@ -220,9 +220,12 @@
     <div class="nav-tree">
       <div><span class="top">Home</span> <span class="slug">→ /</span></div>
       <div><span class="top">About</span> <span class="slug">→ /about-us/</span></div>
-      <div><span class="top">How It Works</span> <span class="slug">→ /process/  <em>(display label only, slug stays /process/)</em></span></div>
+      <div><span class="top">Process</span> <span class="slug">→ /process/</span></div>
       <div><span class="top">Services</span> <span class="slug">→ /ecological-landscaping-services/</span></div>
-      <div class="sub">Design &amp; Consultation <span class="slug">→ /services/design/</span></div>
+      <div class="sub">Consultation <span class="slug">→ /services/consultation/</span></div>
+      <div class="sub">Permaculture Consultation <span class="slug">→ /permaculture-consultation/</span></div>
+      <div class="sub">Design <span class="slug">→ /services/design/</span></div>
+      <div class="sub">Residential <span class="slug">→ /services/residential/</span></div>
       <div class="sub">Installation <span class="slug">→ /services/installation/</span></div>
       <div class="sub">Maintenance <span class="slug">→ /services/maintenance/</span></div>
       <div class="sub">Commercial <span class="slug">→ /services/commercial/</span></div>
@@ -233,7 +236,7 @@
     </div>
 
     <div class="callout">
-      <strong>Questionnaire</strong> at <code>/questionnaire/</code> is not a top-level nav item. It is linked from the Design &amp; Consultation service page CTA and from the Process page at the consultation phase step.
+      <strong>Questionnaire</strong> at <code>/questionnaire/</code> is not a top-level nav item. It is linked from the Consultation, Permaculture Consultation, and Design service page CTAs and from the Process page at the consultation phase step.
     </div>
   </section>
 
@@ -272,10 +275,22 @@
           <td>Services hub page. Educational overview of GOE disciplines. Links to sub-pages. Old Wix slug with indexed equity — promoted to canonical services URL.</td>
         </tr>
         <tr>
+          <td><code>/services/consultation/</code></td>
+          <td><span class="badge badge-new">New</span></td>
+          <td>Services dropdown</td>
+          <td>Consultation discipline page. The on-site walk and site analysis that begins every project. Split out from the former combined Design &amp; Consultation page. Links to questionnaire and packages.</td>
+        </tr>
+        <tr>
           <td><code>/services/design/</code></td>
           <td><span class="badge badge-new">New</span></td>
           <td>Services dropdown</td>
-          <td>Design &amp; Consultation discipline page. Includes Downing project design stages. Links to questionnaire and packages.</td>
+          <td>Design discipline page. Includes Downing project design stages. Split out from the former combined Design &amp; Consultation page. Links to questionnaire and packages.</td>
+        </tr>
+        <tr>
+          <td><code>/services/residential/</code></td>
+          <td><span class="badge badge-new">New</span></td>
+          <td>Services dropdown</td>
+          <td>Residential discipline page. Whole-property residential landscapes: kitchen gardens, orchards, native borders. Links to portfolio and packages.</td>
         </tr>
         <tr>
           <td><code>/services/installation/</code></td>
@@ -303,15 +318,15 @@
         </tr>
         <tr>
           <td><code>/consultation/</code></td>
-          <td><span class="badge badge-keep">Keep</span></td>
+          <td><span class="badge badge-redirect">Redirect</span></td>
           <td>No</td>
-          <td>Design and consultation service detail. Contains Downing design photos and three-stage design process. Content duplicated to /services/design/ — keep both live, do not redirect.</td>
+          <td>Legacy combined Design &amp; Consultation detail page. Content now split across <code>/services/consultation/</code> and <code>/services/design/</code>. 301 to <code>/services/consultation/</code>.</td>
         </tr>
         <tr>
           <td><code>/permaculture-consultation/</code></td>
-          <td><span class="badge badge-shadow">Shadow Page</span></td>
-          <td>No</td>
-          <td>SEO landing page targeting permaculture consultation keywords. Not in nav. Do not redirect or modify. Managed separately by SEO partner. Funnels to /consultation/ or /contact-us/.</td>
+          <td><span class="badge badge-keep">Keep — Promoted</span></td>
+          <td>Services dropdown</td>
+          <td>Permaculture Consultation service page. Formerly an SEO-only shadow page; now promoted to a real, in-nav service sub-page (whole-system permaculture assessment: water, zoning, soil, food forests). Top-level slug kept to preserve keyword equity — do not rename or redirect. Funnels to /questionnaire/ and /design-packages/.</td>
         </tr>
         <tr>
           <td><code>/process/</code></td>
@@ -427,11 +442,20 @@
           <td><span class="badge badge-redirect">301</span></td>
           <td>Trailing slash consistency only. Slug stays as-is, just ensure non-slash version redirects.</td>
         </tr>
+        <tr>
+          <td><code>/consultation/</code></td>
+          <td><code>/services/consultation/</code> <span class="arrow">→</span></td>
+          <td><span class="badge badge-redirect">301</span></td>
+          <td>Legacy combined Design &amp; Consultation page. Now split into <code>/services/consultation/</code> and <code>/services/design/</code>. Redirect the old combined URL to the consultation sub-page.</td>
+        </tr>
       </tbody>
     </table>
 
     <div class="callout" style="margin-top: 24px;">
-      <strong>Do not redirect:</strong> <code>/permaculture-consultation/</code> — This page is actively managed as a keyword landing page. Leave it live and untouched. It is not in the nav and does not conflict with any other page.
+      <strong>Do not redirect:</strong> <code>/permaculture-consultation/</code> — This slug is now a live, in-nav Permaculture Consultation service page (promoted from its former SEO-only role). Keep the top-level slug exactly as-is to preserve its keyword equity — do not rename it or fold it under <code>/services/</code>, and do not redirect it.
+    </div>
+    <div class="callout" style="margin-top: 12px;">
+      <strong>Client-side redirects in the React reference build:</strong> the SPA also 301-equivalents these convenience aliases to their canonical routes — <code>/about → /about-us/</code>, <code>/services → /ecological-landscaping-services/</code>, <code>/packages → /design-packages/</code>, <code>/contact → /contact-us/</code>. On WordPress these should be implemented as server-level 301s alongside the table above.
     </div>
   </section>
 
@@ -461,7 +485,7 @@
           <td><strong>Services</strong></td>
           <td>The disciplines GOE practices and the a la carte offerings available to existing clients. Educational and capability-focused. What GOE knows how to do.</td>
           <td><code>/ecological-landscaping-services/</code> and sub-pages</td>
-          <td>Design &amp; Consultation, Installation, Maintenance, Commercial. Plus a la carte: mulching, hardscaping, seasonal care, gardening services.</td>
+          <td>Consultation, Permaculture Consultation, Design, Residential, Installation, Maintenance, Commercial. Plus a la carte: mulching, hardscaping, seasonal care, gardening services.</td>
         </tr>
         <tr>
           <td><strong>Packages</strong></td>
