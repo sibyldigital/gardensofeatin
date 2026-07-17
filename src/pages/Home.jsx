@@ -24,14 +24,7 @@ const START_CARDS = [
     description:
       "Tiered offerings for every scale of land — from a first kitchen garden to a full estate or commercial build.",
   },
-  {
-    to: "/ecological-landscaping-services",
-    image: PHOTOS.harvest,
-    eyebrow: "What We Do",
-    title: "Services",
-    description:
-      "The disciplines we practice and the systems we build — design, installation, maintenance, and commercial work.",
-  },
+
   {
     to: "/process",
     image: PHOTOS.aerial,
@@ -39,6 +32,14 @@ const START_CARDS = [
     title: "Process",
     description:
       "How every engagement unfolds, from the first walk on your land to the first harvest.",
+  },
+   {
+    to: "/ecological-landscaping-services",
+    image: PHOTOS.harvest,
+    eyebrow: "What We Do",
+    title: "Services",
+    description:
+      "The disciplines we practice and the systems we build — design, installation, maintenance, and commercial work.",
   },
 ];
 
@@ -90,7 +91,7 @@ export default function Home() {
         <div className="container">
           <SectionHeading
             eyebrow="An Ecological Company"
-            title="Beauty You Can Eat"
+            title="Pick Your Path To Permaculture"
             lede="Get started with us."
           />
           <div className="grid-3">
