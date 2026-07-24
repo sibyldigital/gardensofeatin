@@ -68,9 +68,9 @@ export function ServiceSubLayout({
 
       {children}
 
-      {/* What's included */}
+      {/* What's included — dark section */}
       {included && included.length > 0 && (
-        <section className="section section--sunken">
+        <section className="section section--deep">
           <div className="container" style={{ maxWidth: "820px" }}>
             <SectionHeading eyebrow="Included" title={includedTitle} />
             <ul className="bullets" style={{ gap: "var(--space-sm)" }}>

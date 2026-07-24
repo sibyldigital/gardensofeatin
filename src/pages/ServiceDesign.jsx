@@ -88,33 +88,64 @@ export default function ServiceDesign() {
       portfolioCategories={["Residential"]}
       portfolioTitle="Residential Design Work"
     >
-      {/* Four design phases */}
-      <section className="section section--sunken">
+      {/* Four design phases — full-bleed pillars alternating dark / light */}
+      <section className="section">
         <div className="container">
           <SectionHeading eyebrow="The Design Process" title="From Rough Draft To Vision Realized" />
-          <div style={{ display: "flex", flexDirection: "column", gap: "var(--space-xl)" }}>
-            {DESIGN_STAGES.map((stage, i) => (
-              <div key={stage.n} className="grid-2" style={{ alignItems: "center" }}>
-                <div
-                  style={{
-                    order: i % 2 === 1 ? 2 : 1,
-                    backgroundImage: `url(${stage.image})`,
-                    backgroundSize: "cover",
-                    backgroundPosition: "center",
-                    aspectRatio: "4 / 3",
-                  }}
-                />
-                <div style={{ order: i % 2 === 1 ? 1 : 2 }}>
-                  <p className="eyebrow">{`Stage ${stage.n}`}</p>
-                  <h3 className="display-md" style={{ marginBottom: "var(--space-sm)" }}>
-                    {stage.name}
-                  </h3>
-                  <p className="lede">{stage.copy}</p>
-                </div>
-              </div>
-            ))}
-          </div>
         </div>
+        {DESIGN_STAGES.map((stage, i) => {
+          const dark = i % 2 === 0; // dark, light, dark, light
+          const flip = i % 2 === 1; // alternate the image side
+          const image = (
+            <div className="split__image" style={{ backgroundImage: `url(${stage.image})` }} />
+          );
+          const panel = (
+            <div
+              className="split__panel"
+              style={{
+                background: dark ? "var(--color-forest-deep)" : "var(--color-cream-dim)",
+                color: dark ? "var(--color-on-forest)" : "var(--text-body)",
+              }}
+            >
+              <p className="eyebrow" style={dark ? undefined : { color: "var(--color-gold)" }}>
+                {`Stage ${stage.n}`}
+              </p>
+              <h3
+                className="display-md"
+                style={{
+                  color: dark ? "var(--color-on-forest)" : "var(--text-heading)",
+                  marginBottom: "var(--space-sm)",
+                }}
+              >
+                {stage.name}
+              </h3>
+              <p
+                style={{
+                  font: "var(--text-body-lg)",
+                  color: dark ? "var(--color-on-forest-soft)" : "var(--text-muted)",
+                  maxWidth: "440px",
+                }}
+              >
+                {stage.copy}
+              </p>
+            </div>
+          );
+          return (
+            <div key={stage.n} className={flip ? "split split--flip" : "split"}>
+              {flip ? (
+                <>
+                  {panel}
+                  {image}
+                </>
+              ) : (
+                <>
+                  {image}
+                  {panel}
+                </>
+              )}
+            </div>
+          );
+        })}
       </section>
     </ServiceSubLayout>
   );

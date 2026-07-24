@@ -680,6 +680,8 @@ select.input__field { appearance: none; }
   white-space: nowrap;
 }
 .link-underline:hover { color: var(--accent-cta); }
+.section--deep .link-underline { color: var(--color-on-forest); }
+.section--deep .link-underline:hover { color: var(--color-gold-bright); }
 
 .post-date {
   font: var(--text-caption);
@@ -911,6 +913,8 @@ select.input__field { appearance: none; }
   gap: 12px;
 }
 .bullets__dash { color: var(--color-gold); }
+.section--deep .bullets li { color: var(--text-on-deep); }
+.section--deep .bullets__dash { color: var(--color-gold-bright); }
 
 /* ---------- Team monogram tiles ---------- */
 

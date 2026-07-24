@@ -47,19 +47,22 @@ All user-facing copy pulled from the React build (`sibyldigital/gardensofeatin`)
 | → /ecological-landscaping-services | What We Do | Services | The disciplines we practice and the systems we build — design, installation, maintenance, and commercial work. |
 | → /process | How It Works | Process | How every engagement unfolds, from the first walk on your land to the first harvest. |
 
-**"Service Packages" — three alternating pillars**
+**"Permaculture Packages" — three alternating pillars**
 - Section eyebrow: What We Offer
-- Section title: Service Packages
+- Section title: Permaculture Packages
 - Section lede: From a first kitchen garden to a full estate master plan, each package is built on the same pillars.
 
-1. **Enjoy The Harvest — A Landscape That Feeds You**
-   With a consultation, we can help you create a multi-layered food forest that combines annual and perennial plants — beauty in every season, and a basket to carry in from it.
+1. **Enjoy The Harvest — A Garden That Feeds You**
+   With consultation, we can help you create a productive kitchen garden that combines herbs and vegetables to add color to your plate— beauty in every season, and a basket to carry in from it.
+   *Button:* See Kitchen Gardens → /design-packages#kitchen-garden
 2. **Build Resilience In Western NC — Plant For The Decades**
-   We can help you plant fruit trees along with edible nuts and berries on your land — an orchard that outlives trends and keeps producing for your grandchildren.
+   We can create a food forest on your landscape, planting fruit trees along with edible nuts and berries on your land — an orchard that outlives trends and keeps producing for your grandchildren.
+   *Button:* See Food Forests → /design-packages#food-forest
 3. **Rooted In Beauty, Built For Business — Grounds That Work As Hard As They Look Good**
    We design full permaculture properties for estates, wedding venues, and breweries — landscapes that photograph beautifully and earn their keep.
+   *Button:* See Estate Planning → /design-packages#estate-plan
 
-**Information strip** — see [Information facts](#information-facts-componentsinformationsectionjsx).
+**Timeline** (eyebrow "The Journey", title "Four Steps, Start To Harvest") — the four process steps; replaces the former information strip in this slot.
 **Testimonials** — see [Testimonials (Home & Packages)](#testimonials-home--packages-componentstestimonialsectionjsx).
 **Journal preview** — see [Journal preview](#journal-preview-componentsjournalsectionjsx).
 
@@ -92,6 +95,11 @@ All user-facing copy pulled from the React build (`sibyldigital/gardensofeatin`)
 - Title: What We Hold To
 - Items — see [Values](#values-datacontentjs--values).
 
+**Closing CTA** (solid deep-forest background)
+- Eyebrow: Ready When You Are
+- Title: Let's Grow Something That Lasts
+- Button: Get Started → /contact-us
+
 ---
 
 ## Process (`pages/Process.jsx`)
@@ -106,9 +114,11 @@ All user-facing copy pulled from the React build (`sibyldigital/gardensofeatin`)
 - Title: Four Steps, Start To Harvest
 - Steps (number, name, short) — see [Process steps](#process-steps-datacontentjs--steps).
 
-**Four anchored step sections** — each uses `Step {number}`, the step name as heading, and the step's long `description` ([Process steps](#process-steps-datacontentjs--steps)). Step 01 adds the link:
+**Four anchored step sections** — backgrounds alternate **dark / light / dark / light** (deep-forest → cream). Each uses `Step {number}`, the step name as heading, and the step's long `description` ([Process steps](#process-steps-datacontentjs--steps)). Step 01 adds the link:
 > Fill out our design questionnaire before your consultation ›
 
+**Information strip** — see [Information facts](#information-facts-componentsinformationsectionjsx).
+**Testimonials** — see [Testimonials (Home & Packages)](#testimonials-home--packages-componentstestimonialsectionjsx).
 **Service radius** — see [Service radius](#service-radius-componentsserviceradiusjsx).
 
 **Closing CTA**
@@ -157,7 +167,7 @@ All user-facing copy pulled from the React build (`sibyldigital/gardensofeatin`)
 
 ## Service sub-pages (shared `components/ServiceSubLayout.jsx`)
 
-Every discipline page shares one layout: **hero** (eyebrow "Service", title, subhead) → **stats band** → **intro** (subhead/head + body) → optional page-specific block → **What's Included** list → **highlights** ("the approach") → **text-content section** → **related portfolio** → optional questionnaire CTA → **bottom CTA** (eyebrow "Ready To Start?", title "Find The Right Package", button "View Packages").
+Every discipline page shares one layout: **hero** (eyebrow "Service", title, subhead) → **stats band** → **intro** (subhead/head + body) → optional page-specific block → **What's Included** list (rendered on a **dark deep-forest background**, all pages) → **highlights** ("the approach") → **text-content section** → **related portfolio** → optional questionnaire CTA → **bottom CTA** (eyebrow "Ready To Start?", title "Find The Right Package", button "View Packages").
 
 ### Consultation (`pages/ServiceConsultation.jsx`) — `/services/consultation`
 - Hero title: Consultation · Subhead: Where every garden begins.
@@ -199,7 +209,7 @@ Every discipline page shares one layout: **hero** (eyebrow "Service", title, sub
   - Phased To Your Budget — Designs are drawn to install all at once or in seasonal phases, so the plan fits the pace you want to move at.
 - Text section: **Yours To Keep** → **A Plan You Own** — The design is a document, and it belongs to you. You can hand it to our install crew, build it yourself over a few weekends, or phase it across seasons as budget allows — the drawings hold up either way. Every plant, path, and grade decision is recorded, so nothing lives only in one person's head and the vision stays intact no matter who does the digging.
 - Related portfolio: Residential Design Work
-- **Page-specific block — "The Design Process" / "From Rough Draft To Vision Realized" (4 stages):**
+- **Page-specific block — "The Design Process" / "From Rough Draft To Vision Realized" (4 stages, rendered as full-bleed pillars alternating dark / light):**
   - Stage 01 — Rough Draft: Block designing to orient elements to the landscape. Macro level design to have a base to move forward on.
   - Stage 02 — Design 2: This second design manages organic elements like pathways, hardscaping, water retention and canopy trees.
   - Stage 03 — Final Draft: This final draft will position perennials and a planting plan for all the elements as well as earthmoving plans if necessary. A full plant palette and design will be complete and ready to help make your dreams a reality.
@@ -281,8 +291,13 @@ Every discipline page shares one layout: **hero** (eyebrow "Service", title, sub
 
 **Timeline** — Eyebrow: Process · Title: How We Grow With You · steps from [Process steps](#process-steps-datacontentjs--steps) · action button: Learn More About Our Process.
 
-**Testimonials** — see [Testimonials (Home & Packages)](#testimonials-home--packages-componentstestimonialsectionjsx).
+**"A Closer Look" — per-package pillars** (eyebrow "In Depth", title "A Closer Look At Each Package"). Three full-bleed pillars alternating dark/light, each with an anchor id (the deep-link targets from the Home pillar buttons) and a button to its representative project:
+- `#kitchen-garden` — **Package 01 · The Kitchen Garden** — The fastest way to eat from your own yard. We set raised beds a few steps from the back door, match the planting to what your household actually cooks, and hand you a first-season plan — so the harvest starts the same year the beds go in. · Button: *See Black Mountain Homestead ›* → /portfolio/black-mountain-homestead
+- `#food-forest` — **Package 02 · The Food Forest** — An orchard with its wild logic restored. Fruit and nut trees over berries, herbs, and ground covers, sited only after we read the water and shape the land — a layered system that carries more of its own weight every season. · Button: *See Hominy Creek Food Forest ›* → /portfolio/hominy-creek-food-forest
+- `#estate-plan` — **Package 03 · The Estate Plan** — The whole property, master-planned. Multi-zone design across acreage — kitchen gardens by the house, a food forest on the slope, pollinator meadows on the old pasture — installed in phases and tended year-round. · Button: *See Sandy Mush Estate ›* → /portfolio/sandy-mush-estate
+
 **FAQ** — see [FAQ](#faq-componentsfaqsectionjsx).
+**Testimonials** — see [Testimonials (Home & Packages)](#testimonials-home--packages-componentstestimonialsectionjsx). *(Renders after the FAQ.)*
 
 **Closing CTA**
 - Title: Every Property Deserves Its Own Plan
@@ -306,6 +321,11 @@ Every discipline page shares one layout: **hero** (eyebrow "Service", title, sub
 
 **Stats band** — see [Stats bar](#stats-bar-componentsstatsbarjsx).
 **Before/After** — see [Before / After](#before--after-componentsbeforeaftersectionjsx).
+
+**Closing CTA** (solid deep-forest background)
+- Eyebrow: Ready When You Are
+- Title: Tell Us About Your Land
+- Button: Get Started → /questionnaire
 
 ---
 

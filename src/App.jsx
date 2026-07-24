@@ -22,10 +22,19 @@ import Landing from "./pages/Landing.jsx";
 import PortfolioLanding from "./pages/PortfolioLanding.jsx";
 
 function ScrollToTop() {
-  const { pathname } = useLocation();
+  const { pathname, hash } = useLocation();
   useEffect(() => {
+    if (hash) {
+      // Wait a frame so the target section has mounted, then scroll to it.
+      requestAnimationFrame(() => {
+        const el = document.getElementById(hash.slice(1));
+        if (el) el.scrollIntoView();
+        else window.scrollTo(0, 0);
+      });
+      return;
+    }
     window.scrollTo(0, 0);
-  }, [pathname]);
+  }, [pathname, hash]);
   return null;
 }
 

@@ -2,6 +2,8 @@ import React from "react";
 import { PageHero } from "../components/PageHero.jsx";
 import { SectionHeading } from "../components/SectionHeading.jsx";
 import { StatsBar } from "../components/StatsBar.jsx";
+import { CTABanner } from "../components/CTABanner.jsx";
+import { Button } from "../components/Button.jsx";
 import { Footer } from "../components/Footer.jsx";
 import { PHOTOS, TEAM, VALUES } from "../data/content.js";
 
@@ -116,6 +118,12 @@ export default function About() {
           </div>
         </div>
       </section>
+
+      <CTABanner solid eyebrow="Ready When You Are" title="Let's Grow Something That Lasts">
+        <Button variant="primary" size="lg" to="/contact-us">
+          Get Started
+        </Button>
+      </CTABanner>
 
       <Footer />
     </div>

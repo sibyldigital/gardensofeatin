@@ -3,6 +3,8 @@ import { Link } from "react-router-dom";
 import { PageHero } from "../components/PageHero.jsx";
 import { Button } from "../components/Button.jsx";
 import { Timeline } from "../components/Timeline.jsx";
+import { InformationSection } from "../components/InformationSection.jsx";
+import { TestimonialSection } from "../components/TestimonialSection.jsx";
 import { CTABanner } from "../components/CTABanner.jsx";
 import { ServiceRadius } from "../components/ServiceRadius.jsx";
 import { Footer } from "../components/Footer.jsx";
@@ -38,7 +40,7 @@ export default function Process() {
         <section
           key={step.name}
           id={`step-${step.number}`}
-          className={`step-anchor ${i % 2 === 1 ? "section section--sunken" : "section"}`}
+          className={`step-anchor ${i % 2 === 0 ? "section section--deep" : "section"}`}
         >
           <div className="container grid-2" style={{ alignItems: "center" }}>
             <div style={{ order: i % 2 === 1 ? 2 : 1 }}>
@@ -67,6 +69,10 @@ export default function Process() {
           </div>
         </section>
       ))}
+
+      <InformationSection />
+
+      <TestimonialSection />
 
       <ServiceRadius />
 

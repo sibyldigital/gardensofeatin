@@ -6,11 +6,11 @@ import { Card } from "../components/Card.jsx";
 import { Button } from "../components/Button.jsx";
 import { CTABanner } from "../components/CTABanner.jsx";
 import { StatsBar } from "../components/StatsBar.jsx";
-import { InformationSection } from "../components/InformationSection.jsx";
+import { Timeline } from "../components/Timeline.jsx";
 import { TestimonialSection } from "../components/TestimonialSection.jsx";
 import { JournalSection } from "../components/JournalSection.jsx";
 import { Footer } from "../components/Footer.jsx";
-import { PHOTOS } from "../data/content.js";
+import { PHOTOS, STEPS } from "../data/content.js";
 
 /* Home — hero with two CTAs, "Beauty You Can Eat" three-card feature,
    "Service Packages" alternating pillar blocks, photo CTA, footer. */
@@ -46,14 +46,16 @@ const PILLARS = [
   {
     image: PHOTOS.carrots,
     eyebrow: "Enjoy The Harvest",
-    title: "A Landscape That Feeds You",
-    body: "With a consultation, we can help you create a multi-layered food forest that combines annual and perennial plants — beauty in every season, and a basket to carry in from it.",
+    title: "A Garden That Feeds You",
+    body: "With consultation, we can help you create a productive kitchen garden that combines herbs and vegetables to add color to your plate— beauty in every season, and a basket to carry in from it.",
+    button: { label: "See Kitchen Gardens", to: "/design-packages#kitchen-garden" },
   },
   {
     image: PHOTOS.orchard,
     eyebrow: "Build Resilience In Western NC",
     title: "Plant For The Decades",
-    body: "We can help you plant fruit trees along with edible nuts and berries on your land — an orchard that outlives trends and keeps producing for your grandchildren.",
+    body: "We can create a food forest on your landscape, planting fruit trees along with edible nuts and berries on your land — an orchard that outlives trends and keeps producing for your grandchildren.",
+    button: { label: "See Food Forests", to: "/design-packages#food-forest" },
     flip: true,
   },
   {
@@ -61,6 +63,7 @@ const PILLARS = [
     eyebrow: "Rooted In Beauty, Built For Business",
     title: "Grounds That Work As Hard As They Look Good",
     body: "We design full permaculture properties for estates, wedding venues, and breweries — landscapes that photograph beautifully and earn their keep.",
+    button: { label: "See Estate Planning", to: "/design-packages#estate-plan" },
   },
 ];
 
@@ -107,7 +110,7 @@ export default function Home() {
         <div className="container">
           <SectionHeading
             eyebrow="What We Offer"
-            title="Service Packages"
+            title="Permaculture Packages"
             lede="From a first kitchen garden to a full estate master plan, each package is built on the same pillars."
           />
         </div>
@@ -123,6 +126,13 @@ export default function Home() {
                   <p style={{ font: "var(--text-body-lg)", color: "var(--color-on-forest-soft)", maxWidth: "440px" }}>
                     {p.body}
                   </p>
+                  {p.button && (
+                    <div style={{ marginTop: "var(--space-md)" }}>
+                      <Button variant="secondary-on-dark" size="sm" to={p.button.to}>
+                        {p.button.label}
+                      </Button>
+                    </div>
+                  )}
                 </div>
                 <div className="split__image" style={{ backgroundImage: `url(${p.image})` }} />
               </>
@@ -137,6 +147,13 @@ export default function Home() {
                   <p style={{ font: "var(--text-body-lg)", color: "var(--color-on-forest-soft)", maxWidth: "440px" }}>
                     {p.body}
                   </p>
+                  {p.button && (
+                    <div style={{ marginTop: "var(--space-md)" }}>
+                      <Button variant="secondary-on-dark" size="sm" to={p.button.to}>
+                        {p.button.label}
+                      </Button>
+                    </div>
+                  )}
                 </div>
               </>
             )}
@@ -144,7 +161,11 @@ export default function Home() {
         ))}
       </section>
 
-      <InformationSection />
+      <Timeline
+        eyebrow="The Journey"
+        title="Four Steps, Start To Harvest"
+        steps={STEPS.map((s) => ({ number: s.number, name: s.name, description: s.short }))}
+      />
 
       <TestimonialSection />
 

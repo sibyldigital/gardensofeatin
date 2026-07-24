@@ -5,6 +5,8 @@ import { SectionHeading } from "../components/SectionHeading.jsx";
 import { Card } from "../components/Card.jsx";
 import { BeforeAfterSection } from "../components/BeforeAfterSection.jsx";
 import { StatsBar } from "../components/StatsBar.jsx";
+import { CTABanner } from "../components/CTABanner.jsx";
+import { Button } from "../components/Button.jsx";
 import { Footer } from "../components/Footer.jsx";
 import { PHOTOS, PROJECTS, PROJECT_CATEGORIES } from "../data/content.js";
 
@@ -64,6 +66,12 @@ export default function Portfolio() {
       <StatsBar />
 
       <BeforeAfterSection />
+
+      <CTABanner solid eyebrow="Ready When You Are" title="Tell Us About Your Land">
+        <Button variant="primary" size="lg" to="/questionnaire">
+          Get Started
+        </Button>
+      </CTABanner>
 
       <Footer />
     </div>
