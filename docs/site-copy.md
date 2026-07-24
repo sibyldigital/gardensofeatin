@@ -85,7 +85,7 @@ All user-facing copy pulled from the React build (`sibyldigital/gardensofeatin`)
 
 **Stats band** — see [Stats bar](#stats-bar-componentsstatsbarjsx).
 
-**Team (deep-forest section)**
+**Team** (full-bleed pillars, alternating dark / light — one member per row, Anna first)
 - Eyebrow: The People
 - Title: A Small Crew With Deep Roots
 - Members — see [Team — About page](#team--about-page-datacontentjs--team).

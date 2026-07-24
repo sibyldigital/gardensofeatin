@@ -19,8 +19,6 @@ const initials = (name) =>
     .slice(0, 2)
     .toUpperCase();
 
-const TILE_BG = ["var(--color-forest-mid)", "var(--color-gold)", "var(--color-forest-mid)"];
-
 export default function About() {
   return (
     <div>
@@ -67,48 +65,87 @@ export default function About() {
 
       <StatsBar />
 
-      <section className="section section--deep">
+      <section className="section">
         <div className="container">
           <SectionHeading eyebrow="The People" title="A Small Crew With Deep Roots" />
-          <div className="grid-3">
-            {TEAM.map((member, i) => {
-              const bg = TILE_BG[i % TILE_BG.length];
-              const onGold = bg === "var(--color-gold)";
-              return (
-                <div key={member.name}>
-                  <div
-                    className="monogram"
-                    style={{
-                      aspectRatio: "4 / 3",
-                      background: bg,
-                      color: onGold ? "var(--color-forest-deep)" : "var(--color-on-forest)",
-                    }}
-                  >
-                    {initials(member.name)}
-                  </div>
-                  <div style={{ paddingTop: "var(--space-sm)" }}>
-                    <p className="eyebrow" style={{ marginBottom: "6px" }}>{member.title}</p>
-                    <h3 className="display-md" style={{ fontSize: "20px", color: "var(--color-on-forest)", marginBottom: "var(--space-2xs)" }}>
-                      {member.name}
-                    </h3>
-                    {(Array.isArray(member.bio) ? member.bio : [member.bio]).map((para, j) => (
-                      <p
-                        key={j}
-                        style={{
-                          font: "var(--text-body-sm)",
-                          color: "var(--color-on-forest-soft)",
-                          marginBottom: "var(--space-2xs)",
-                        }}
-                      >
-                        {para}
-                      </p>
-                    ))}
-                  </div>
-                </div>
-              );
-            })}
-          </div>
         </div>
+        {TEAM.map((member, i) => {
+          const dark = i % 2 === 0; // Anna dark, Nick light, Eric dark
+          const flip = i % 2 === 1; // alternate the monogram side
+          const monogram = (
+            <div
+              className="split__image"
+              style={{
+                background: dark ? "var(--color-forest-deep)" : "var(--color-cream-dim)",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+              }}
+            >
+              <div
+                className="monogram"
+                style={{
+                  width: "min(240px, 62%)",
+                  aspectRatio: "4 / 3",
+                  background: dark ? "var(--color-gold)" : "var(--color-forest-deep)",
+                  color: dark ? "var(--color-forest-deep)" : "var(--color-on-forest)",
+                }}
+              >
+                {initials(member.name)}
+              </div>
+            </div>
+          );
+          const panel = (
+            <div
+              className="split__panel"
+              style={{
+                background: dark ? "var(--color-forest-deep)" : "var(--color-cream-dim)",
+                color: dark ? "var(--color-on-forest)" : "var(--text-body)",
+              }}
+            >
+              <p className="eyebrow" style={dark ? undefined : { color: "var(--color-gold)" }}>
+                {member.title}
+              </p>
+              <h3
+                className="display-md"
+                style={{
+                  color: dark ? "var(--color-on-forest)" : "var(--text-heading)",
+                  margin: "var(--space-2xs) 0 var(--space-sm)",
+                }}
+              >
+                {member.name}
+              </h3>
+              {(Array.isArray(member.bio) ? member.bio : [member.bio]).map((para, j) => (
+                <p
+                  key={j}
+                  style={{
+                    font: "var(--text-body-md)",
+                    color: dark ? "var(--color-on-forest-soft)" : "var(--text-muted)",
+                    maxWidth: "460px",
+                    marginBottom: "var(--space-sm)",
+                  }}
+                >
+                  {para}
+                </p>
+              ))}
+            </div>
+          );
+          return (
+            <div key={member.name} className={flip ? "split split--flip" : "split"}>
+              {flip ? (
+                <>
+                  {panel}
+                  {monogram}
+                </>
+              ) : (
+                <>
+                  {monogram}
+                  {panel}
+                </>
+              )}
+            </div>
+          );
+        })}
       </section>
 
       <section className="section">
