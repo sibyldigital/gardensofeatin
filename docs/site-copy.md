@@ -77,17 +77,22 @@ All user-facing copy pulled from the React build (`sibyldigital/gardensofeatin`)
 - Title: Grounded In The Land We Plant
 - Lede: An ecological landscaping company from Asheville, North Carolina — founded on the idea that beauty and harvest belong in the same garden.
 
+*(Section order: hero → stats → intro → pull-quote → team → how we work → approach text → CTA.)*
+
+**Stats band** — see [Stats bar](#stats-bar-componentsstatsbarjsx).
+
 **Intro (eyebrow + header + body)**
 - Eyebrow: A Living Landscape Is A Lifestyle
 - Title: Designed Around How You Live
 - Para 1: Every property is different, so every plan starts from scratch, tailored to your land and what you actually want to live in. Gardens of Eatin' designs native landscapes, edible gardens, food forests, and full permaculture property designs across Western North Carolina.
 - Para 2: Fruit trees, edible nuts and berries, kitchen gardens within reach of the back door: the plants themselves are part of how you live on the property.
 
-**Stats band** — see [Stats bar](#stats-bar-componentsstatsbarjsx).
+**Pull-quote** (centered italic serif, on sunken cream)
+> We plant for the long haul, for a legacy of nutrition and connection.
 
-**Team** (full-bleed **all-dark pillars**, one member per row, Anna first; the monogram tile side alternates left/right — matching the homepage packages section)
+**Team** (full-bleed **all-dark pillars**, one member per row, Anna first; monogram tile side alternates left/right — matching the homepage packages section. Heading now sits on the same dark background as the pillars.)
 - Eyebrow: The People
-- Title: A Small Crew With Deep Roots
+- Title: A Small Team With Deep Roots
 - Members — see [Team — About page](#team--about-page-datacontentjs--team).
 
 **Values**
@@ -95,11 +100,10 @@ All user-facing copy pulled from the React build (`sibyldigital/gardensofeatin`)
 - Title: What We Hold To
 - Items — see [Values](#values-datacontentjs--values).
 
-**Intro text (paragraph 2)** (on sunken cream)
-> We read the water, sun, and soil first, because the land tells you what it wants to be before you ever pick up a shovel. That's how we build landscapes that support biodiversity, strengthen soil health, and hold together as resilient ecosystems. Done right, a garden enriches everyone who spends time in it.
-
-**Closing pull-quote** (centered italic serif)
-> We plant for the long haul, for a legacy of nutrition and connection.
+**Approach (eyebrow + header + body)** (on sunken cream)
+- Eyebrow: Our Approach
+- Title: We Design With The Land
+- Body: We read the water, sun, and soil first, because the land tells you what it wants to be before you ever pick up a shovel. That's how we build landscapes that support biodiversity, strengthen soil health, and hold together as resilient ecosystems. Done right, a garden enriches everyone who spends time in it.
 
 **Closing CTA** (solid deep-forest background)
 - Eyebrow: Ready When You Are
