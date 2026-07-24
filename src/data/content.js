@@ -477,21 +477,30 @@ export const PROJECT_CATEGORIES = ["All", "Residential", "Venue", "Brewery/Comme
 export const TEAM = [
   {
     name: "Anna Timmerman",
-    title: "Founder & Lead Designer",
+    title: "Owner / Chief Shoveler",
     image: PHOTOS.coleus,
-    bio: "Anna founded Gardens of Eatin' to prove that a landscape can be beautiful and feed the people who live in it. She has designed edible landscapes across Western North Carolina for more than a decade.",
+    bio: [
+      "A certified permaculture designer, ecological landscaper, and former organic farm manager, Anna has always been rooted in working with the earth — blending regeneration and beauty as one.",
+      "Passionate about local food and resilient communities, she saw a divide between sustainability and ornamental landscaping and made it her mission to bridge that gap through permaculture principles and ecological design. Through Gardens of Eatin', she uses nature as a canvas to create spaces that inspire awe while remaining practical and regenerative — proud to serve her hometown of Asheville, NC.",
+    ],
   },
   {
-    name: "Marcus Lee",
-    title: "Installation Lead",
+    name: "Nick Jennison",
+    title: "Permaculture Designer",
     image: PHOTOS.orchard,
-    bio: "Marcus turns master plans into living systems — from earthworks and stone to the last layer of mulch. He has planted over two thousand fruit and nut trees in the region.",
+    bio: [
+      "Nick is an Asheville-based permaculture designer, consultant, and educator with over a decade of experience. Certified by Geoff Lawton in 2017 through Discover Permaculture, he advanced from student to Director of Education, and now manages Geoff's online courses and supports thousands of students worldwide.",
+      "He founded Tierra Permaculture in 2019 after working rainforest land in Puerto Rico and managing ecological systems on a 21-acre organic farm near Seattle. Since moving to Asheville in 2023, he has partnered with Gardens of Eatin' on holistic designs for properties from quarter-acre homesteads to 50+ acre sites. Above all, Nick is a husband and father who values balancing meaningful work with family life.",
+    ],
   },
   {
-    name: "Sofia Ramirez",
-    title: "Ecological Horticulturist",
+    name: "Eric Hall-Floden",
+    title: "Project Manager",
     image: PHOTOS.coneflowers,
-    bio: "Sofia leads maintenance and harvest management. Her seasonal care plans keep client gardens productive without synthetic inputs of any kind.",
+    bio: [
+      "Eric is a professional installer and project manager specializing in permaculture-based landscapes. With horticultural degrees in Fruit and Vegetable Production and Landscape Design, he discovered his passion for edible and ecological design early on.",
+      "His experience spans greenhouses, native plant nurseries, organic farms, and large-scale landscaping firms — including project management for one of British Columbia's largest companies. For the past three years he has been a key part of Gardens of Eatin', bringing comprehensive permaculture designs to life and making sustainable landscaping practical, accessible, and rooted in strong ecological principles.",
+    ],
   },
 ];
 

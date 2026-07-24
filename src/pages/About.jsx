@@ -91,9 +91,18 @@ export default function About() {
                     <h3 className="display-md" style={{ fontSize: "20px", color: "var(--color-on-forest)", marginBottom: "var(--space-2xs)" }}>
                       {member.name}
                     </h3>
-                    <p style={{ font: "var(--text-body-sm)", color: "var(--color-on-forest-soft)" }}>
-                      {member.bio}
-                    </p>
+                    {(Array.isArray(member.bio) ? member.bio : [member.bio]).map((para, j) => (
+                      <p
+                        key={j}
+                        style={{
+                          font: "var(--text-body-sm)",
+                          color: "var(--color-on-forest-soft)",
+                          marginBottom: "var(--space-2xs)",
+                        }}
+                      >
+                        {para}
+                      </p>
+                    ))}
                   </div>
                 </div>
               );
