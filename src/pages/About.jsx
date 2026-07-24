@@ -2,7 +2,6 @@ import React from "react";
 import { PageHero } from "../components/PageHero.jsx";
 import { SectionHeading } from "../components/SectionHeading.jsx";
 import { StatsBar } from "../components/StatsBar.jsx";
-import { Callout } from "../components/Callout.jsx";
 import { CTABanner } from "../components/CTABanner.jsx";
 import { Button } from "../components/Button.jsx";
 import { Footer } from "../components/Footer.jsx";
@@ -30,26 +29,27 @@ export default function About() {
         lede="An ecological landscaping company from Asheville, North Carolina — founded on the idea that beauty and harvest belong in the same garden."
       />
 
-      {/* Intro — paragraph 1 */}
+      {/* Intro — eyebrow + header, then the combined body copy */}
       <section className="section">
         <div className="container" style={{ maxWidth: "820px" }}>
-          <p className="body-justified" style={{ font: "var(--text-body-lg)" }}>
+          <SectionHeading
+            eyebrow="A Living Landscape Is A Lifestyle"
+            title="Designed Around How You Live"
+          />
+          <p
+            className="body-justified"
+            style={{ font: "var(--text-body-lg)", marginBottom: "var(--space-md)" }}
+          >
             Every property is different, so every plan starts from scratch,
             tailored to your land and what you actually want to live in. Gardens
             of Eatin' designs native landscapes, edible gardens, food forests,
             and full permaculture property designs across Western North Carolina.
           </p>
-        </div>
-      </section>
-
-      {/* Callout — a living landscape is a lifestyle */}
-      <section className="section section--sunken">
-        <div className="container" style={{ maxWidth: "760px" }}>
-          <Callout label="A Living Landscape Is A Lifestyle">
+          <p className="body-justified" style={{ font: "var(--text-body-lg)" }}>
             Fruit trees, edible nuts and berries, kitchen gardens within reach of
             the back door: the plants themselves are part of how you live on the
             property.
-          </Callout>
+          </p>
         </div>
       </section>
 

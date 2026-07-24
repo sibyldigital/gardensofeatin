@@ -77,12 +77,11 @@ All user-facing copy pulled from the React build (`sibyldigital/gardensofeatin`)
 - Title: Grounded In The Land We Plant
 - Lede: An ecological landscaping company from Asheville, North Carolina — founded on the idea that beauty and harvest belong in the same garden.
 
-**Intro text (paragraph 1)**
-> Every property is different, so every plan starts from scratch, tailored to your land and what you actually want to live in. Gardens of Eatin' designs native landscapes, edible gardens, food forests, and full permaculture property designs across Western North Carolina.
-
-**Callout** (gold-ruled, on sunken cream)
-- Label: A Living Landscape Is A Lifestyle
-- Body: Fruit trees, edible nuts and berries, kitchen gardens within reach of the back door: the plants themselves are part of how you live on the property.
+**Intro (eyebrow + header + body)**
+- Eyebrow: A Living Landscape Is A Lifestyle
+- Title: Designed Around How You Live
+- Para 1: Every property is different, so every plan starts from scratch, tailored to your land and what you actually want to live in. Gardens of Eatin' designs native landscapes, edible gardens, food forests, and full permaculture property designs across Western North Carolina.
+- Para 2: Fruit trees, edible nuts and berries, kitchen gardens within reach of the back door: the plants themselves are part of how you live on the property.
 
 **Stats band** — see [Stats bar](#stats-bar-componentsstatsbarjsx).
 
