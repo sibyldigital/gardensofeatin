@@ -77,11 +77,12 @@ All user-facing copy pulled from the React build (`sibyldigital/gardensofeatin`)
 - Title: Grounded In The Land We Plant
 - Lede: An ecological landscaping company from Asheville, North Carolina — founded on the idea that beauty and harvest belong in the same garden.
 
-**Philosophy (two-column)**
-- Eyebrow: Our Philosophy
-- Title: Simple, Clean Design That *Feeds People*
-- Para 1: Founded by Anna Timmerman, Gardens of Eatin' designs and installs edible landscapes, food forests, and full permaculture property designs for residential and commercial clients across Western North Carolina.
-- Para 2: We work at the intersection of luxury lifestyle and values-led living. Our clients want an outdoor space that photographs beautifully — and we believe that same space should carry fruit trees, edible nuts and berries, and a kitchen garden that earns its ground. We read the water, sun, and soil first, and we plant for decades, not seasons.
+**Intro text (paragraph 1)**
+> Every property is different, so every plan starts from scratch, tailored to your land and what you actually want to live in. Gardens of Eatin' designs native landscapes, edible gardens, food forests, and full permaculture property designs across Western North Carolina.
+
+**Callout** (gold-ruled, on sunken cream)
+- Label: A Living Landscape Is A Lifestyle
+- Body: Fruit trees, edible nuts and berries, kitchen gardens within reach of the back door: the plants themselves are part of how you live on the property.
 
 **Stats band** — see [Stats bar](#stats-bar-componentsstatsbarjsx).
 
@@ -94,6 +95,12 @@ All user-facing copy pulled from the React build (`sibyldigital/gardensofeatin`)
 - Eyebrow: How We Work
 - Title: What We Hold To
 - Items — see [Values](#values-datacontentjs--values).
+
+**Intro text (paragraph 2)** (on sunken cream)
+> We read the water, sun, and soil first, because the land tells you what it wants to be before you ever pick up a shovel. That's how we build landscapes that support biodiversity, strengthen soil health, and hold together as resilient ecosystems. Done right, a garden enriches everyone who spends time in it.
+
+**Closing pull-quote** (centered italic serif)
+> We plant for the long haul, for a legacy of nutrition and connection.
 
 **Closing CTA** (solid deep-forest background)
 - Eyebrow: Ready When You Are

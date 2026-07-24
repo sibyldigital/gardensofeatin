@@ -2,14 +2,15 @@ import React from "react";
 import { PageHero } from "../components/PageHero.jsx";
 import { SectionHeading } from "../components/SectionHeading.jsx";
 import { StatsBar } from "../components/StatsBar.jsx";
+import { Callout } from "../components/Callout.jsx";
 import { CTABanner } from "../components/CTABanner.jsx";
 import { Button } from "../components/Button.jsx";
 import { Footer } from "../components/Footer.jsx";
 import { PHOTOS, TEAM, VALUES } from "../data/content.js";
 
-/* About — warm editorial hero, two-column philosophy statement (text left,
-   portrait right), team section (monogram tiles per the updated design —
-   no invented headshots), values list. */
+/* About — editorial hero, an intro text block + a "living landscape"
+   callout, the team pillars, the "how we work" values, a second text block
+   + a closing pull-quote, and a CTA. */
 
 const initials = (name) =>
   name
@@ -29,37 +30,26 @@ export default function About() {
         lede="An ecological landscaping company from Asheville, North Carolina — founded on the idea that beauty and harvest belong in the same garden."
       />
 
+      {/* Intro — paragraph 1 */}
       <section className="section">
-        <div className="container grid-2" style={{ alignItems: "center" }}>
-          <div>
-            <SectionHeading
-              eyebrow="Our Philosophy"
-              title="Simple, Clean Design That"
-              italic="Feeds People"
-            />
-            <p className="body-justified" style={{ maxWidth: "540px", marginBottom: "var(--space-md)" }}>
-              Founded by Anna Timmerman, Gardens of Eatin' designs and installs
-              edible landscapes, food forests, and full permaculture property
-              designs for residential and commercial clients across Western
-              North Carolina.
-            </p>
-            <p className="body-justified" style={{ maxWidth: "540px" }}>
-              We work at the intersection of luxury lifestyle and values-led
-              living. Our clients want an outdoor space that photographs
-              beautifully — and we believe that same space should carry fruit
-              trees, edible nuts and berries, and a kitchen garden that earns
-              its ground. We read the water, sun, and soil first, and we plant
-              for decades, not seasons.
-            </p>
-          </div>
-          <div
-            style={{
-              backgroundImage: `url(${PHOTOS.coleus})`,
-              backgroundSize: "cover",
-              backgroundPosition: "center",
-              aspectRatio: "4 / 5",
-            }}
-          />
+        <div className="container" style={{ maxWidth: "820px" }}>
+          <p className="body-justified" style={{ font: "var(--text-body-lg)" }}>
+            Every property is different, so every plan starts from scratch,
+            tailored to your land and what you actually want to live in. Gardens
+            of Eatin' designs native landscapes, edible gardens, food forests,
+            and full permaculture property designs across Western North Carolina.
+          </p>
+        </div>
+      </section>
+
+      {/* Callout — a living landscape is a lifestyle */}
+      <section className="section section--sunken">
+        <div className="container" style={{ maxWidth: "760px" }}>
+          <Callout label="A Living Landscape Is A Lifestyle">
+            Fruit trees, edible nuts and berries, kitchen gardens within reach of
+            the back door: the plants themselves are part of how you live on the
+            property.
+          </Callout>
         </div>
       </section>
 
@@ -152,6 +142,34 @@ export default function About() {
               </div>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* Intro — paragraph 2 */}
+      <section className="section section--sunken">
+        <div className="container" style={{ maxWidth: "820px" }}>
+          <p className="body-justified" style={{ font: "var(--text-body-lg)" }}>
+            We read the water, sun, and soil first, because the land tells you
+            what it wants to be before you ever pick up a shovel. That's how we
+            build landscapes that support biodiversity, strengthen soil health,
+            and hold together as resilient ecosystems. Done right, a garden
+            enriches everyone who spends time in it.
+          </p>
+        </div>
+      </section>
+
+      {/* Closing pull-quote */}
+      <section className="section" style={{ textAlign: "center" }}>
+        <div className="container" style={{ maxWidth: "820px" }}>
+          <p
+            style={{
+              font: "var(--text-display-italic-lg)",
+              color: "var(--text-heading)",
+              margin: "0 auto",
+            }}
+          >
+            We plant for the long haul, for a legacy of nutrition and connection.
+          </p>
         </div>
       </section>
 
