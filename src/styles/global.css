@@ -680,8 +680,10 @@ select.input__field { appearance: none; }
   white-space: nowrap;
 }
 .link-underline:hover { color: var(--accent-cta); }
-.section--deep .link-underline { color: var(--color-on-forest); }
-.section--deep .link-underline:hover { color: var(--color-gold-bright); }
+.section--deep .link-underline,
+.split__panel .link-underline { color: var(--color-on-forest); }
+.section--deep .link-underline:hover,
+.split__panel .link-underline:hover { color: var(--color-gold-bright); }
 
 .post-date {
   font: var(--text-caption);

@@ -106,8 +106,14 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="section section--sunken">
-        <div className="container">
+      <section className="section--sunken">
+        <div
+          className="container"
+          style={{
+            paddingTop: "var(--space-2xl)",
+            paddingBottom: "calc(var(--space-2xl) - var(--space-lg))",
+          }}
+        >
           <SectionHeading
             eyebrow="What We Offer"
             title="Permaculture Packages"

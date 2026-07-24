@@ -36,39 +36,52 @@ export default function Process() {
         }))}
       />
 
-      {STEPS.map((step, i) => (
-        <section
-          key={step.name}
-          id={`step-${step.number}`}
-          className={`step-anchor ${i % 2 === 0 ? "section section--deep" : "section"}`}
-        >
-          <div className="container grid-2" style={{ alignItems: "center" }}>
-            <div style={{ order: i % 2 === 1 ? 2 : 1 }}>
-              <p className="eyebrow">{`Step ${step.number}`}</p>
-              <h2 className="display-lg" style={{ marginBottom: "var(--space-sm)" }}>
-                {step.name}
-              </h2>
-              <p className="lede">{step.description}</p>
-              {i === 0 && (
-                <p style={{ marginTop: "var(--space-md)" }}>
-                  <Link to="/questionnaire" className="link-underline">
-                    Fill out our design questionnaire before your consultation ›
-                  </Link>
-                </p>
-              )}
-            </div>
-            <div
-              style={{
-                order: i % 2 === 1 ? 1 : 2,
-                backgroundImage: `url(${STEP_IMAGES[i]})`,
-                backgroundSize: "cover",
-                backgroundPosition: "center",
-                aspectRatio: "4 / 3",
-              }}
-            />
+      {/* All-dark step pillars; the image side alternates, matching the
+          homepage packages section. */}
+      {STEPS.map((step, i) => {
+        const flip = i % 2 === 1; // alternate the image side
+        const image = (
+          <div className="split__image" style={{ backgroundImage: `url(${STEP_IMAGES[i]})` }} />
+        );
+        const panel = (
+          <div className="split__panel" style={{ background: "var(--color-forest-deep)" }}>
+            <p className="eyebrow">{`Step ${step.number}`}</p>
+            <h2 className="display-lg" style={{ color: "var(--color-on-forest)", marginBottom: "var(--space-sm)" }}>
+              {step.name}
+            </h2>
+            <p className="lede" style={{ color: "var(--color-on-forest-soft)" }}>
+              {step.description}
+            </p>
+            {i === 0 && (
+              <p style={{ marginTop: "var(--space-md)" }}>
+                <Link to="/questionnaire" className="link-underline">
+                  Fill out our design questionnaire before your consultation ›
+                </Link>
+              </p>
+            )}
           </div>
-        </section>
-      ))}
+        );
+        return (
+          <div
+            key={step.name}
+            id={`step-${step.number}`}
+            className={`step-anchor ${flip ? "split split--flip" : "split"}`}
+            style={{ scrollMarginTop: "80px" }}
+          >
+            {flip ? (
+              <>
+                {panel}
+                {image}
+              </>
+            ) : (
+              <>
+                {image}
+                {panel}
+              </>
+            )}
+          </div>
+        );
+      })}
 
       <InformationSection />
 

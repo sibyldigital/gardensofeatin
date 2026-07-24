@@ -65,53 +65,43 @@ export default function About() {
 
       <StatsBar />
 
-      <section className="section">
-        <div className="container">
+      <section>
+        <div
+          className="container"
+          style={{
+            paddingTop: "var(--space-2xl)",
+            paddingBottom: "calc(var(--space-2xl) - var(--space-lg))",
+          }}
+        >
           <SectionHeading eyebrow="The People" title="A Small Crew With Deep Roots" />
         </div>
+        {/* All-dark pillars; the monogram side alternates, matching the
+            homepage packages section. */}
         {TEAM.map((member, i) => {
-          const dark = i % 2 === 0; // Anna dark, Nick light, Eric dark
           const flip = i % 2 === 1; // alternate the monogram side
+          const tileGold = i % 2 === 0; // gold, forest, gold
           const monogram = (
             <div
               className="split__image"
               style={{
-                background: dark ? "var(--color-forest-deep)" : "var(--color-cream-dim)",
+                background: tileGold ? "var(--color-gold)" : "var(--color-forest-mid)",
+                color: tileGold ? "var(--color-forest-deep)" : "var(--color-on-forest)",
                 display: "flex",
                 alignItems: "center",
                 justifyContent: "center",
+                font: "var(--text-display-xl)",
+                fontSize: "clamp(56px, 9vw, 104px)",
               }}
             >
-              <div
-                className="monogram"
-                style={{
-                  width: "min(240px, 62%)",
-                  aspectRatio: "4 / 3",
-                  background: dark ? "var(--color-gold)" : "var(--color-forest-deep)",
-                  color: dark ? "var(--color-forest-deep)" : "var(--color-on-forest)",
-                }}
-              >
-                {initials(member.name)}
-              </div>
+              {initials(member.name)}
             </div>
           );
           const panel = (
-            <div
-              className="split__panel"
-              style={{
-                background: dark ? "var(--color-forest-deep)" : "var(--color-cream-dim)",
-                color: dark ? "var(--color-on-forest)" : "var(--text-body)",
-              }}
-            >
-              <p className="eyebrow" style={dark ? undefined : { color: "var(--color-gold)" }}>
-                {member.title}
-              </p>
+            <div className="split__panel" style={{ background: "var(--color-forest-deep)" }}>
+              <p className="eyebrow">{member.title}</p>
               <h3
                 className="display-md"
-                style={{
-                  color: dark ? "var(--color-on-forest)" : "var(--text-heading)",
-                  margin: "var(--space-2xs) 0 var(--space-sm)",
-                }}
+                style={{ color: "var(--color-on-forest)", margin: "var(--space-2xs) 0 var(--space-sm)" }}
               >
                 {member.name}
               </h3>
@@ -120,7 +110,7 @@ export default function About() {
                   key={j}
                   style={{
                     font: "var(--text-body-md)",
-                    color: dark ? "var(--color-on-forest-soft)" : "var(--text-muted)",
+                    color: "var(--color-on-forest-soft)",
                     maxWidth: "460px",
                     marginBottom: "var(--space-sm)",
                   }}

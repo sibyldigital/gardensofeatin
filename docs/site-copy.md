@@ -85,7 +85,7 @@ All user-facing copy pulled from the React build (`sibyldigital/gardensofeatin`)
 
 **Stats band** — see [Stats bar](#stats-bar-componentsstatsbarjsx).
 
-**Team** (full-bleed pillars, alternating dark / light — one member per row, Anna first)
+**Team** (full-bleed **all-dark pillars**, one member per row, Anna first; the monogram tile side alternates left/right — matching the homepage packages section)
 - Eyebrow: The People
 - Title: A Small Crew With Deep Roots
 - Members — see [Team — About page](#team--about-page-datacontentjs--team).
@@ -114,7 +114,7 @@ All user-facing copy pulled from the React build (`sibyldigital/gardensofeatin`)
 - Title: Four Steps, Start To Harvest
 - Steps (number, name, short) — see [Process steps](#process-steps-datacontentjs--steps).
 
-**Four anchored step sections** — backgrounds alternate **dark / light / dark / light** (deep-forest → cream). Each uses `Step {number}`, the step name as heading, and the step's long `description` ([Process steps](#process-steps-datacontentjs--steps)). Step 01 adds the link:
+**Four anchored step sections** — full-bleed **all-dark pillars** (deep-forest), with the **photo side alternating** left/right (matching the homepage packages section). Each uses `Step {number}`, the step name as heading, and the step's long `description` ([Process steps](#process-steps-datacontentjs--steps)). Step 01 adds the link:
 > Fill out our design questionnaire before your consultation ›
 
 **Information strip** — see [Information facts](#information-facts-componentsinformationsectionjsx).
