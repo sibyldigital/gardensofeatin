@@ -5,9 +5,23 @@ import { SectionHeading } from "./SectionHeading.jsx";
 import { Card } from "./Card.jsx";
 import { Callout } from "./Callout.jsx";
 import { StatsBand } from "./StatsBand.jsx";
+import { MasonryGallery } from "./MasonryGallery.jsx";
 import { Button } from "./Button.jsx";
 import { Footer } from "./Footer.jsx";
-import { PROJECTS } from "../data/content.js";
+import { PROJECTS, PHOTOS } from "../data/content.js";
+
+/* Default gallery photography — swap-friendly placeholders standing in for
+   real project photos and design drawings. */
+const DEFAULT_GALLERY = [
+  PHOTOS.aerial,
+  PHOTOS.carrots,
+  PHOTOS.orchard,
+  PHOTOS.coneflowers,
+  PHOTOS.cabbage,
+  PHOTOS.harvest,
+  PHOTOS.coleus,
+  PHOTOS.hero,
+];
 
 /**
  * ServiceSubLayout — shared scaffold for the four service discipline pages:
@@ -34,6 +48,10 @@ export function ServiceSubLayout({
   highlightsEyebrow = "The Details",
   highlightsTitle = "Choices & Options",
   textSection,
+  gallery = DEFAULT_GALLERY,
+  galleryEyebrow = "Gallery",
+  galleryTitle = "From The Field",
+  showPackagesCta = true,
 }) {
   const projects = PROJECTS.filter((p) => portfolioCategories.includes(p.category)).slice(0, 3);
 
@@ -121,6 +139,11 @@ export function ServiceSubLayout({
         </section>
       )}
 
+      {/* Masonry gallery — project photography and design drawings */}
+      {gallery && gallery.length > 0 && (
+        <MasonryGallery eyebrow={galleryEyebrow} title={galleryTitle} images={gallery} />
+      )}
+
       {/* Related portfolio links */}
       {projects.length > 0 && (
         <section className="section">
@@ -162,17 +185,19 @@ export function ServiceSubLayout({
       )}
 
       {/* Bottom CTA → packages */}
-      <section className="section section--deep" style={{ textAlign: "center" }}>
-        <div className="container" style={{ maxWidth: "720px" }}>
-          <p className="eyebrow" style={{ textAlign: "center" }}>Ready To Start?</p>
-          <h2 className="display-lg" style={{ marginBottom: "var(--space-lg)" }}>
-            Find The Right Package
-          </h2>
-          <Button variant="primary" size="lg" to="/design-packages">
-            View Packages
-          </Button>
-        </div>
-      </section>
+      {showPackagesCta && (
+        <section className="section section--deep" style={{ textAlign: "center" }}>
+          <div className="container" style={{ maxWidth: "720px" }}>
+            <p className="eyebrow" style={{ textAlign: "center" }}>Ready To Start?</p>
+            <h2 className="display-lg" style={{ marginBottom: "var(--space-lg)" }}>
+              Find The Right Package
+            </h2>
+            <Button variant="primary" size="lg" to="/design-packages">
+              View Packages
+            </Button>
+          </div>
+        </section>
+      )}
 
       <Footer />
     </div>

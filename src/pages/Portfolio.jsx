@@ -26,6 +26,8 @@ export default function Portfolio() {
         lede="A body of edible landscapes across Western North Carolina — homes, venues, and breweries whose grounds now earn their keep."
       />
 
+      <StatsBar />
+
       <section className="section">
         <div className="container">
           <SectionHeading eyebrow="Selected Projects" title="Browse By Setting" />
@@ -62,8 +64,6 @@ export default function Portfolio() {
           </div>
         </div>
       </section>
-
-      <StatsBar />
 
       <BeforeAfterSection />
 

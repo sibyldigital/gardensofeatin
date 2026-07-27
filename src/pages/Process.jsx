@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { PageHero } from "../components/PageHero.jsx";
 import { Button } from "../components/Button.jsx";
 import { Timeline } from "../components/Timeline.jsx";
+import { StatsBar } from "../components/StatsBar.jsx";
 import { InformationSection } from "../components/InformationSection.jsx";
 import { TestimonialSection } from "../components/TestimonialSection.jsx";
 import { CTABanner } from "../components/CTABanner.jsx";
@@ -24,6 +25,8 @@ export default function Process() {
         title="From First Walk To First Harvest"
         lede="Four steps carry every project — a consultation on your land, a custom design, a careful installation, and the ecological care that keeps it producing."
       />
+
+      <StatsBar />
 
       <Timeline
         eyebrow="The Journey"

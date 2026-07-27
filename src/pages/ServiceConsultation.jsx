@@ -52,7 +52,10 @@ export default function ServiceConsultation() {
       ]}
       portfolioCategories={["Residential"]}
       portfolioTitle="Residential Work"
+      galleryEyebrow="The Plans"
+      galleryTitle="Design Blueprints"
       questionnaireCallout
+      showPackagesCta={false}
     />
   );
 }

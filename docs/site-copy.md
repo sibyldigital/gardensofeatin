@@ -6,6 +6,8 @@ All user-facing copy pulled from the React build (`sibyldigital/gardensofeatin`)
 
 ---
 
+> Layout note: the whole site sits in a centered **frame** (`.site-frame`, max-width 1280px) with a hairline "edge guide" down each side on wide desktops, so content stays centered instead of stretching full-width. Every page also leads **hero → stats band → …**.
+
 ## Site chrome
 
 ### Nav header (`components/NavHeader.jsx`)
@@ -63,10 +65,17 @@ All user-facing copy pulled from the React build (`sibyldigital/gardensofeatin`)
    *Button:* See Estate Planning → /design-packages#estate-plan
 
 **Timeline** (eyebrow "The Journey", title "Four Steps, Start To Harvest") — the four process steps; replaces the former information strip in this slot.
+
+**Founder plug** (dark section, gold "AT" monogram)
+- Eyebrow: Meet The Founder
+- Title: Anna Timmerman
+- Body: A certified permaculture designer, ecological landscaper, and former organic farm manager, Anna founded Gardens of Eatin' to close the gap between sustainability and beauty — using nature as a canvas for spaces that inspire while they feed.
+- Button: Meet The Team → /about-us
+
 **Testimonials** — see [Testimonials (Home & Packages)](#testimonials-home--packages-componentstestimonialsectionjsx).
 **Journal preview** — see [Journal preview](#journal-preview-componentsjournalsectionjsx).
 
-**Closing CTA:** photo banner, single button — Get A Quote.
+**Closing CTA:** photo banner — eyebrow "Ready When You Are" · title "Let's Design Your Land's Next Chapter" · button "Get A Quote".
 
 ---
 
@@ -146,6 +155,10 @@ All user-facing copy pulled from the React build (`sibyldigital/gardensofeatin`)
 - Title: Everything A Landscape Can Give
 - Lede: Beauty you can eat — seven ways we design, build, and care for landscapes that feed the people who live in them.
 
+*(Section order: hero → stats → philosophy → disciplines → individual services → what we build → packages CTA.)*
+
+**Stats band** — see [Stats bar](#stats-bar-componentsstatsbarjsx).
+
 **Philosophy**
 - Eyebrow: What We Practice
 - Title: Ecological Landscaping
@@ -157,27 +170,28 @@ All user-facing copy pulled from the React build (`sibyldigital/gardensofeatin`)
 - Title: Three Ways To Work With Us
 - Cards (card eyebrow "Discipline") — see [Ways to work](#ways-to-work-datacontentjs--ways_to_work).
 
-**Mid-page packages callout**
-- Eyebrow: Ready To Start?
-- Title: See Our Packages
-- Button: View Packages
-
-**Capability grid ("what we build")**
-- Eyebrow: What We Build
-- Title: From First Bed To Full Forest
-- Cards (card eyebrow "System") — see [Systems / what we build](#systems--what-we-build-datacontentjs--services).
-
-**A la carte**
+**A la carte** (Individual Services)
 - Eyebrow: A La Carte & Ongoing
 - Title: Individual Services
 - Lede: Individual offerings available to existing clients, or to anyone with a specific need outside of a full package.
 - Items — see [A la carte](#a-la-carte-datacontentjs--alacarte).
 
+**Capability grid ("what we build")** — each card links (to its discipline page, or to /design-packages)
+- Eyebrow: What We Build
+- Title: From First Bed To Full Forest
+- Lede: These are the skills and systems that make up every Gardens of Eatin' package — the building blocks of the work. Click any to learn more about how it fits your land.
+- Cards (card eyebrow "System") — see [Systems / what we build](#systems--what-we-build-datacontentjs--services).
+
+**Bottom CTA** (packages)
+- Eyebrow: Ready To Start?
+- Title: See Our Packages
+- Button: View Packages
+
 ---
 
 ## Service sub-pages (shared `components/ServiceSubLayout.jsx`)
 
-Every discipline page shares one layout: **hero** (eyebrow "Service", title, subhead) → **stats band** → **intro** (subhead/head + body) → optional page-specific block → **What's Included** list (rendered on a **dark deep-forest background**, all pages) → **highlights** ("the approach") → **text-content section** → **related portfolio** → optional questionnaire CTA → **bottom CTA** (eyebrow "Ready To Start?", title "Find The Right Package", button "View Packages").
+Every discipline page shares one layout: **hero** (eyebrow "Service", title, subhead) → **stats band** → **intro** (subhead/head + body) → optional page-specific block → **What's Included** list (rendered on a **dark deep-forest background**, all pages) → **highlights** ("the approach") → **text-content section** → **masonry gallery** (zero-bleed; default eyebrow "Gallery" / title "From The Field") → **related portfolio** → optional questionnaire CTA → **bottom CTA** (eyebrow "Ready To Start?", title "Find The Right Package", button "View Packages"; can be hidden per page).
 
 ### Consultation (`pages/ServiceConsultation.jsx`) — `/services/consultation`
 - Hero title: Consultation · Subhead: Where vision meets possibility.
@@ -190,7 +204,8 @@ Every discipline page shares one layout: **hero** (eyebrow "Service", title, sub
   - Goals First — We start with how you want to live on the land, not a template — the plan follows your priorities.
   - An Honest Read — You leave with a clear, honest picture of what your site can do before any design work begins.
 - Text section: **Why It Matters** → **The Site Tells Us What To Plant** — Most design mistakes are really listening mistakes — a plan drawn before anyone read the water, the wind, or the way the afternoon sun bakes one corner. The consultation is where we slow down and let the property speak first: where it drains, where it holds frost, what already grows well and what struggles. Everything we recommend afterward is built on what we learned standing on your ground, not on a template.
-- Related portfolio: Residential Work · Questionnaire callout: on
+- Gallery: eyebrow "The Plans" / title "Design Blueprints"
+- Related portfolio: Residential Work · Questionnaire callout: on (this page shows **only** the questionnaire CTA — the packages CTA is hidden)
 
 ### Permaculture Consultation (`pages/ServicePermaculture.jsx`) — `/permaculture-consultation`
 - Hero title: Permaculture Consultation · Subhead: Design that works with your land, not against it.
@@ -211,7 +226,7 @@ Every discipline page shares one layout: **hero** (eyebrow "Service", title, sub
 - Hero title: Design · Subhead: A custom plan, drawn to build.
 - Intro header: **The Plan** → **From First Walk To Living Document**
 - Intro: Following our time on site, your designer builds a set of objectives, an estimate, and a timeline for your first design draft. That draft becomes a living document, not a fixed one. It evolves as your goals shift, the way any good plan should. We design with the full dream in view while staying flexible enough to phase the work around your budget. Every meeting after that is where the plan gets sharper, until it feels like it actually belongs to your land.
-- Payment (Callout, after the stages): **Design Agreement & Deposit** — A deposit of half the design estimate is due with your Design Agreement, with the remaining balance due upon completion of your final design.
+- *(Deposit terms live on the [Policies](#policies--terms-pagespoliciesjsx--policies) page, not here.)*
 - Stats: 4 / Design Phases · 1:1 / Collaborative Process · Custom / Plant Palette · WNC / Site-Matched Design
 - What's Included: Rough draft block design · Refined design with pathways, hardscaping, and water retention · Final planting plan with full plant palette · Earthmoving plans if applicable · Installation-ready documentation
 - Highlights (The Details / Choices & Options):

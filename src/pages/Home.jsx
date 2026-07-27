@@ -173,11 +173,47 @@ export default function Home() {
         steps={STEPS.map((s) => ({ number: s.number, name: s.name, description: s.short }))}
       />
 
+      {/* Short founder plug → About / team */}
+      <section className="section section--deep">
+        <div className="container grid-2" style={{ alignItems: "center", gap: "var(--space-xl)" }}>
+          <div
+            className="monogram"
+            style={{
+              aspectRatio: "4 / 3",
+              background: "var(--color-gold)",
+              color: "var(--color-forest-deep)",
+              fontSize: "clamp(56px, 8vw, 96px)",
+            }}
+          >
+            AT
+          </div>
+          <div>
+            <p className="eyebrow">Meet The Founder</p>
+            <h2 className="display-lg" style={{ color: "var(--color-on-forest)", marginBottom: "var(--space-sm)" }}>
+              Anna Timmerman
+            </h2>
+            <p className="lede" style={{ color: "var(--color-on-forest-soft)", marginBottom: "var(--space-lg)" }}>
+              A certified permaculture designer, ecological landscaper, and former
+              organic farm manager, Anna founded Gardens of Eatin' to close the gap
+              between sustainability and beauty — using nature as a canvas for
+              spaces that inspire while they feed.
+            </p>
+            <Button variant="secondary-on-dark" to="/about-us">
+              Meet The Team
+            </Button>
+          </div>
+        </div>
+      </section>
+
       <TestimonialSection />
 
       <JournalSection />
 
-      <CTABanner image={PHOTOS.aerial}>
+      <CTABanner
+        image={PHOTOS.aerial}
+        eyebrow="Ready When You Are"
+        title="Let's Design Your Land's Next Chapter"
+      >
         <Button variant="primary" size="lg" to="/contact-us">
           Get A Quote
         </Button>

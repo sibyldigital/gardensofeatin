@@ -1,7 +1,6 @@
 import React from "react";
 import { ServiceSubLayout } from "../components/ServiceSubLayout.jsx";
 import { SectionHeading } from "../components/SectionHeading.jsx";
-import { Callout } from "../components/Callout.jsx";
 import { PHOTOS } from "../data/content.js";
 
 /* Design (/services/design). The custom permaculture plan developed from the
@@ -147,13 +146,6 @@ export default function ServiceDesign() {
             </div>
           );
         })}
-        <div className="container" style={{ maxWidth: "760px", marginTop: "var(--space-xl)" }}>
-          <Callout label="Design Agreement & Deposit">
-            A deposit of half the design estimate is due with your Design
-            Agreement, with the remaining balance due upon completion of your
-            final design.
-          </Callout>
-        </div>
       </section>
     </ServiceSubLayout>
   );

@@ -41,7 +41,7 @@ function ScrollToTop() {
 
 export default function App() {
   return (
-    <>
+    <div className="site-frame">
       <ScrollToTop />
       <Routes>
         <Route path="/" element={<Home />} />
@@ -84,6 +84,6 @@ export default function App() {
         <Route path="/portfolio-landing" element={<PortfolioLanding />} />
         <Route path="/policies" element={<Policies />} />
       </Routes>
-    </>
+    </div>
   );
 }

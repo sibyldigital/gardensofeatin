@@ -29,6 +29,8 @@ export default function PortfolioLanding() {
         lede="Edible gardens, food forests, and full permaculture properties across Western North Carolina."
       />
 
+      <StatsBar />
+
       <section className="section">
         <div className="container grid-2" style={{ alignItems: "center" }}>
           <div>
@@ -109,8 +111,6 @@ export default function PortfolioLanding() {
           </div>
         </div>
       </section>
-
-      <StatsBar />
 
       <TeamSection eyebrow="The Team" title="Who Does The Work" />
 

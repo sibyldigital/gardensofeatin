@@ -4,6 +4,7 @@ import { PageHero } from "../components/PageHero.jsx";
 import { SectionHeading } from "../components/SectionHeading.jsx";
 import { Card } from "../components/Card.jsx";
 import { Button } from "../components/Button.jsx";
+import { StatsBar } from "../components/StatsBar.jsx";
 import { Footer } from "../components/Footer.jsx";
 import { PHOTOS, SERVICES, WAYS_TO_WORK, ALACARTE } from "../data/content.js";
 
@@ -21,6 +22,8 @@ export default function Services() {
         title="Everything A Landscape Can Give"
         lede="Beauty you can eat — seven ways we design, build, and care for landscapes that feed the people who live in them."
       />
+
+      <StatsBar />
 
       {/* Philosophy / what ecological landscaping means at GOE */}
       <section className="section">
@@ -54,49 +57,6 @@ export default function Services() {
         </div>
       </section>
 
-      {/* Mid-page packages callout */}
-      <section className="section section--deep" style={{ textAlign: "center" }}>
-        <div className="container" style={{ maxWidth: "720px" }}>
-          <p className="eyebrow" style={{ textAlign: "center" }}>Ready To Start?</p>
-          <h2 className="display-lg" style={{ marginBottom: "var(--space-lg)" }}>
-            See Our Packages
-          </h2>
-          <Button variant="primary" size="lg" to="/design-packages">
-            View Packages
-          </Button>
-        </div>
-      </section>
-
-      {/* Educational capability grid — the seven systems we build */}
-      <section className="section">
-        <div className="container">
-          <SectionHeading
-            eyebrow="What We Build"
-            title="From First Bed To Full Forest"
-          />
-          <div className="grid-3">
-            {SERVICES.map((s) => {
-              const card = (
-                <Card
-                  image={s.image}
-                  eyebrow="System"
-                  title={s.name}
-                  description={s.description}
-                  aspect="4 / 3"
-                />
-              );
-              return s.to ? (
-                <Link key={s.name} to={s.to} style={{ display: "block" }}>
-                  {card}
-                </Link>
-              ) : (
-                <React.Fragment key={s.name}>{card}</React.Fragment>
-              );
-            })}
-          </div>
-        </div>
-      </section>
-
       {/* A la carte and ongoing services */}
       <section className="section section--sunken">
         <div className="container" style={{ maxWidth: "820px" }}>
@@ -113,6 +73,43 @@ export default function Services() {
               </li>
             ))}
           </ul>
+        </div>
+      </section>
+
+      {/* Educational capability grid — the systems that make up the packages */}
+      <section className="section">
+        <div className="container">
+          <SectionHeading
+            eyebrow="What We Build"
+            title="From First Bed To Full Forest"
+            lede="These are the skills and systems that make up every Gardens of Eatin' package — the building blocks of the work. Click any to learn more about how it fits your land."
+          />
+          <div className="grid-3">
+            {SERVICES.map((s) => (
+              <Link key={s.name} to={s.to || "/design-packages"} style={{ display: "block" }}>
+                <Card
+                  image={s.image}
+                  eyebrow="System"
+                  title={s.name}
+                  description={s.description}
+                  aspect="4 / 3"
+                />
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Bottom CTA → packages */}
+      <section className="section section--deep" style={{ textAlign: "center" }}>
+        <div className="container" style={{ maxWidth: "720px" }}>
+          <p className="eyebrow" style={{ textAlign: "center" }}>Ready To Start?</p>
+          <h2 className="display-lg" style={{ marginBottom: "var(--space-lg)" }}>
+            See Our Packages
+          </h2>
+          <Button variant="primary" size="lg" to="/design-packages">
+            View Packages
+          </Button>
         </div>
       </section>
 
