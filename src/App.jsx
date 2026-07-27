@@ -20,6 +20,7 @@ import Contact from "./pages/Contact.jsx";
 import Questionnaire from "./pages/Questionnaire.jsx";
 import Landing from "./pages/Landing.jsx";
 import PortfolioLanding from "./pages/PortfolioLanding.jsx";
+import Policies from "./pages/Policies.jsx";
 
 function ScrollToTop() {
   const { pathname, hash } = useLocation();
@@ -81,6 +82,7 @@ export default function App() {
         <Route path="/questionnaire" element={<Questionnaire />} />
         <Route path="/landing" element={<Landing />} />
         <Route path="/portfolio-landing" element={<PortfolioLanding />} />
+        <Route path="/policies" element={<Policies />} />
       </Routes>
     </>
   );

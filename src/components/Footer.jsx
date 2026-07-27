@@ -48,6 +48,9 @@ export function Footer({ phone = "(828) 555-0134" }) {
       <div className="footer__bottom">
         <span>{phone}</span>
         <span style={{ display: "flex", gap: "var(--space-md)", alignItems: "center" }}>
+          <Link className="footer__link" to="/policies">
+            Policies
+          </Link>
           <a className="footer__link" href={asset("site-reference/")}>
             Developer Reference
           </a>

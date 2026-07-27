@@ -1,6 +1,7 @@
 import React from "react";
 import { ServiceSubLayout } from "../components/ServiceSubLayout.jsx";
 import { SectionHeading } from "../components/SectionHeading.jsx";
+import { Callout } from "../components/Callout.jsx";
 import { PHOTOS } from "../data/content.js";
 
 /* Design (/services/design). The custom permaculture plan developed from the
@@ -13,28 +14,28 @@ const DESIGN_STAGES = [
   {
     n: "01",
     name: "Rough Draft",
-    copy: "Block designing to orient elements to the landscape. Macro level design to have a base to move forward on.",
+    copy: "Block design first. We orient the big elements to the land, so there's a real foundation to build on instead of guesswork.",
     // media: Downing-Design-Draft-1.1-FullSite
     image: PHOTOS.aerial,
   },
   {
     n: "02",
     name: "Design 2",
-    copy: "This second design manages organic elements like pathways, hardscaping, water retention and canopy trees.",
+    copy: "This is where pathways, hardscaping, water retention, and canopy trees come into focus. We meet after every draft to fine-tune the vision, and it gets more precise each round.",
     // media: Downing-Design-Draft-2.3-EdgingReference
     image: PHOTOS.cabbage,
   },
   {
     n: "03",
     name: "Final Draft",
-    copy: "This final draft will position perennials and a planting plan for all the elements as well as earthmoving plans if necessary. A full plant palette and design will be complete and ready to help make your dreams a reality.",
+    copy: "Perennials, a full planting plan, earthmoving if the site calls for it. This is where the plant palette locks in and the dream starts looking like a drawing you could hand someone and say, build this.",
     // media: Downing-Design-Final-1.3-Install
     image: PHOTOS.carrots,
   },
   {
     n: "04",
     name: "Vision Realized",
-    copy: "At this stage, your finalized plans are organized and prepared for contractors or installation teams, ensuring clarity, efficiency, and alignment as the project moves from design into construction.",
+    copy: "Your finalized plans get organized and prepped for contractors or our own install crew, so nothing gets lost in translation between the page and the ground.",
     // media: gardenofeatinphotos
     image: PHOTOS.orchard,
   },
@@ -55,8 +56,8 @@ export default function ServiceDesign() {
       title="Design"
       subhead="A custom plan, drawn to build."
       introEyebrow="The Plan"
-      introTitle="From Consultation To Installable Drawing"
-      intro="From that first consultation, your designer develops a custom permaculture plan through a series of drafts — orienting the big elements first, then layering in pathways, water, and plantings — until you have an installation-ready design matched to Western North Carolina."
+      introTitle="From First Walk To Living Document"
+      intro="Following our time on site, your designer builds a set of objectives, an estimate, and a timeline for your first design draft. That draft becomes a living document, not a fixed one. It evolves as your goals shift, the way any good plan should. We design with the full dream in view while staying flexible enough to phase the work around your budget. Every meeting after that is where the plan gets sharper, until it feels like it actually belongs to your land."
       textSection={{
         eyebrow: "Yours To Keep",
         title: "A Plan You Own",
@@ -146,6 +147,13 @@ export default function ServiceDesign() {
             </div>
           );
         })}
+        <div className="container" style={{ maxWidth: "760px", marginTop: "var(--space-xl)" }}>
+          <Callout label="Design Agreement & Deposit">
+            A deposit of half the design estimate is due with your Design
+            Agreement, with the remaining balance due upon completion of your
+            final design.
+          </Callout>
+        </div>
       </section>
     </ServiceSubLayout>
   );

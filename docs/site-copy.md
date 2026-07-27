@@ -22,7 +22,7 @@ All user-facing copy pulled from the React build (`sibyldigital/gardensofeatin`)
 - **Column 2:** Portfolio · Services · Packages · Landing Page
 - **Column 3:** Blog · Questionnaire · Contact Us
 - **Phone:** (828) 555-0134
-- **Bottom links:** Developer Reference · © {year} Gardens of Eatin'
+- **Bottom links:** Policies · Developer Reference · © {year} Gardens of Eatin'
 
 ---
 
@@ -180,13 +180,13 @@ All user-facing copy pulled from the React build (`sibyldigital/gardensofeatin`)
 Every discipline page shares one layout: **hero** (eyebrow "Service", title, subhead) → **stats band** → **intro** (subhead/head + body) → optional page-specific block → **What's Included** list (rendered on a **dark deep-forest background**, all pages) → **highlights** ("the approach") → **text-content section** → **related portfolio** → optional questionnaire CTA → **bottom CTA** (eyebrow "Ready To Start?", title "Find The Right Package", button "View Packages").
 
 ### Consultation (`pages/ServiceConsultation.jsx`) — `/services/consultation`
-- Hero title: Consultation · Subhead: Where every garden begins.
-- Intro header: **The Consultation** → **Start With A Walk On The Land**
-- Intro: We walk your property with you — noting sun, slope, water, and soil — and listen to how you want to live on the land. The visit ends with clear goals and an honest read of what your site can do.
+- Hero title: Consultation · Subhead: Where vision meets possibility.
+- Intro header: **The Consultation** → **A Thoughtful Conversation On Your Land**
+- Intro: A thoughtful landscape starts with a thoughtful conversation. We spend real time on your property, walking the sun, the slope, the water, the soil, and listening for what you actually want to live in. By the end, we've got a clear direction for a landscape that's not just beautiful, but aligned with the way you live and the way your land wants to grow.
 - Stats: On-Site / Consultations · 4 / Site Factors Read · 1:1 / Collaborative · WNC / Service Area
 - What's Included: On-site property consultation · Site analysis: soil, water, sun, microclimate · Collaborative design questionnaire · Goal-setting and priorities session · An honest read of what your site can do
 - Highlights (The Details / Choices & Options):
-  - Come Prepared — Fill out the design questionnaire first — the more you share, the more we can accomplish together on site.
+  - Come Prepared — Fill out the design questionnaire before we meet. The more we know going in, the less time we spend getting acquainted and the more time we spend actually co-creating on your land.
   - Goals First — We start with how you want to live on the land, not a template — the plan follows your priorities.
   - An Honest Read — You leave with a clear, honest picture of what your site can do before any design work begins.
 - Text section: **Why It Matters** → **The Site Tells Us What To Plant** — Most design mistakes are really listening mistakes — a plan drawn before anyone read the water, the wind, or the way the afternoon sun bakes one corner. The consultation is where we slow down and let the property speak first: where it drains, where it holds frost, what already grows well and what struggles. Everything we recommend afterward is built on what we learned standing on your ground, not on a template.
@@ -209,8 +209,9 @@ Every discipline page shares one layout: **hero** (eyebrow "Service", title, sub
 
 ### Design (`pages/ServiceDesign.jsx`) — `/services/design`
 - Hero title: Design · Subhead: A custom plan, drawn to build.
-- Intro header: **The Plan** → **From Consultation To Installable Drawing**
-- Intro: From that first consultation, your designer develops a custom permaculture plan through a series of drafts — orienting the big elements first, then layering in pathways, water, and plantings — until you have an installation-ready design matched to Western North Carolina.
+- Intro header: **The Plan** → **From First Walk To Living Document**
+- Intro: Following our time on site, your designer builds a set of objectives, an estimate, and a timeline for your first design draft. That draft becomes a living document, not a fixed one. It evolves as your goals shift, the way any good plan should. We design with the full dream in view while staying flexible enough to phase the work around your budget. Every meeting after that is where the plan gets sharper, until it feels like it actually belongs to your land.
+- Payment (Callout, after the stages): **Design Agreement & Deposit** — A deposit of half the design estimate is due with your Design Agreement, with the remaining balance due upon completion of your final design.
 - Stats: 4 / Design Phases · 1:1 / Collaborative Process · Custom / Plant Palette · WNC / Site-Matched Design
 - What's Included: Rough draft block design · Refined design with pathways, hardscaping, and water retention · Final planting plan with full plant palette · Earthmoving plans if applicable · Installation-ready documentation
 - Highlights (The Details / Choices & Options):
@@ -220,10 +221,10 @@ Every discipline page shares one layout: **hero** (eyebrow "Service", title, sub
 - Text section: **Yours To Keep** → **A Plan You Own** — The design is a document, and it belongs to you. You can hand it to our install crew, build it yourself over a few weekends, or phase it across seasons as budget allows — the drawings hold up either way. Every plant, path, and grade decision is recorded, so nothing lives only in one person's head and the vision stays intact no matter who does the digging.
 - Related portfolio: Residential Design Work
 - **Page-specific block — "The Design Process" / "From Rough Draft To Vision Realized" (4 stages, rendered as full-bleed pillars alternating dark / light):**
-  - Stage 01 — Rough Draft: Block designing to orient elements to the landscape. Macro level design to have a base to move forward on.
-  - Stage 02 — Design 2: This second design manages organic elements like pathways, hardscaping, water retention and canopy trees.
-  - Stage 03 — Final Draft: This final draft will position perennials and a planting plan for all the elements as well as earthmoving plans if necessary. A full plant palette and design will be complete and ready to help make your dreams a reality.
-  - Stage 04 — Vision Realized: At this stage, your finalized plans are organized and prepared for contractors or installation teams, ensuring clarity, efficiency, and alignment as the project moves from design into construction.
+  - Stage 01 — Rough Draft: Block design first. We orient the big elements to the land, so there's a real foundation to build on instead of guesswork.
+  - Stage 02 — Design 2: This is where pathways, hardscaping, water retention, and canopy trees come into focus. We meet after every draft to fine-tune the vision, and it gets more precise each round.
+  - Stage 03 — Final Draft: Perennials, a full planting plan, earthmoving if the site calls for it. This is where the plant palette locks in and the dream starts looking like a drawing you could hand someone and say, build this.
+  - Stage 04 — Vision Realized: Your finalized plans get organized and prepped for contractors or our own install crew, so nothing gets lost in translation between the page and the ground.
 
 ### Residential (`pages/ServiceResidential.jsx`) — `/services/residential`
 - Hero title: Residential · Subhead: Edible landscapes for the way you live.
@@ -506,6 +507,25 @@ Template chrome (article content from [Blog posts](#blog-posts-datacontentjs--po
 **Team** — Eyebrow "The Team" · Title "Who Does The Work" — see [Team — component](#team--component-componentsteamsectionjsx).
 **Instagram** — see [Instagram](#instagram-componentsinstagramsectionjsx).
 **Closing:** single button — Start A Conversation.
+
+---
+
+## Policies & Terms (`pages/Policies.jsx`) — `/policies`
+
+Linked from the footer bottom bar. Plain-language terms.
+
+**Hero**
+- Eyebrow: Working Together
+- Title: What To Expect
+- Lede: The clear terms behind every project, so nothing gets in the way of the work.
+
+**Terms** (numbered 01–04, hairline-separated)
+- **01 · Design Agreement & Deposit** — A deposit of half the design estimate is due when you sign your Design Agreement. The remaining balance is due upon completion of your final design.
+- **02 · Installation & Payment Schedule** — Once your design is approved, installation is booked with a deposit that reserves your place on the schedule and secures materials. The remaining balance is due on completion of the work. For larger, phased projects we bill by phase — each phase begins with its own deposit and is paid in full as it wraps, so you always know what's owed and when.
+- **03 · Cancellations & Rescheduling** — Weather, seasons, and living materials mean dates occasionally move — we'll always give you as much notice as we can, and we ask the same in return. Consultations and installations can be rescheduled at no charge with reasonable notice. Deposits hold your place on the calendar and reserve materials, so they are non-refundable once ordering or work has begun, though they carry over when we reschedule together.
+- **04 · Service Area & Travel** — We serve homes, estates, wedding venues, and breweries within about an hour of Asheville, from Hendersonville north to Burnsville, and Black Mountain west to Waynesville.
+
+**Closing CTA** (solid deep-forest): eyebrow "Questions?" · title "Let's Talk Through Your Project" · button "Get Started" → /contact-us
 
 ---
 

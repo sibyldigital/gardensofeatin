@@ -19,10 +19,10 @@ export default function ServiceConsultation() {
     <ServiceSubLayout
       heroImage={PHOTOS.harvest}
       title="Consultation"
-      subhead="Where every garden begins."
+      subhead="Where vision meets possibility."
       introEyebrow="The Consultation"
-      introTitle="Start With A Walk On The Land"
-      intro="We walk your property with you — noting sun, slope, water, and soil — and listen to how you want to live on the land. The visit ends with clear goals and an honest read of what your site can do."
+      introTitle="A Thoughtful Conversation On Your Land"
+      intro="A thoughtful landscape starts with a thoughtful conversation. We spend real time on your property, walking the sun, the slope, the water, the soil, and listening for what you actually want to live in. By the end, we've got a clear direction for a landscape that's not just beautiful, but aligned with the way you live and the way your land wants to grow."
       textSection={{
         eyebrow: "Why It Matters",
         title: "The Site Tells Us What To Plant",
@@ -39,7 +39,7 @@ export default function ServiceConsultation() {
       highlights={[
         {
           label: "Come Prepared",
-          text: "Fill out the design questionnaire first — the more you share, the more we can accomplish together on site.",
+          text: "Fill out the design questionnaire before we meet. The more we know going in, the less time we spend getting acquainted and the more time we spend actually co-creating on your land.",
         },
         {
           label: "Goals First",
