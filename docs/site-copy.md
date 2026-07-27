@@ -6,7 +6,7 @@ All user-facing copy pulled from the React build (`sibyldigital/gardensofeatin`)
 
 ---
 
-> Layout note: the whole site sits in a centered **frame** (`.site-frame`, max-width 1280px) with a hairline "edge guide" down each side on wide desktops, so content stays centered instead of stretching full-width. Every page also leads **hero → stats band → …**.
+> Layout note: section backgrounds and imagery (hero, stats band, split pillars, CTA banners, masonry galleries) bleed **full-width**; reading copy stays in a centered column (`.container`, max ~1180px) marked by faint gold **center guides** (`.center-guides`) on wide desktops. Every page leads **hero → stats band → …**.
 
 ## Site chrome
 

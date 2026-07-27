@@ -10,13 +10,16 @@ export function MasonryGallery({ images, eyebrow, title, sunken = false }) {
   if (!images || images.length === 0) return null;
   return (
     <section className={sunken ? "section section--sunken" : "section"}>
-      <div className="container">
-        {(eyebrow || title) && <SectionHeading eyebrow={eyebrow} title={title} />}
-        <div className="masonry">
-          {images.map((src, i) => (
-            <img key={i} className="masonry__item" src={src} alt="" loading="lazy" />
-          ))}
+      {(eyebrow || title) && (
+        <div className="container">
+          <SectionHeading eyebrow={eyebrow} title={title} />
         </div>
+      )}
+      {/* Full-bleed, zero-gutter masonry */}
+      <div className="masonry">
+        {images.map((src, i) => (
+          <img key={i} className="masonry__item" src={src} alt="" loading="lazy" />
+        ))}
       </div>
     </section>
   );

@@ -42,6 +42,7 @@ function ScrollToTop() {
 export default function App() {
   return (
     <div className="site-frame">
+      <div className="center-guides" aria-hidden="true" />
       <ScrollToTop />
       <Routes>
         <Route path="/" element={<Home />} />

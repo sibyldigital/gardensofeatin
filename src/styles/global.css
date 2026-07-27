@@ -22,23 +22,36 @@ body {
 }
 
 body {
-  /* The gutters outside the centered site frame on wide screens. */
-  background: var(--surface-sunken);
+  background: var(--surface-page);
   color: var(--text-body);
   font: var(--text-body-md);
 }
 
-/* Edge guides — keep the whole site centered on wide desktops instead of
-   stretching full width, with a hairline rule down each edge. */
-.site-frame {
-  max-width: 1280px;
-  margin: 0 auto;
-  min-height: 100vh;
-  background: var(--surface-page);
-  border-inline: var(--border-width-hairline) solid var(--border-hairline);
-}
-@media (max-width: 1280px) {
-  .site-frame { border-inline: 0; }
+.site-frame { position: relative; }
+
+/* Center-column guides — faint gold rules marking the centered copy column
+   on wide desktops. Section backgrounds and imagery bleed full-width past
+   them; the reading copy (inside .container) stays between them. */
+.center-guides { display: none; }
+@media (min-width: 1300px) {
+  .center-guides {
+    display: block;
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 4;
+  }
+  .center-guides::before,
+  .center-guides::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 1px;
+    background: rgba(139, 105, 20, 0.2);
+  }
+  .center-guides::before { left: calc((100% - var(--content-max)) / 2); }
+  .center-guides::after { right: calc((100% - var(--content-max)) / 2); }
 }
 
 /* Masonry gallery — zero-bleed (no gutters), columns fill by intrinsic
